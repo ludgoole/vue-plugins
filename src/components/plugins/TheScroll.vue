@@ -3,6 +3,9 @@
     <ul ref="list">
       <li v-for="n in 10" :key="n" @click="scrollTo">{{n}}</li>
     </ul>
+    <ul v-scroll="onVueScroll">
+      <li v-for="n in 10" :key="n" @click="scrollTo">{{n}}</li>
+    </ul>
   </div>
 </template>
 
@@ -34,6 +37,9 @@ export default {
       } else {
         console.log('我要开始滚啦--')
       }
+    },
+    onVueScroll (e, position) {
+      console.log('position >>>', position)
     }
   },
   mounted () {

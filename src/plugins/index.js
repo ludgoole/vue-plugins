@@ -10,7 +10,7 @@ export default {
 
     Vue.mixin({
       created: function () {
-        console.log('Vue.mixin >>>>', this.$options)
+        console.log('Vue.mixin >>>>', this.$axios)
       }
     })
   }
