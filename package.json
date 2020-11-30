@@ -14,6 +14,7 @@
     "element-ui": "^2.14.1",
     "lodash": "^4.17.20",
     "reset.css": "^2.0.2",
+    "smooth-scrollbar": "^8.5.3",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vue-scroll": "^2.1.13",

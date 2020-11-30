@@ -6,6 +6,9 @@
     <ul v-scroll="onVueScroll">
       <li v-for="n in 10" :key="n" @click="scrollTo">{{n}}</li>
     </ul>
+    <ul ref="scrollbar">
+      <li v-for="n in 10" :key="n" @click="scrollTo">{{n}}</li>
+    </ul>
   </div>
 </template>
 
@@ -14,7 +17,7 @@ export default {
   data () {
     return {
       container: null,
-      list: []
+      scrollbar: null
     }
   },
   methods: {
@@ -40,6 +43,13 @@ export default {
     },
     onVueScroll (e, position) {
       console.log('position >>>', position)
+    },
+    onScrollbarScroll ({ limit, offset }) {
+      if (offset.y === 0) {
+        console.log('到顶了~~')
+      } else if (offset.y === limit.y) {
+        console.log('到底了~~')
+      }
     }
   },
   mounted () {
@@ -48,6 +58,21 @@ export default {
 
     this.$once('hook:beforeDestory', () => {
       this.container.removeEventListener('scroll', this.onScroll)
+    })
+
+    // 初始化滚动条
+    this.scrollbar = this.$Scrollbar.init(this.$refs.scrollbar, {
+      alwaysShowTracks: true
+    })
+
+    // 滚动到指定位置
+    this.scrollbar.scrollTo(0, 50, 600)
+
+    // 事件监听
+    this.scrollbar.addListener(this.onScrollbarScroll)
+
+    this.$once('hook:beforeDestroy', () => {
+      this.scrollbar.removeListener(this.onScrollbarScroll)
     })
   }
 }
