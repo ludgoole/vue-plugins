@@ -12,3 +12,15 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+
+// eslint-disable-next-line no-undef
+console.log('Test', Test)
+// {add, sum, default: {add, sum}}
+
+// eslint-disable-next-line no-undef
+console.log('Add', Add)
+// function add() {}
+
+// eslint-disable-next-line no-undef
+console.log('test', test)
+// {add, sum, default: {add, sum}}

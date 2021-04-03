@@ -122,9 +122,9 @@ export default {
 }
 </script>
 <style>
-* {
+/* * {
   touch-action: none;
-}
+} */
 .swiper-slide {
   width: 100%;
   height: 100vh;

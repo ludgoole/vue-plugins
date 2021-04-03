@@ -3,10 +3,28 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+      <img :src="img" alt="" />
+      <img src="./assets/image/hope.jpg" alt="" />
+      <img src="./assets/logo.png" alt="" />
+      <div class="img1"></div>
+      <div class="img2"></div>
     </div>
     <router-view />
   </div>
 </template>
+
+<script>
+// @ is an alias to /src
+import img from '@assets/image/hope.jpg'
+
+export default {
+  data() {
+    return {
+      img
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -44,5 +62,16 @@
   // width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
+}
+
+.img1 {
+  width: 100px;
+  height: 100px;
+  background: url(./assets/image/hope.jpg);
+}
+.img2 {
+  width: 100px;
+  height: 100px;
+  background: url(./assets/logo.png);
 }
 </style>

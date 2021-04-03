@@ -1,6 +1,9 @@
 // vue.config.js
 const webpack = require('webpack')
-const undevelopment = process.env.NODE_ENV === 'development'
+const path = require('path')
+const undevelopment = process.env.NODE_ENV !== 'development'
+const assetsDir = 'static'
+const resolve = filepath => path.resolve(__dirname, filepath)
 
 // 定义 Webpack 不打包资源列表
 const externals = {
@@ -39,27 +42,188 @@ const CDNSources = {
 
 module.exports = {
   // 出口
-  publicPath: undevelopment ? './' : '/',
+  publicPath: './',
   outputDir: 'dist',
-  assetsDir: 'static',
+  assetsDir: assetsDir,
   filenameHashing: true,
   productionSourceMap: true,
 
-  // 插件
+  // 常规配置
+  configureWebpack: {
+    // resolve: {
+    //   alias: {
+    //     '@assets': path.resolve(__dirname, 'src/assets')
+    //   }
+    // },
+    module: {
+      rules: [
+        {
+          test: /\.(png|jpg|gif)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name][hash:5].[ext]'
+                // limit: 8192
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  // 链式配置
   chainWebpack: config => {
+    // *****************************
+    // externals 不打包资源
+    // *****************************
     // 通过externals不打包CDN资源
-    config.set('externals', externals)
+    undevelopment && config.set('externals', externals)
 
+    // *****************************
+    // alias 别名
+    // *****************************
+    config.resolve.alias
+      .set('test', resolve('src/plugins/test.js'))
+      .set('@assets', resolve('src/assets'))
+
+    // *****************************
+    // module 模块
+    // *****************************
+    // 提取图片文件
+    // config.module
+    //   .rule('url-loader')
+    //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+    //   .use('url-loader')
+    //   .loader('url-loader')
+    //   .options({
+    // 默认 [name][hash:8].[ext]
+    // name: '[name][hash:5].[ext]',
+    // 没有超出 limit 放置在 `${assetsDir}/img` 里
+    // 超出 limit 放置在 outputPath 里
+    // outputPath 默认为 ` `, 即dist目录下
+    // outputPath: `${assetsDir}/img`,
+    // limit: 8192
+    //   })
+    // 图片压缩
+    // config.module
+    //   .rule('images')
+    //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+    //   .use('image-webpack-loader')
+    //   .loader('image-webpack-loader')
+    //   .options({
+    //     bypassOnDebug: true,
+    //     disable: true,
+    //     mozjpeg: {
+    //       progressive: true,
+    //       quality: 65
+    //     },
+
+    //     // optipng.enabled: false will disable optipng
+    //     optipng: {
+    //       enabled: true
+    //     },
+    //     pngquant: {
+    //       quality: [0.65, 0.9],
+    //       speed: 4
+    //     },
+    //     gifsicle: {
+    //       interlaced: false
+    //     },
+
+    //     // the webp option will enable WEBP
+    //     webp: {
+    //       quality: 75
+    //     }
+    //   })
+    //   .end()
+
+    // config.module
+    //   .rule('imagesmin')
+    //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+    //   .use('imagemin-loader')
+    //   .loader('imagemin-loader')
+    //   .options({
+    //     plugins: [
+    //       {
+    //         use: 'imagemin-pngquant',
+    //         options: {
+    //           quality: [0.65, 0.9]
+    //         }
+    //       }
+    //     ]
+    //   })
+    //   .end()
+
+    // config.module
+    //   .rule('image-min')
+    //   .test(/\.(gif|png|jpe?g|svg)$/i)
+    //   .use('file-loader')
+    //   .loader('image-webpack-loader')
+    //   .options({
+    //     mozjpeg: {
+    //       progressive: true
+    //     },
+    //     // optipng.enabled: false will disable optipng
+    //     optipng: {
+    //       enabled: false
+    //     },
+    //     pngquant: {
+    //       quality: [0.65, 0.9],
+    //       speed: 4
+    //     },
+    //     // gifsicle: {
+    //     //   interlaced: false
+    //     // },
+    //     // the webp option will enable WEBP
+    //     webp: {
+    //       quality: 75
+    //     }
+    //   })
+    //   .end()
+
+    // *****************************
+    // plugin 插件
+    // *****************************
     // 在html文件加载外部CDN资源
-    config.plugin('html').tap(args => {
-      args[0].CDN = CDNSources[undevelopment ? 'prod' : 'dev']
-      return args
-    })
-
-    // 定义全局变量
+    // 具名插件html，默认使用htmlWebpackPlugin
     config
+      .plugin('html')
+      .tap(args => {
+        // 默认args
+        /*
+          [
+            {
+              title: 'vue-plugins',
+              templateParameters: [Function: templateParameters],
+              template: 'C:\\Users\\ThinkPad\\Desktop\\vue-plugins\\public\\index.html'
+            }
+          ]
+        */
+        console.log('html', args)
+        args[0].CDN = CDNSources[undevelopment ? 'prod' : 'dev']
+        return args
+      })
+      .end()
+
+      // 定义全局变量
       .plugin('povide')
-      .use(webpack.ProvidePlugin, [{ _: 'lodash', LocalForage: 'localforage' }])
+      // args must be an array of arguments
+      .use(webpack.ProvidePlugin, [
+        {
+          _: 'lodash',
+          LocalForage: 'localforage',
+          // eslint-disable-next-line no-undef
+          Test: path.resolve(__dirname, 'src/plugins/test.js'),
+          Add: [path.resolve('src/plugins/test.js'), 'add'],
+          test: 'test'
+        }
+      ])
+      .tap(args => {
+        console.log('povide', args)
+        return args
+      })
   },
 
   // 服务

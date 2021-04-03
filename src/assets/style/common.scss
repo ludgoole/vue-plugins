@@ -1,15 +1,15 @@
-html {
-  font-size: 100vw / 1920 * 100;
-  // 同时，通过Media Queries 限制根元素最大最小值
-  @media screen and (max-width: 1200px) {
-    font-size: 14px;
-  }
-  @media screen and (min-width: 1600px) {
-    font-size: 100px;
-  }
-}
-// body 也增加宽度限制，避免默认100%宽度的 block 元素跟随 body 而过大过小
-body {
-  min-width: 1200px;
-  font-size: 14px;
-}
+// html {
+//   font-size: 100vw / 1920 * 100;
+//   // 同时，通过Media Queries 限制根元素最大最小值
+//   @media screen and (max-width: 1200px) {
+//     font-size: 14px;
+//   }
+//   @media screen and (min-width: 1600px) {
+//     font-size: 100px;
+//   }
+// }
+// // body 也增加宽度限制，避免默认100%宽度的 block 元素跟随 body 而过大过小
+// body {
+//   min-width: 1200px;
+//   font-size: 14px;
+// }
