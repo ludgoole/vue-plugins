@@ -16,18 +16,43 @@
     <BaseVideo v-if="false"></BaseVideo>
     <BaseRecorder v-if="false"></BaseRecorder>
     <BaseTreeSelect v-if="false"></BaseTreeSelect>
-    <BaseSvg v-if="true"></BaseSvg>
+    <BaseSvg v-if="false"></BaseSvg>
+    <BaseDrive v-if="false"></BaseDrive>
+    <DefineReactive v-if="false" :count="count"></DefineReactive>
+    <template v-if="false">
+      <p>{{ price }}</p>
+      <el-button type="primary" @click="count++">add</el-button>
+      <el-button type="primary" @click="price--">
+        changePrice
+      </el-button>
+    </template>
+    <ReHome></ReHome>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import components from '@/components/plugins'
+import renders from '@/components/renders'
 
-console.log('MathJax', components)
+console.log('MathJax', components, renders)
 
 export default {
   name: 'Home',
-  components
+  components: {
+    ...components,
+    ...renders
+  },
+  data() {
+    return {
+      count: 1,
+      price: 12
+    }
+  },
+  provide() {
+    return {
+      price: this.price
+    }
+  }
 }
 </script>

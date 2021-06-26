@@ -1,5 +1,6 @@
 // vue.config.js
 const webpack = require('webpack')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
 const undevelopment = process.env.NODE_ENV !== 'development'
 const assetsDir = 'static'
@@ -21,7 +22,7 @@ const CDNSources = {
     js: [
       // TODO:按需
       // mathjax
-      'https://cdn.bootcss.com/mathjax/3.0.5/es5/tex-mml-chtml.js?config=TeX-AMS_CHTML'
+      // 'https://cdn.bootcss.com/mathjax/3.0.5/es5/tex-mml-chtml.js?config=TeX-AMS_CHTML'
     ]
   },
   prod: {
@@ -57,19 +58,60 @@ module.exports = {
     // },
     module: {
       rules: [
-        {
-          test: /\.(png|jpg|gif)$/i,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: '[name][hash:5].[ext]'
-                // limit: 8192
-              }
-            }
-          ]
-        }
+        // {
+        //   test: /\.(png|jpg|gif)$/i,
+        //   use: [
+        //     {
+        //       loader: 'file-loader',
+        //       options: {
+        //         name: '[name][hash:5].[ext]'
+        //         // limit: 8192
+        //       }
+        //     }
+        //   ]
+        // }
+        // {
+        //   test: /\.(png|jpg|gif)$/i,
+        //   use: [
+        //     {
+        //       loader: 'url-loader',
+        //       options: {
+        //         limit: 8192
+        //       }
+        //     }
+        //   ]
+        // }
       ]
+    },
+    plugins: [
+      // new UglifyJsPlugin({
+      //   uglifyOptions: {
+      //     warnings: false,
+      //     compress: {
+      //       drop_debugger: true, // console
+      //       drop_console: true,
+      //       pure_funcs: ['console.log'] // 移除console
+      //     }
+      //   },
+      //   sourceMap: false,
+      //   parallel: true
+      // })
+    ],
+    optimization: {
+      // minimizer: [
+      //   new UglifyJsPlugin({
+      //     uglifyOptions: {
+      //       warnings: false,
+      //       compress: {
+      //         drop_debugger: true, // console
+      //         drop_console: true,
+      //         pure_funcs: ['console.log'] // 移除console
+      //       }
+      //     },
+      //     sourceMap: false,
+      //     parallel: true
+      //   })
+      // ]
     }
   },
 
@@ -92,20 +134,52 @@ module.exports = {
     // module 模块
     // *****************************
     // 提取图片文件
-    // config.module
-    //   .rule('url-loader')
-    //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-    //   .use('url-loader')
-    //   .loader('url-loader')
-    //   .options({
-    // 默认 [name][hash:8].[ext]
-    // name: '[name][hash:5].[ext]',
-    // 没有超出 limit 放置在 `${assetsDir}/img` 里
-    // 超出 limit 放置在 outputPath 里
-    // outputPath 默认为 ` `, 即dist目录下
-    // outputPath: `${assetsDir}/img`,
-    // limit: 8192
-    //   })
+    config.module
+      .rule('images')
+      .use('url-loader')
+      .tap(options => {
+        // console.log('url-loader', options)
+        return {
+          ...options,
+          limit: 8192
+        }
+      })
+      .end()
+    // .use('image-webpack-loader')
+    // .loader('image-webpack-loader')
+    // .options({
+    //   bypassOnDebug: true,
+    //   disable: false,
+    //   mozjpeg: {
+    //     progressive: true,
+    //     // enabled: false,
+    //     quality: 65
+    //   },
+
+    //   // optipng.enabled: false will disable optipng
+    //   optipng: {
+    //     enabled: false
+    //   },
+    //   pngquant: {
+    //     quality: [0.65, 0.9],
+    //     speed: 4
+    //   },
+    //   // Cannot find module 'gifsicle'
+    //   gifsicle: {
+    //     enabled: false,
+    //     interlaced: false
+    //   }
+
+    //   // the webp option will enable WEBP
+    //   // webp: {
+    //   //   quality: 75
+    //   // }
+    // })
+    // .tap(options => {
+    //   console.log('image-webpack-loader', options)
+    //   return options
+    // })
+
     // 图片压缩
     // config.module
     //   .rule('images')
@@ -140,7 +214,7 @@ module.exports = {
     //   .end()
 
     // config.module
-    //   .rule('imagesmin')
+    //   .rule('images')
     //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
     //   .use('imagemin-loader')
     //   .loader('imagemin-loader')
@@ -149,10 +223,10 @@ module.exports = {
     //       {
     //         use: 'imagemin-pngquant',
     //         options: {
-    //           quality: [0.65, 0.9]
-    //         }
-    //       }
-    //     ]
+    //           quality: [0.65, 0.9],
+    //         },
+    //       },
+    //     ],
     //   })
     //   .end()
 
@@ -201,7 +275,7 @@ module.exports = {
             }
           ]
         */
-        console.log('html', args)
+        // console.log('html', args)
         args[0].CDN = CDNSources[undevelopment ? 'prod' : 'dev']
         return args
       })
@@ -222,6 +296,36 @@ module.exports = {
       ])
       .tap(args => {
         console.log('povide', args)
+        return args
+      })
+      .end()
+
+      // 代码压缩
+      .plugin('uglifyJs')
+      .use(UglifyJsPlugin, [
+        {
+          uglifyOptions: {
+            warnings: false,
+            compress: {
+              // 移除 debugger
+              drop_debugger: true,
+              // 移除console.*函数
+              drop_console: true,
+              // 移除console.log的引用
+              // 例如 log = console.log, 移除log，同时移除console.log
+              pure_funcs: ['console.log']
+            }
+          },
+          // 多进程并行运行
+          parallel: true,
+          // 启用缓存
+          cache: true,
+          // 抽取注释
+          extractComments: true
+        }
+      ])
+      .tap(args => {
+        console.log('uglifyJs', process.env.NODE_ENV, args)
         return args
       })
   },

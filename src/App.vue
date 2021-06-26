@@ -3,11 +3,6 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-      <img :src="img" alt="" />
-      <img src="./assets/image/hope.jpg" alt="" />
-      <img src="./assets/logo.png" alt="" />
-      <div class="img1"></div>
-      <div class="img2"></div>
     </div>
     <router-view />
   </div>
