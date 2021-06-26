@@ -145,117 +145,6 @@ module.exports = {
         }
       })
       .end()
-    // .use('image-webpack-loader')
-    // .loader('image-webpack-loader')
-    // .options({
-    //   bypassOnDebug: true,
-    //   disable: false,
-    //   mozjpeg: {
-    //     progressive: true,
-    //     // enabled: false,
-    //     quality: 65
-    //   },
-
-    //   // optipng.enabled: false will disable optipng
-    //   optipng: {
-    //     enabled: false
-    //   },
-    //   pngquant: {
-    //     quality: [0.65, 0.9],
-    //     speed: 4
-    //   },
-    //   // Cannot find module 'gifsicle'
-    //   gifsicle: {
-    //     enabled: false,
-    //     interlaced: false
-    //   }
-
-    //   // the webp option will enable WEBP
-    //   // webp: {
-    //   //   quality: 75
-    //   // }
-    // })
-    // .tap(options => {
-    //   console.log('image-webpack-loader', options)
-    //   return options
-    // })
-
-    // 图片压缩
-    // config.module
-    //   .rule('images')
-    //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-    //   .use('image-webpack-loader')
-    //   .loader('image-webpack-loader')
-    //   .options({
-    //     bypassOnDebug: true,
-    //     disable: true,
-    //     mozjpeg: {
-    //       progressive: true,
-    //       quality: 65
-    //     },
-
-    //     // optipng.enabled: false will disable optipng
-    //     optipng: {
-    //       enabled: true
-    //     },
-    //     pngquant: {
-    //       quality: [0.65, 0.9],
-    //       speed: 4
-    //     },
-    //     gifsicle: {
-    //       interlaced: false
-    //     },
-
-    //     // the webp option will enable WEBP
-    //     webp: {
-    //       quality: 75
-    //     }
-    //   })
-    //   .end()
-
-    // config.module
-    //   .rule('images')
-    //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-    //   .use('imagemin-loader')
-    //   .loader('imagemin-loader')
-    //   .options({
-    //     plugins: [
-    //       {
-    //         use: 'imagemin-pngquant',
-    //         options: {
-    //           quality: [0.65, 0.9],
-    //         },
-    //       },
-    //     ],
-    //   })
-    //   .end()
-
-    // config.module
-    //   .rule('image-min')
-    //   .test(/\.(gif|png|jpe?g|svg)$/i)
-    //   .use('file-loader')
-    //   .loader('image-webpack-loader')
-    //   .options({
-    //     mozjpeg: {
-    //       progressive: true
-    //     },
-    //     // optipng.enabled: false will disable optipng
-    //     optipng: {
-    //       enabled: false
-    //     },
-    //     pngquant: {
-    //       quality: [0.65, 0.9],
-    //       speed: 4
-    //     },
-    //     // gifsicle: {
-    //     //   interlaced: false
-    //     // },
-    //     // the webp option will enable WEBP
-    //     webp: {
-    //       quality: 75
-    //     }
-    //   })
-    //   .end()
 
     // *****************************
     // plugin 插件
@@ -288,10 +177,6 @@ module.exports = {
         {
           _: 'lodash',
           LocalForage: 'localforage',
-          // eslint-disable-next-line no-undef
-          Test: path.resolve(__dirname, 'src/plugins/test.js'),
-          Add: [path.resolve('src/plugins/test.js'), 'add'],
-          test: 'test'
         }
       ])
       .tap(args => {
@@ -325,7 +210,7 @@ module.exports = {
         }
       ])
       .tap(args => {
-        console.log('uglifyJs', process.env.NODE_ENV, args)
+        // console.log('uglifyJs', process.env.NODE_ENV, args)
         return args
       })
   },

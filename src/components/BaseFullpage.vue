@@ -39,7 +39,7 @@ export default {
       isLock: true,
       opts: {
         start: 0,
-        dir: 'v',
+        dir: 'h',
         duration: 500,
         beforeChange: this.beforeChange,
         afterChange: this.afterChange
