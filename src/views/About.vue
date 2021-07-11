@@ -26,7 +26,8 @@
         changePrice
       </el-button>
     </template>
-    <ReHome></ReHome>
+    <ReHome v-if="false"></ReHome>
+    <BaseSocket></BaseSocket>
   </div>
 </template>
 
@@ -48,6 +49,11 @@ export default {
       count: 1,
       price: 12
     }
+  },
+  mounted() {
+    this.$axios.post('/api/login').then(data => {
+      console.log('/api/login', data)
+    })
   },
   provide() {
     return {

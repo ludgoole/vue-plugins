@@ -344,6 +344,16 @@ module.exports = {
         pathRewrite: {
           '^/api': ''
         }
+      },
+      '/socket.io': {
+        target: 'http://192.168.1.103:3000',
+        ws: true,
+        changeOrigin: true
+      },
+      'sockjs-node': {
+        target: 'http://192.168.1.103:3000',
+        ws: false,
+        changeOrigin: true
       }
     }
   }
