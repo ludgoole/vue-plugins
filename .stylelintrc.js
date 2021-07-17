@@ -8,9 +8,6 @@ module.exports = {
     'selector-max-compound-selectors': 3,
     'at-rule-no-unknown': null,
     'scss/at-rule-no-unknown': true,
-    'function-url-quotes': 'always',
-    'number-leading-zero': null,
-    'unit-whitelist': ['em', 'rem', 's', '%', 'px', 'deg'],
-    'unit-case': 'lower'
+    'number-leading-zero': null
   }
 }

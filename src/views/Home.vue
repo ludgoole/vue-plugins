@@ -1,7 +1,5 @@
 <template>
   <div class="home">
-    <p>{{ moment.get() }}</p>
-    <p>{{ moment.format() }}</p>
     <p>{{ moment.format('YYYY-MM-DD hh:mm:ss') }}</p>
   </div>
 </template>

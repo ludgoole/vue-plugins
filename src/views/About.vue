@@ -1,9 +1,6 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <BaseSwiper v-if="false"></BaseSwiper>
-    <VView v-if="false"></VView>
-    <BaseFullpage></BaseFullpage>
   </div>
 </template>
 
@@ -14,15 +11,13 @@ import components from '@/components'
 export default {
   name: 'Home',
   components: {
-    ...components,
+    ...components
   },
   data() {
-    return {
-    }
+    return {}
   },
   provide() {
-    return {
-    }
+    return {}
   }
 }
 </script>
