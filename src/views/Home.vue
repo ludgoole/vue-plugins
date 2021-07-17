@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-
     <p>{{ moment.get() }}</p>
     <p>{{ moment.format() }}</p>
     <p>{{ moment.format('YYYY-MM-DD hh:mm:ss') }}</p>
@@ -12,25 +11,18 @@
 
 import moment from 'moment'
 
-
 export default {
   name: 'Home',
-  components: {
-    
-  },
+  components: {},
   data() {
-    return {
- 
-    }
+    return {}
   },
   computed: {
     moment() {
       return moment()
     }
   },
-  mounted() {
-
-  }
+  mounted() {}
 }
 </script>
 <style lang="scss">
