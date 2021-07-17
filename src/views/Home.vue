@@ -1,32 +1,35 @@
 <template>
   <div class="home">
-    <p>{{ moment.get() }}</p>
-    <p>{{ moment.format() }}</p>
-    <p>{{ moment.format('YYYY-MM-DD hh:mm:ss') }}</p>
+    <p>{{ now }}</p>
+    <van-button type="primary">主要按钮</van-button>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
+// import Vue from 'vue'
+// import { Button } from 'vant'
 import moment from 'moment'
+
+// Vue.use(Button)
 
 export default {
   name: 'Home',
   components: {},
   data() {
-    return {}
-  },
-  computed: {
-    moment() {
-      return moment()
+    return {
+      now: Date.now()
     }
   },
-  mounted() {}
+  mounted() {
+    setInterval(() => {
+      this.now = moment(Date.now()).format('YYYY-MM-DD hh:mm:ss')
+    }, 1000)
+  }
 }
 </script>
 <style lang="scss">
 .home {
-  background: chocolate;
+  font-size: 24px;
 }
 </style>

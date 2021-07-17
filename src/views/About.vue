@@ -10,19 +10,16 @@
 <script>
 // @ is an alias to /src
 import components from '@/components'
-
 export default {
   name: 'Home',
   components: {
-    ...components,
+    ...components
   },
   data() {
-    return {
-    }
+    return {}
   },
   provide() {
-    return {
-    }
+    return {}
   }
 }
 </script>

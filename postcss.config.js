@@ -15,6 +15,7 @@ module.exports = {
       // font-size 保留px
       // border 保留px
       propList: ['*', '!font-*', '!border'],
+      selectorBlackList: ['van-', 'px-'],
       unitPrecision: 3
     }
   }
