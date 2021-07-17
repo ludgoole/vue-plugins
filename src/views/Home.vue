@@ -1,18 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>{{ moment.get() }}</p>
+    <p>{{ moment.format() }}</p>
+    <p>{{ moment.format('YYYY-MM-DD hh:mm:ss') }}</p>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import moment from 'moment'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  }
+  components: {},
+  data() {
+    return {}
+  },
+  computed: {
+    moment() {
+      return moment()
+    }
+  },
+  mounted() {}
 }
 </script>
+<style lang="scss">
+.home {
+  background: chocolate;
+}
+</style>

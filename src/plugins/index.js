@@ -5,13 +5,13 @@ import './style'
 import { installPlugins } from './plugin'
 
 export default {
-  install (Vue) {
+  install(Vue) {
     installPlugins(Vue)
 
-    Vue.mixin({
-      created: function () {
-        console.log('Vue.mixin >>>>', this.$options)
-      }
-    })
+    // Vue.mixin({
+    //   created: function () {
+    //     console.log('Vue.mixin >>>>', this.$axios)
+    //   }
+    // })
   }
 }
