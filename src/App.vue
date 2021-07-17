@@ -10,13 +10,10 @@
 
 <script>
 // @ is an alias to /src
-import img from '@assets/image/hope.jpg'
 
 export default {
   data() {
-    return {
-      img
-    }
+    return {}
   }
 }
 </script>
@@ -42,33 +39,5 @@ export default {
       font-size: 12px;
     }
   }
-}
-
-.MathJax {
-  outline: 0;
-}
-// .MathJax_Display {
-//   overflow-x: auto;
-//   overflow-y: hidden;
-// }
-.is-scroll {
-  max-width: 100vw;
-  overflow-x: auto;
-  overflow-y: hidden;
-  font-size: 20px;
-  white-space: nowrap;
-  // width: 100%;
-}
-
-.img1 {
-  width: 100px;
-  height: 100px;
-  background: url(./assets/image/hope.jpg);
-}
-
-.img2 {
-  width: 100px;
-  height: 100px;
-  background: url(./assets/logo.png);
 }
 </style>

@@ -6,17 +6,10 @@
 
 <script>
 // @ is an alias to /src
-import components from '@/components'
 
 export default {
   name: 'Home',
-  components: {
-    ...components
-  },
   data() {
-    return {}
-  },
-  provide() {
     return {}
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <p>{{ moment.format('YYYY-MM-DD hh:mm:ss') }}</p>
+    <p>{{ now }}</p>
   </div>
 </template>
 
@@ -13,18 +13,19 @@ export default {
   name: 'Home',
   components: {},
   data() {
-    return {}
-  },
-  computed: {
-    moment() {
-      return moment()
+    return {
+      now: Date.now()
     }
   },
-  mounted() {}
+  mounted() {
+    setInterval(() => {
+      this.now = moment(Date.now()).format('YYYY-MM-DD hh:mm:ss')
+    }, 1000)
+  }
 }
 </script>
 <style lang="scss">
 .home {
-  background: chocolate;
+  font-size: 24px;
 }
 </style>
