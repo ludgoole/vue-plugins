@@ -4,13 +4,13 @@ export default [
     relation: [
       {
         name: '金',
-        affect: '扶',
+        affect: '比',
         fortune: '吉'
       },
       {
         name: '木',
         affect: '耗',
-        fortune: '凶'
+        fortune: '吉'
       },
       {
         name: '水',
@@ -39,7 +39,7 @@ export default [
       },
       {
         name: '木',
-        affect: '扶',
+        affect: '比',
         fortune: '吉'
       },
       {
@@ -55,7 +55,7 @@ export default [
       {
         name: '土',
         affect: '耗',
-        fortune: '凶'
+        fortune: '吉'
       }
     ]
   },
@@ -74,13 +74,13 @@ export default [
       },
       {
         name: '水',
-        affect: '扶',
+        affect: '比',
         fortune: '吉'
       },
       {
         name: '火',
         affect: '耗',
-        fortune: '凶'
+        fortune: '吉'
       },
       {
         name: '土',
@@ -95,7 +95,7 @@ export default [
       {
         name: '金',
         affect: '耗',
-        fortune: '凶'
+        fortune: '吉'
       },
       {
         name: '木',
@@ -109,7 +109,7 @@ export default [
       },
       {
         name: '火',
-        affect: '扶',
+        affect: '比',
         fortune: '吉'
       },
       {
@@ -135,7 +135,7 @@ export default [
       {
         name: '水',
         affect: '耗',
-        fortune: '凶'
+        fortune: '吉'
       },
       {
         name: '火',
@@ -144,7 +144,7 @@ export default [
       },
       {
         name: '土',
-        affect: '扶',
+        affect: '比',
         fortune: '吉'
       }
     ]

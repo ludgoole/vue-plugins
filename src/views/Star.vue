@@ -1,9 +1,6 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <BaseSwiper v-if="false"></BaseSwiper>
-    <VView v-if="false"></VView>
-    <BaseFullpage></BaseFullpage>
+  <div class="Star">
+    <h1>名卦赏析</h1>
   </div>
 </template>
 
@@ -11,7 +8,7 @@
 // @ is an alias to /src
 import components from '@/components'
 export default {
-  name: 'Home',
+  name: 'Star',
   components: {
     ...components
   },
@@ -20,6 +17,7 @@ export default {
   },
   provide() {
     return {}
-  }
+  },
+  methods: {}
 }
 </script>

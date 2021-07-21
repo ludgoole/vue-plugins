@@ -11,11 +11,11 @@ const CancelToken = axios.CancelToken
 instance.interceptors.request.use(
   req => {
     // 取消请求
-    cancelToken.cancel(req.url)
+    cancelToken.cancel(req)
 
     // 缓存新的 cancel
-    req.cancelToken = new CancelToken(function (cancel) {
-      cancelToken.set(req.url, cancel)
+    req.cancelToken = new CancelToken(function(cancel) {
+      cancelToken.set(req, cancel)
     })
 
     // 配置token
@@ -32,7 +32,7 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   res => {
     // 移除 cancel
-    cancelToken.delete(res.config.url)
+    cancelToken.delete(res.config)
 
     let data = {}
 
@@ -78,7 +78,7 @@ instance.interceptors.response.use(
     return Promise.resolve(data)
   },
   err => {
-    cancelToken.delete(err.message.url)
+    cancelToken.delete(err.message)
 
     if (axios.isCancel(err)) {
       // 中断promise链接
@@ -91,53 +91,59 @@ instance.interceptors.response.use(
 )
 
 // 实例方法
-export function get (url, params = {}) {
+export function get(url, params = {}) {
   return instance({
     method: 'get',
     url,
     params
   })
 }
-export function post (url, data = {}) {
+export function post(url, data = {}) {
   return instance({
     method: 'post',
     url,
     data,
-    transformRequest: [function (data) {
-      return qs.stringify(data)
-    }],
+    transformRequest: [
+      function(data) {
+        return qs.stringify(data)
+      }
+    ],
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
     }
   })
 }
-export function postStr (url, data = {}) {
+export function postStr(url, data = {}) {
   return instance({
     method: 'post',
     url,
     data,
-    transformRequest: [function (data) {
-      return JSON.stringify(data)
-    }],
+    transformRequest: [
+      function(data) {
+        return JSON.stringify(data)
+      }
+    ],
     headers: {
       'Content-Type': 'application/json;charset=UTF-8'
     }
   })
 }
-export function upload (url, data = {}) {
+export function upload(url, data = {}) {
   return instance({
     method: 'post',
     url,
     data,
-    transformRequest: [function (data) {
-      return data
-    }],
+    transformRequest: [
+      function(data) {
+        return data
+      }
+    ],
     headers: {
       'Content-Type': 'multipart/form-data'
     }
   })
 }
-export function download (url, data = {}) {
+export function download(url, data = {}) {
   return instance({
     method: 'post',
     url,

@@ -1,10 +1,27 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app" class="flex flex-column">
+    <van-nav-bar
+      v-if="$route.meta.title"
+      :title="$route.meta.title"
+      :left-text="$route.meta.leftText"
+      :right-text="$route.meta.rightText"
+      :left-arrow="!!$route.meta.leftText"
+      @click-left="onClickLeft"
+      @click-right="onClickRight"
+    />
+    <router-view class="router-view flex-1" />
+    <div class="navbar">
+      <van-grid>
+        <van-grid-item
+          v-for="item in list"
+          :key="item.icon"
+          :icon="item.icon"
+          :text="item.name"
+          :class="{ active: item.name === currName }"
+          @click="switchTo(item)"
+        />
+      </van-grid>
     </div>
-    <router-view />
   </div>
 </template>
 
@@ -13,31 +30,82 @@
 
 export default {
   data() {
-    return {}
+    return {
+      list: [
+        {
+          name: '卜卦',
+          path: '/question',
+          icon: 'question-o'
+        },
+        {
+          name: '查卦',
+          path: '/query',
+          icon: 'gift-o'
+        },
+        {
+          name: '名卦',
+          path: '/star',
+          icon: 'medal-o'
+        },
+        {
+          name: '我的',
+          path: '/mine',
+          icon: 'user-circle-o'
+        }
+      ],
+      currName: ''
+    }
+  },
+  methods: {
+    onClickLeft() {
+      this.$route.meta.leftText && this.$router.go(-1)
+      this.$toast('返回')
+    },
+    onClickRight() {
+      this.$route.meta.rightText && this.$bus.$emit('global.save')
+      this.$toast('保存')
+    },
+    switchTo({ name, path }) {
+      this.currName !== name && this.$router.push(path)
+      this.currName = name
+    }
   }
 }
 </script>
 
 <style lang="scss">
 #app {
+  position: relative;
+  height: 100vh;
   color: #2c3e50;
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  // text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
 
-#nav {
-  padding: 30px;
+  .router-view {
+    overflow-y: auto;
+  }
 
-  a {
-    color: #2c3e50;
-    font-weight: bold;
+  .navbar {
+    width: 100%;
 
-    &.router-link-exact-active {
-      color: #42b983;
-      font-size: 12px;
+    .active {
+      color: #409eff;
     }
+  }
+
+  .van-nav-bar__title {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .van-nav-bar__text {
+    color: #333;
+  }
+
+  .van-nav-bar .van-icon {
+    color: #333;
   }
 }
 </style>
