@@ -45,6 +45,13 @@
         </p>
       </template>
       <template>
+        <p class="Answer-tiyong flex flex-justify text-center">
+          <span>体卦</span>
+          <span>用卦</span>
+          <span>互卦</span>
+          <span>互卦</span>
+          <span>变卦</span>
+        </p>
         <div class="Answer-bagua flex flex-justify flex-bottom">
           <BaseGua :gua-xiang="tiGua.guaXiang" :size="44"></BaseGua>
           <BaseGua :gua-xiang="yongGua.guaXiang" :size="44"></BaseGua>
@@ -243,9 +250,9 @@ export default {
       )
     },
     bianYongGua() {
-      let guaXiang = _.cloneDeep(this.benGua.guaXiang)
+      let guaXiang = _.cloneDeep(this.bianGua.guaXiang)
       guaXiang =
-        this.dongYao.order % 3 ? guaXiang.slice(0, 3) : guaXiang.slice(3)
+        this.dongYao.order > 3 ? guaXiang.slice(0, 3) : guaXiang.slice(3)
       return BAGUA.find(gua => gua.guaXiang.join() === guaXiang.join())
     },
     jianYu() {
@@ -334,6 +341,14 @@ export default {
 
   &-zhigua {
     margin: 10px 0 20px 0;
+  }
+
+  &-tiyong {
+    margin: 10px 0 0;
+
+    span {
+      width: 44px;
+    }
   }
 
   &-leixiang {
