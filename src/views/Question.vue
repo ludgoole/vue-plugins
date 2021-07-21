@@ -63,7 +63,7 @@ export default {
           type: 'number',
           text: '数字',
           icon: 'info-o',
-          ext: '520 1314'
+          ext: '13 14'
         },
         {
           type: 'character',
@@ -81,7 +81,7 @@ export default {
           type: 'car',
           text: '车牌',
           icon: 'logistics',
-          ext: '鄂A2W360'
+          ext: '鄂A8W888'
         },
         {
           type: 'id',
@@ -170,11 +170,23 @@ export default {
           break
         case 'birthday':
         case 'home':
-          params.shangGuaCount = text.split(/[-_]/g).slice(-2, -1)
-          params.xiaGuaCount = text.split(/[-_]/g).slice(-1)
+          params.shangGuaCount = text
+            .split(/[-_]/g)
+            .join('')
+            .slice(-2, -1)
+          params.xiaGuaCount = text
+            .split(/[-_]/g)
+            .join('')
+            .slice(-1)
           break
         // default:
       }
+      Object.entries(params).forEach(([key, value]) => {
+        if (key.includes('Count')) {
+          value = Number(value)
+          params[key] = Number.isNaN(value) ? _.random(0, 99) : value
+        }
+      })
       this.goAnswer(params)
     },
     goAnswer(query) {
