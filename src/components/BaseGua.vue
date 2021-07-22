@@ -13,6 +13,7 @@
             'is-dong': index === 6 - dongYaoOrder
           }
         ]"
+        @click="onClick(yao, index)"
       ></li>
     </ul>
   </div>
@@ -50,12 +51,22 @@ export default {
         margin: `${height / 2}px 0`
       }
     }
+  },
+  methods: {
+    onClick(yao, index) {
+      const guaXiang = _.cloneDeep(this.guaXiang)
+      guaXiang[index] = yao === 0 ? 1 : 0
+
+      this.$emit('change', guaXiang.join(''), this.guaXiang.join(''))
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .BaseGua {
+  display: inline-block;
+
   &-yao {
     position: relative;
     width: 100%;

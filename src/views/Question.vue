@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="Question">
     <van-grid :column-num="3">
       <van-grid-item
         v-for="item in list"
@@ -42,7 +42,7 @@ import _ from 'lodash'
 import cnchar from 'cnchar'
 
 export default {
-  name: 'Home',
+  name: 'Question',
   components: {},
   data() {
     return {
@@ -202,7 +202,7 @@ export default {
 }
 </script>
 <style lang="scss" scope>
-.home {
+.Question {
   font-size: 24px;
 
   .gap {
