@@ -12,7 +12,9 @@ import {
   Collapse,
   CollapseItem,
   Tab,
-  Tabs
+  Tabs,
+  Cell,
+  CellGroup
 } from 'vant'
 const components = [
   Button,
@@ -25,7 +27,9 @@ const components = [
   Collapse,
   CollapseItem,
   Tab,
-  Tabs
+  Tabs,
+  Cell,
+  CellGroup
 ]
 function installPlugin(Vue) {
   components.forEach(component => Vue.use(component))

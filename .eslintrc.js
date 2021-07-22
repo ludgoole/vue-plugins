@@ -16,6 +16,7 @@ module.exports = {
   },
   globals: {
     // 指定全局变量并不允许改写
-    _: true
+    _: true,
+    localforage: true
   }
 }

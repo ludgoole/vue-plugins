@@ -189,7 +189,7 @@ module.exports = {
       .use(webpack.ProvidePlugin, [
         {
           _: 'lodash',
-          LocalForage: 'localforage'
+          localforage: 'localforage'
         }
       ])
       .tap(args => {

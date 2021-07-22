@@ -5,6 +5,7 @@
       right-text="保存"
       left-arrow
       @click-left="$router.go(-1)"
+      @click-right="save"
     />
     <div class="Answer-container flex-1">
       <template>
@@ -131,16 +132,15 @@
 // import components from '@/components'
 import moment from 'moment'
 import { Lunar } from 'lunar-javascript'
-import _ from 'lodash'
+// import _ from 'lodash'
+// import localforage from 'localforage'
 import DIZHI from '@/mock/dizhi'
 import BAGUA from '@/mock/bagua'
 import ZHOUYI from '@/mock/zhouyi'
 import WUXING from '@/mock/wuxing'
 import JIXIONG from '@/mock/jixiong'
 import BaseGua from '@/components/BaseGua.vue'
-
-window.Lunar = Lunar
-
+window.localforage = localforage
 export default {
   name: 'Home',
   components: {
@@ -173,7 +173,7 @@ export default {
       return this.query.dongYaoCount || -1
     },
     timestamp() {
-      return this.query.timestamp || Date.now()
+      return Number(this.query.timestamp) || Date.now()
     },
     lunar() {
       return Lunar.fromDate(new Date(this.timestamp))
@@ -311,6 +311,42 @@ export default {
     },
     getLeiXiang(name) {
       return BAGUA.find(gua => gua.name === name).leixiang
+    },
+    async save() {
+      const {
+        question,
+        shangGua,
+        xiaGua,
+        dongYao,
+        benGua,
+        bianGua,
+        timestamp,
+        ganwu
+      } = this
+      const answer = {
+        question,
+        shangGua,
+        xiaGua,
+        dongYao,
+        benGua,
+        bianGua,
+        timestamp,
+        ganwu
+      }
+      const mine = (await localforage.getItem('MEI_HUA__mine')) || []
+      const currAnswerIndex = mine.findIndex(
+        answer => answer.timestamp === this.timestamp
+      )
+
+      // 如果存过，覆盖
+      // 如果没有，添加
+      currAnswerIndex > -1
+        ? mine.splice(currAnswerIndex, 1, answer)
+        : mine.push(answer)
+
+      localforage
+        .setItem('MEI_HUA__mine', mine)
+        .then(mine => console.log('存储成功', mine))
     }
   }
 }
