@@ -53,7 +53,7 @@ export default {
           if (search > 64) {
             return gua.guaXiang.join('') === search
           } else {
-            return gua.order === search
+            return gua.guaXu === +search
           }
         }
       }) || ZHOUYI[0]

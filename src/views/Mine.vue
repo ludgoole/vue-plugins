@@ -5,7 +5,7 @@
       :key="index"
       :title="item.question"
       :label="getTime(item.timestamp)"
-      :value="`${item.benGua.guaMing}之${item.bianGua.guaMing}`"
+      :value="item.zhigua"
       @click="goAnswer(item)"
       is-link
     />
@@ -15,38 +15,49 @@
 <script>
 // @ is an alias to /src
 import moment from 'moment'
+import { download } from '@/util'
 export default {
   name: 'Mine',
-  components: {
-    // ...components
-  },
   data() {
     return {
       list: []
     }
   },
+  created() {
+    this.$bus.$off('global.rightClick').$on('global.rightClick', this.save)
+  },
   async mounted() {
     this.list = (await localforage.getItem('MEI_HUA__mine')) || []
-  },
-  provide() {
-    return {}
   },
   methods: {
     getTime(timestamp) {
       return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
     },
     goAnswer(item) {
-      const { question, shangGua, xiaGua, dongYao, timestamp, ganwu } = item
+      const {
+        question,
+        shangGuaCount,
+        xiaGuaCount,
+        dongYaoCount,
+        timestamp,
+        ganwu
+      } = item
       this.$router.push({
         path: '/answer',
         query: {
           question,
-          shangGuaCount: shangGua.order,
-          xiaGuaCount: xiaGua.order,
-          dongYaoCount: dongYao.order,
+          shangGuaCount,
+          xiaGuaCount,
+          dongYaoCount,
           timestamp,
           ganwu
         }
+      })
+    },
+    save() {
+      localforage.getItem('MEI_HUA__mine').then(mine => {
+        download(mine, '我的卦例')
+        // this.$toast('下载成功')
       })
     }
   }

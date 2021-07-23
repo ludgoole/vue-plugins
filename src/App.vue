@@ -59,11 +59,12 @@ export default {
   methods: {
     onClickLeft() {
       this.$route.meta.leftText && this.$router.go(-1)
-      this.$toast('返回')
+      // this.$toast('返回')
     },
     onClickRight() {
       this.$route.meta.rightText && this.$bus.$emit('global.save')
-      this.$toast('保存')
+      this.$bus.$emit('global.rightClick')
+      // this.$toast('保存')
     },
     switchTo({ name, path }) {
       this.currName !== name && this.$router.push(path)
@@ -74,9 +75,14 @@ export default {
 </script>
 
 <style lang="scss">
+html,
+body {
+  height: 100%;
+}
+
 #app {
   position: relative;
-  height: 100vh;
+  height: 100%;
   color: #2c3e50;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   // text-align: center;

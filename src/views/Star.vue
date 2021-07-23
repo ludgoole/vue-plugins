@@ -1,23 +1,47 @@
 <template>
   <div class="Star">
-    <h1>名卦赏析</h1>
+    <van-cell
+      class="text-justify"
+      v-for="(item, index) in MINGGUA"
+      :key="index"
+      :title="item.question"
+      :label="item.describle"
+      @click="goAnswer(item)"
+      is-link
+    />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import components from '@/components'
+import MINGGUA from '@/mock/minggua'
 export default {
   name: 'Star',
-  components: {
-    ...components
-  },
   data() {
-    return {}
+    return {
+      MINGGUA
+    }
   },
-  provide() {
-    return {}
-  },
-  methods: {}
+  methods: {
+    goAnswer(item) {
+      const {
+        question,
+        shangGuaCount,
+        xiaGuaCount,
+        dongYaoCount,
+        jianyu
+      } = item
+      this.$router.push({
+        path: '/answer',
+        query: {
+          question,
+          shangGuaCount,
+          xiaGuaCount,
+          dongYaoCount,
+          jianyu
+        }
+      })
+    }
+  }
 }
 </script>

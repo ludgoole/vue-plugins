@@ -13,21 +13,41 @@
           <p>
             时间：<span>{{ dateTime }}</span>
           </p>
-          <p>
+          <!-- <p>
             旧历：
+            <span>
+              {{ lunar.getYearZhi() }}年{{ lunar.toString().slice(5)
+              }}{{ lunar.getTimeZhi() }}时
+            </span>
+          </p> -->
+          <p>
+            四柱：
             <span>
               {{ lunar.getYearInGanZhi() }}年 {{ lunar.getMonthInGanZhi() }}月
               {{ lunar.getDayInGanZhi() }}日 {{ lunar.getTimeInGanZhi() }}时
             </span>
           </p>
           <p>
-            太岁：<span>{{ taiSui.animal }}年 属{{ taiSui.wuxing }}</span>
+            太岁：<span
+              >{{ lunar.getYearZhi() }}{{ lunar.getAnimal() }}属{{
+                taiSui.wuxing
+              }}
+              {{ lunar.getChong() }}{{ lunar.getChongShengXiao() }}对冲
+            </span>
+          </p>
+          <!-- <p>
+            月建：<span
+              >{{ lunar.getMonthZhi() }}月 属{{ yueJian.wuxing }}
+            </span>
           </p>
           <p>
-            月建：<span>{{ yueJian.animal }}月 属{{ yueJian.wuxing }}</span>
+            日辰：<span>{{ lunar.getDayZhi() }}日 属{{ riChen.wuxing }}</span>
+          </p> -->
+          <p>
+            宜：<span>{{ lunar.getDayYi().join(' ') }}</span>
           </p>
           <p>
-            日辰：<span>{{ riChen.animal }}日 属{{ riChen.wuxing }}</span>
+            忌：<span>{{ lunar.getDayJi().join(' ') }}</span>
           </p>
         </div>
       </template>
@@ -83,7 +103,7 @@
         </p>
         <van-collapse v-model="activeName" accordion>
           <van-collapse-item title="断卦" name="0">
-            {{ jianYu }}
+            <p class="text-justify" v-html="jianYu"></p>
           </van-collapse-item>
           <van-collapse-item title="吉凶" name="1">
             <p>流年，{{ liuNian }}</p>
@@ -105,10 +125,15 @@
             <p>时辰：{{ today }}</p>
             <p>
               天数：
-              <span>{{ dongYao.order }}</span> |
+              <span>{{
+                dongYaoCount > -1
+                  ? dongYaoCount
+                  : tiGua.order + yongGua.order + riChen.order
+              }}</span>
+              | <span>{{ dongYao.order }}</span> |
+              <span>{{ tiGua.order + bianYongGua.order }}</span> |
               <span>{{ `${tiGua.order}${bianYongGua.order}` }}</span> |
-              <span>{{ `${bianYongGua.order}${tiGua.order}` }}</span> |
-              <span>{{ tiGua.order + bianYongGua.order }}</span>
+              <span>{{ `${bianYongGua.order}${tiGua.order}` }}</span>
             </p>
           </van-collapse-item>
           <van-collapse-item title="感悟" name="4">
@@ -141,6 +166,7 @@ import WUXING from '@/mock/wuxing'
 import JIXIONG from '@/mock/jixiong'
 import BaseGua from '@/components/BaseGua.vue'
 window.localforage = localforage
+window.Lunar = Lunar
 export default {
   name: 'Home',
   components: {
@@ -207,8 +233,8 @@ export default {
     dongYao() {
       const { dongYaoCount, shangGuaCount, xiaGuaCount, riChen } = this
       const order =
-        dongYaoCount > 0
-          ? dongYaoCount
+        dongYaoCount > -1
+          ? dongYaoCount % 6
           : (shangGuaCount + xiaGuaCount + riChen.order) % 6
 
       return BAGUA[order === 0 ? 5 : order - 1]
@@ -258,7 +284,7 @@ export default {
     jianYu() {
       const { benGua, dongYao } = this
       const yaoCi = benGua.yaoCi[dongYao.order - 1]
-      return yaoCi.split('：')[1].slice(0, -1)
+      return this.query.jianyu || yaoCi.split('：')[1].slice(0, -1)
     },
     liuNian() {
       const { tiGua, taiSui, getJiXiong } = this
@@ -315,9 +341,12 @@ export default {
     async save() {
       const {
         question,
-        shangGua,
-        xiaGua,
-        dongYao,
+        shangGuaCount,
+        xiaGuaCount,
+        dongYaoCount,
+        tiGua,
+        yongGua,
+        riChen,
         benGua,
         bianGua,
         timestamp,
@@ -325,11 +354,13 @@ export default {
       } = this
       const answer = {
         question,
-        shangGua,
-        xiaGua,
-        dongYao,
-        benGua,
-        bianGua,
+        shangGuaCount,
+        xiaGuaCount,
+        dongYaoCount:
+          dongYaoCount > -1
+            ? dongYaoCount
+            : tiGua.order + yongGua.order + riChen.order,
+        zhigua: `${benGua.guaMing}之${bianGua.guaMing}`,
         timestamp,
         ganwu
       }
@@ -346,7 +377,7 @@ export default {
 
       localforage
         .setItem('MEI_HUA__mine', mine)
-        .then(mine => console.log('存储成功', mine))
+        .then(mine => this.$toast('保存成功'))
     }
   }
 }
