@@ -28,8 +28,19 @@ npm run lint
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### hbuild
+### git
 
-io.dcloud.hello
+#### 本地推送远程
 
- <!-- Error: pngquant failed to build, make sure that libpng-dev is installed -->
+```js
+// 推送到远程分支
+git push origin apicloud:apicloud
+// 与远程分支建立关联
+git branch --set-upstream-to=origin/apicloud apicloud
+```
+
+#### 本地拉取远程
+
+```js
+git checkout origin apicloud --track
+```
