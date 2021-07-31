@@ -42,5 +42,5 @@ git branch --set-upstream-to=origin/apicloud apicloud
 #### 本地拉取远程
 
 ```js
-git checkout origin apicloud --track
+git checkout origin/apicloud --track
 ```
