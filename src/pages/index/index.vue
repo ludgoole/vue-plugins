@@ -53,7 +53,7 @@ export default {
           icon: 'user-circle-o'
         }
       ],
-      currName: '卜卦'
+      currName: ''
     }
   },
   methods: {
@@ -77,7 +77,9 @@ export default {
 <style lang="scss">
 #app {
   position: relative;
+  box-sizing: border-box;
   height: 100vh;
+  padding-top: 24px;
   color: #2c3e50;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   // text-align: center;

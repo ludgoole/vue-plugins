@@ -25,6 +25,7 @@
 // @ is an alias to /src
 import moment from 'moment'
 // import { download } from '@/util'
+import localforage from 'localforage'
 export default {
   name: 'Mine',
   data() {

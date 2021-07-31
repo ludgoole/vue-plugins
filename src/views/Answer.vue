@@ -151,8 +151,8 @@
 // import components from '@/components'
 import moment from 'moment'
 import { Lunar } from 'lunar-javascript'
-// import _ from 'lodash'
-// import localforage from 'localforage'
+import _ from 'lodash'
+import localforage from 'localforage'
 import DIZHI from '@/mock/dizhi'
 import BAGUA from '@/mock/bagua'
 import ZHOUYI from '@/mock/zhouyi'
@@ -371,7 +371,7 @@ export default {
 
       localforage
         .setItem('MEI_HUA__mine', mine)
-        .then(mine => this.$toast('保存成功'))
+        .then(mine => this.$toast('save success'))
     }
   }
 }

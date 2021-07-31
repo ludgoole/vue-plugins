@@ -38,7 +38,7 @@
 <script>
 // @ is an alias to /src
 import moment from 'moment'
-// import _ from 'lodash'
+import _ from 'lodash'
 import cnchar from 'cnchar'
 
 export default {

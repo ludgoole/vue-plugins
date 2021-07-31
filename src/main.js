@@ -3,28 +3,21 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import plugins from './plugins'
+import VAQ from 'vue-apicloud-quickstart'
+import pages from '@/config/pages.json'
 
 Vue.config.productionTip = false
 Vue.use(plugins)
+
+Vue.use(VAQ, {
+  pages /*, debugOnPC: process.env.NODE_ENV !== 'production' */
+})
 
 new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount('#app')
-
-// eslint-disable-next-line no-undef
-// console.log('Test', Test)
-// {add, sum, default: {add, sum}}
-
-// eslint-disable-next-line no-undef
-// console.log('Add', Add)
-// function add() {}
-
-// eslint-disable-next-line no-undef
-// console.log('test', test)
-// {add, sum, default: {add, sum}}
-
 window.Vue = Vue
 
 console.log('Vue', [Vue])
