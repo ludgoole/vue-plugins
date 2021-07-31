@@ -38,7 +38,7 @@
 <script>
 // @ is an alias to /src
 import moment from 'moment'
-import _ from 'lodash'
+// import _ from 'lodash'
 import cnchar from 'cnchar'
 
 export default {
@@ -121,8 +121,9 @@ export default {
           params.xiaGuaCount = _.random(0, 99)
           break
         case 'time':
-          params.shangGuaCount = moment(Date.now()).format('hh')
-          params.xiaGuaCount = moment(Date.now()).format('mm')
+          params.shangGuaCount = moment(Date.now()).format('hh') * 1
+          params.xiaGuaCount = moment(Date.now()).format('mm') * 1
+          params.dongYaoCount = params.shangGuaCount + params.xiaGuaCount
           break
         case 'number':
           if (text.split(' ').length === 1) {

@@ -66,7 +66,7 @@ const routes = [
     meta: {
       title: '我的',
       leftText: '',
-      rightText: '下载'
+      rightText: '清除'
     },
     component: () => import(/* webpackChunkName: "mine" */ '../views/Mine.vue')
   }

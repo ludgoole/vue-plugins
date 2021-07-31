@@ -13,36 +13,30 @@
           <p>
             时间：<span>{{ dateTime }}</span>
           </p>
-          <!-- <p>
+          <p>
             旧历：
-            <span>
-              {{ lunar.getYearZhi() }}年{{ lunar.toString().slice(5)
-              }}{{ lunar.getTimeZhi() }}时
+            <span> {{ lunar.toString() }}{{ lunar.getTimeZhi() }}时 </span>
+          </p>
+          <!-- <p>
+            四柱：<span
+              >{{ lunar.getYearInGanZhi() }}年 {{ lunar.getMonthInGanZhi() }}月
+              {{ lunar.getDayInGanZhi() }}日 {{ lunar.getTimeInGanZhi() }}时
             </span>
           </p> -->
           <p>
-            四柱：
-            <span>
-              {{ lunar.getYearInGanZhi() }}年 {{ lunar.getMonthInGanZhi() }}月
-              {{ lunar.getDayInGanZhi() }}日 {{ lunar.getTimeInGanZhi() }}时
+            太岁：<span
+              >{{ lunar.getYearShengXiao() }}年 属{{ taiSui.wuxing }}
+              <!-- {{ lunar.getChong() }}{{ lunar.getChongShengXiao() }}对冲 -->
             </span>
           </p>
           <p>
-            太岁：<span
-              >{{ lunar.getYearZhi() }}{{ lunar.getAnimal() }}属{{
-                taiSui.wuxing
-              }}
-              {{ lunar.getChong() }}{{ lunar.getChongShengXiao() }}对冲
-            </span>
-          </p>
-          <!-- <p>
             月建：<span
               >{{ lunar.getMonthZhi() }}月 属{{ yueJian.wuxing }}
             </span>
           </p>
           <p>
             日辰：<span>{{ lunar.getDayZhi() }}日 属{{ riChen.wuxing }}</span>
-          </p> -->
+          </p>
           <p>
             宜：<span>{{ lunar.getDayYi().join(' ') }}</span>
           </p>

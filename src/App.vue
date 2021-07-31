@@ -75,14 +75,9 @@ export default {
 </script>
 
 <style lang="scss">
-html,
-body {
-  height: 100%;
-}
-
 #app {
   position: relative;
-  height: 100%;
+  height: 100vh;
   color: #2c3e50;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   // text-align: center;
@@ -90,10 +85,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   .router-view {
+    margin-bottom: 90px;
     overflow-y: auto;
   }
 
   .navbar {
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
     width: 100%;
 
     .active {

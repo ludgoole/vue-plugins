@@ -28,4 +28,8 @@ npm run lint
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+### hbuild
+
+io.dcloud.hello
+
  <!-- Error: pngquant failed to build, make sure that libpng-dev is installed -->

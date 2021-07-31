@@ -15,7 +15,8 @@ import {
   Tabs,
   Cell,
   CellGroup,
-  Search
+  Search,
+  SwipeCell
 } from 'vant'
 const components = [
   Button,
@@ -31,7 +32,8 @@ const components = [
   Tabs,
   Cell,
   CellGroup,
-  Search
+  Search,
+  SwipeCell
 ]
 function installPlugin(Vue) {
   components.forEach(component => Vue.use(component))
