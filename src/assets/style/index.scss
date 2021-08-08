@@ -1,8 +1,5 @@
 // 当前路径 ./ 可省略不写
-@import 'variable';
+@import 'variable.scss';
+@import 'rem.scss';
 @import 'common.scss';
 @import 'laylou.scss';
-
-body {
-  color: $color-success;
-}

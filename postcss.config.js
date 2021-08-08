@@ -9,7 +9,9 @@ module.exports = {
         'ie >= 8'
       ]
     },
-    // 375px 即100%宽度，写px会自动rem处理，如果不想被rem处理，可以使用PX来写   750设计稿需要除以2
+    // 375px 即100%宽度，写px会自动rem处理
+    // 如果不想被rem处理，可以使用PX来写
+    // 根元素 1rem = 16px
     'postcss-pxtorem': {
       rootValue: 16,
       // font-size 保留px
