@@ -5,7 +5,7 @@
       :title="$route.meta.title"
       :left-text="$route.meta.leftText"
       :right-text="$route.meta.rightText"
-      :left-arrow="!!$route.meta.leftArrow"
+      :left-arrow="$route.meta.leftArrow"
       @click-left="onClickLeft"
       @click-right="onClickRight"
     />
@@ -37,7 +37,10 @@ export default {
 
 <style lang="scss">
 #app {
+  box-sizing: border-box;
   height: 100%;
+  // 顶部电池条高度
+  padding-top: 29px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   -webkit-font-smoothing: antialiased;
