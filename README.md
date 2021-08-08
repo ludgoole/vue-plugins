@@ -18,6 +18,12 @@ npm run serve
 npm run build
 ```
 
+### Compiles and widget for apicloud
+
+```
+npm run generate
+```
+
 ### Lints and fixes files
 
 ```

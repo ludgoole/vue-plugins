@@ -1,1 +1,11 @@
-{**/*.js.map,**/node_modules/**,src/**,script/**,public/**,dist/**,.vscode/**,widget/**,**.zip}
+{
+  **/*.js.map,
+  **/node_modules/**,
+  src/**,script/**,
+  public/**,
+  dist/**,
+  .lh/**,
+  .vscode/**,
+  widget/**,
+  **.zip
+}
