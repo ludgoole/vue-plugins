@@ -6,69 +6,34 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/question'
+    redirect: '/home'
   },
   {
-    path: '/question',
-    name: 'Question',
+    path: '/home',
+    name: 'HomeView',
     meta: {
-      title: '卜卦',
+      title: '首页',
       leftText: '',
+      leftArrow: true,
       rightText: ''
     },
     component: () =>
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      import(/* webpackChunkName: "question" */ '../views/Question.vue')
+      import(/* webpackChunkName: "home" */ '../views/HomeView.vue')
   },
   {
-    path: '/answer',
-    name: 'Answer',
-    component: () =>
-      import(/* webpackChunkName: "question" */ '../views/Answer.vue')
-  },
-  {
-    path: '/query',
-    name: 'Query',
+    path: '/about',
+    name: 'AboutView',
     meta: {
-      title: '查卦',
+      title: '关于',
       leftText: '',
+      leftArrow: true,
       rightText: ''
     },
     component: () =>
-      import(/* webpackChunkName: "query" */ '../views/Query.vue')
-  },
-  {
-    path: '/guaXiang',
-    name: 'GuaXiang',
-    meta: {
-      title: '',
-      leftText: '',
-      rightText: ''
-    },
-    component: () =>
-      import(/* webpackChunkName: "query" */ '../views/GuaXiang.vue')
-  },
-  {
-    path: '/star',
-    name: 'Star',
-    meta: {
-      title: '名卦',
-      leftText: '',
-      rightText: ''
-    },
-    component: () => import(/* webpackChunkName: "star" */ '../views/Star.vue')
-  },
-  {
-    path: '/mine',
-    name: 'Mine',
-    meta: {
-      title: '我的',
-      leftText: '',
-      rightText: '清除'
-    },
-    component: () => import(/* webpackChunkName: "mine" */ '../views/Mine.vue')
+      import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   }
 ]
 
