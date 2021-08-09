@@ -9,10 +9,6 @@
       @click-left="onClickLeft"
       @click-right="onClickRight"
     />
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view class="router-view" />
   </div>
 </template>

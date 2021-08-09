@@ -38,7 +38,8 @@ instance.interceptors.response.use(
 
     switch (res.status) {
       case 200:
-        if (res.data.errCode === '000000') {
+        // if (res.data.errCode === '000000') {
+        if (res.data.res === 0) {
           data = res.data instanceof Blob ? res.data : res.data.data
         } else {
           data = res.data

@@ -7,11 +7,22 @@
 
 <script>
 import HelloWorld from '@/components/HelloWorld.vue'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'HomeView',
   components: {
     HelloWorld
+  },
+  computed: {
+    ...mapState('home', ['contentList'])
+  },
+  async created() {
+    await this.getOne()
+    console.log('contentList', this.contentList)
+  },
+  methods: {
+    ...mapActions('home', ['getOne'])
   }
 }
 </script>
