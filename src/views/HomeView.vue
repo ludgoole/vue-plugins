@@ -27,9 +27,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .HomeView {
-  color: #2c3e50;
-  text-align: center;
+  padding: 0 20px;
 }
 </style>
