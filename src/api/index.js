@@ -1,9 +1,10 @@
 import { post, get } from '@/request'
-const API = '/api'
+const BASE_API = process.env.VUE_APP_BASE_API
+console.log('BASE_API', BASE_API)
 export function login(params = {}) {
-  return post(`${API}/login`, params)
+  return post(`${BASE_API}/login`, params)
 }
 
 export function getOne(params = {}) {
-  return get(`${API}/api/channel/one/0/0`, params)
+  return get(`${BASE_API}/api/channel/one/0/0`, params)
 }

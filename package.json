@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --port 8080",
+    "serve": "vue-cli-service serve",
+    "dev": "npm run serve",
+    "test": "vue-cli-service serve --mode test",
+    "mock": "vue-cli-service serve --mode mock",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "generate": "vue-cli-service generate",
-    "serve:mock": "vue-cli-service serve --mode mock"
+    "generate": "vue-cli-service generate"
   },
   "dependencies": {
     "@better-scroll/core": "^2.2.0",

@@ -147,11 +147,11 @@ module.exports = {
     hot: true, // 热更新
     disableHostCheck: true,
     proxy: {
-      '/api': {
-        target: 'http://v3.wufazhuce.com:8000/', // 设置你调用的接口域名和端口号
+      [process.env.VUE_APP_BASE_API]: {
+        target: process.env.VUE_APP_PROXY_SERVER, // 设置你调用的接口域名和端口号
         changeOrigin: true, // 跨域
         pathRewrite: {
-          '^/api': ''
+          ['^' + process.env.VUE_APP_BASE_API]: ''
         }
       }
     }
