@@ -1,5 +1,3 @@
-console.log('process.env', process.env, process.env.VUE_APP_PROXY_SERVER)
-
 export default {
   baseURL: process.env.BASE_URL, // node环境配置
   timeout: 5000, // 请求的超时时间

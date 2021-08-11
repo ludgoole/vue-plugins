@@ -1,6 +1,6 @@
 import { post, get } from '@/request'
+
 const BASE_API = process.env.VUE_APP_BASE_API
-console.log('BASE_API', BASE_API)
 export function login(params = {}) {
   return post(`${BASE_API}/login`, params)
 }
