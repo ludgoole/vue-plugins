@@ -66,7 +66,7 @@ export default {
     },
     save() {
       localforage.clear().then(mine => {
-        this.$toast('清除成功')
+        this.$toast({ msg: '清除成功', location: 'middle' })
 
         localforage.getItem('MEI_HUA__mine').then(mine => {
           this.list = mine || []
@@ -78,7 +78,9 @@ export default {
       localforage.getItem('MEI_HUA__mine').then(mine => {
         const index = mine.findIndex(v => v.timestamp === item.timestamp)
         this.list.splice(index, 1)
-        localforage.setItem('MEI_HUA__mine', this.list)
+        localforage.setItem('MEI_HUA__mine', this.list).then(() => {
+          this.$toast({ msg: '删除成功', location: 'middle' })
+        })
       })
     }
   }

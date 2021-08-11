@@ -142,7 +142,7 @@ export default {
           break
         case 'character':
           if (!text.match(/^[\u4e00-\u9fa5]+$/))
-            return this.$toast('必须为汉字')
+            return this.$toast({ msg: '必须为汉字', location: 'middle' })
 
           if (text.length === 1) {
             const bh = cnchar.stroke(text)

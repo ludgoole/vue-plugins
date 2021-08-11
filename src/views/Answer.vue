@@ -371,7 +371,7 @@ export default {
 
       localforage
         .setItem('MEI_HUA__mine', mine)
-        .then(mine => this.$toast('save success'))
+        .then(mine => this.$toast({ msg: '保存成功', location: 'middle' }))
     }
   }
 }

@@ -13,7 +13,6 @@ const vuexLocal = new VuexPersistence({
   storage: window.sessionStorage,
   modules: ['menu'],
   reducer: state => {
-    console.log('VuexPersistence:state', state)
     return {
       token: state.token,
       auth: state.auth,
@@ -21,7 +20,6 @@ const vuexLocal = new VuexPersistence({
     }
   },
   filter: mutation => {
-    console.log('VuexPersistence:mutation', mutation)
     return mutation.type === 'setToken'
     // mutation.type ==='addNavItem'
   }

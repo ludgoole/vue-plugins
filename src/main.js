@@ -18,7 +18,3 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
-window.Vue = Vue
-
-console.log('Vue', [Vue])
-console.log('Vue.util', Vue.util)
