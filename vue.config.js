@@ -34,7 +34,7 @@ const CDNSources = {
 module.exports = {
   // 出口
   outputDir: 'dist',
-  publicPath: './',
+  publicPath: process.env.BASE_URL,
   assetsDir: assetsDir,
   filenameHashing: false,
   productionSourceMap: false,
