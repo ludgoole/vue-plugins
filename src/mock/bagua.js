@@ -88,7 +88,7 @@ export default [
     leixiang: [
       {
         key: '类象',
-        value: '泽 云 雾 露 口 悦 缺 毁 穴 金'
+        value: '泽 云 雾 露 口舌 巫 决策 悦 缺 毁 穴 金 刚卤 妾 朋'
       },
       {
         key: '自然',
@@ -171,7 +171,7 @@ export default [
     leixiang: [
       {
         key: '类象',
-        value: '火 文明 文书 日 光明 丽 甲胄 目 中虚 内柔'
+        value: '火 电 文明 文书 日 光明 丽 目 中虚 大腹 甲胄 内柔 旋涡'
       },
       {
         key: '自然',
@@ -251,7 +251,7 @@ export default [
     leixiang: [
       {
         key: '类象',
-        value: '雷 动 闹 大 扁木 竹 乐器 舟 足 飞 走 盂'
+        value: '雷 动 闹 鼓 躁 大 扁木 竹 筐 藩 乐器 舟 足 飞 走 逐 盂 大笑 妻'
       },
       {
         key: '自然',
@@ -332,7 +332,8 @@ export default [
     leixiang: [
       {
         key: '类象',
-        value: '风 顺 命 伏 婢女 长木 林 绳 丝 羽毛'
+        value:
+          '风 顺 命 伏 婢女 长 高 草木 林 绳 腰带 丝 羽毛 利 富 商旅 进退 号啕 股'
       },
       {
         key: '自然',
@@ -413,7 +414,8 @@ export default [
     leixiang: [
       {
         key: '类象',
-        value: '水 雨 雪 霜 血 酒 险 陷 律法 刑法 厕 墓 核 耳 肾 腰 '
+        value:
+          '水 雨 雪 霜 月 血 酒 险 陷 律法 刑法 寇盗 忧虑 厕 墓 核 耳 肾 腰 弓 曳 轮'
       },
       {
         key: '自然',
@@ -492,7 +494,8 @@ export default [
     leixiang: [
       {
         key: '类象',
-        value: '山 石 土 冥 门 城 墙 巷 瓦器 伞 止 阻 星 童仆 闲人 足 趾'
+        value:
+          '山 石 土 冥 门阙 城 墙 巷 瓦器 伞 止 阻 星 童仆 闲人 足 趾 鼻 腓 皮肤'
       },
       {
         key: '自然',
@@ -572,7 +575,8 @@ export default [
     leixiang: [
       {
         key: '类象',
-        value: '地 厚 卑 配 柔 方 布 土 田 邑 宫阙 城 壁 阴 寡妇 奴婢 缓 迟钝'
+        value:
+          '地 厚 卑 配 柔 方 帛 布 裳 土 田 邑 宫阙 城 壁 阴 寡妇 奴婢 肉 缓 迟钝 迷 囊 包 藏'
       },
       {
         key: '自然',
