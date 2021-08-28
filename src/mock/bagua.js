@@ -7,12 +7,12 @@ export default [
     wuxing: '金',
     leixiang: [
       {
-        key: '自然',
-        value: '天'
+        key: '类象',
+        value: '阳 天 圆 金 寒 尊 贵 首'
       },
       {
-        key: '物象',
-        value: '圆者 连者'
+        key: '自然',
+        value: '天'
       },
       {
         key: '属性',
@@ -87,12 +87,12 @@ export default [
     wuxing: '金',
     leixiang: [
       {
-        key: '自然',
-        value: '泽'
+        key: '类象',
+        value: '泽 云 雾 露 口 悦 缺 毁 穴 金'
       },
       {
-        key: '物象',
-        value: '刚者 刚卤 缺者'
+        key: '自然',
+        value: '泽'
       },
       {
         key: '属性',
@@ -170,12 +170,12 @@ export default [
     wuxing: '火',
     leixiang: [
       {
-        key: '自然',
-        value: '火'
+        key: '类象',
+        value: '火 文明 文书 日 光明 丽 甲胄 目 中虚 内柔'
       },
       {
-        key: '物象',
-        value: '内柔外刚 干燥 枯槁 文采'
+        key: '自然',
+        value: '火'
       },
       {
         key: '属性',
@@ -250,12 +250,12 @@ export default [
     wuxing: '木',
     leixiang: [
       {
-        key: '自然',
-        value: '雷'
+        key: '类象',
+        value: '雷 动 闹 大 扁木 竹 乐器 舟 足 飞 走 盂'
       },
       {
-        key: '物象',
-        value: '仰者 多发 下'
+        key: '自然',
+        value: '雷'
       },
       {
         key: '属性',
@@ -331,12 +331,12 @@ export default [
     wuxing: '木',
     leixiang: [
       {
-        key: '自然',
-        value: '风'
+        key: '类象',
+        value: '风 顺 命 伏 婢女 长木 林 绳 丝 羽毛'
       },
       {
-        key: '物象',
-        value: '长者 草木 富 顺 命 寡发'
+        key: '自然',
+        value: '风'
       },
       {
         key: '属性',
@@ -412,12 +412,12 @@ export default [
     wuxing: '水',
     leixiang: [
       {
-        key: '自然',
-        value: '水'
+        key: '类象',
+        value: '水 雨 雪 霜 血 酒 险 陷 律法 刑法 厕 墓 核 耳 肾 腰 '
       },
       {
-        key: '物象',
-        value: '外柔内刚 疑 律'
+        key: '自然',
+        value: '水'
       },
       {
         key: '属性',
@@ -491,12 +491,12 @@ export default [
     wuxing: '土',
     leixiang: [
       {
-        key: '自然',
-        value: '山'
+        key: '类象',
+        value: '山 石 土 冥 门 城 墙 巷 瓦器 伞 止 阻 星 童仆 闲人 足 趾'
       },
       {
-        key: '物象',
-        value: '覆者 实 高地 冥'
+        key: '自然',
+        value: '山'
       },
       {
         key: '属性',
@@ -571,12 +571,12 @@ export default [
     wuxing: '土',
     leixiang: [
       {
-        key: '自然',
-        value: '地'
+        key: '类象',
+        value: '地 厚 卑 配 柔 方 布 土 田 邑 宫阙 城 壁 阴 寡妇 奴婢 缓 迟钝'
       },
       {
-        key: '物象',
-        value: '方者 断者 邑户 厚'
+        key: '自然',
+        value: '地'
       },
       {
         key: '属性',
