@@ -46,7 +46,7 @@ export default [
       },
       {
         key: '静物',
-        value: '玉器 珠宝 古董 文物 帽子 钟表 首饰 木果 飞机 火车'
+        value: '玉器 珠宝 古董 文物 帽子 钟表 首饰 木果 飞机 火车 门'
       },
       {
         key: '动物',
@@ -58,7 +58,7 @@ export default [
       },
       {
         key: '场所',
-        value: '宫殿 博物馆 体育馆 大学 办公室 五金店 机关政府 车站 广场'
+        value: '宫殿 博物馆 体育馆 大学 办公室 五金店 机关政府 车站 广场 郊外'
       },
       {
         key: '时辰',
@@ -92,7 +92,7 @@ export default [
       },
       {
         key: '物象',
-        value: '刚者 缺者'
+        value: '刚者 刚卤 缺者'
       },
       {
         key: '属性',
@@ -175,7 +175,7 @@ export default [
       },
       {
         key: '物象',
-        value: '内柔外刚 干燥枯槁 文采'
+        value: '内柔外刚 干燥 枯槁 文采'
       },
       {
         key: '属性',
@@ -209,11 +209,11 @@ export default [
       {
         key: '静物',
         value:
-          '字画 奖状 合同 信件 书报杂志 电话 火柴 打火机 干肉 微波炉 红路灯 花衣服'
+          '字画 奖状 合同 信件 书报杂志 电话 火柴 打火机 干肉 微波炉 红路灯 花衣服 兵戈'
       },
       {
         key: '动物',
-        value: '雉 孔雀 凤凰 金鱼 虾蟹龟 萤火虫'
+        value: '雉 孔雀 凤凰 金鱼 虾 蟹 龟 萤火虫'
       },
       {
         key: '天象',
@@ -255,7 +255,7 @@ export default [
       },
       {
         key: '物象',
-        value: '仰者'
+        value: '仰者 多发 下'
       },
       {
         key: '属性',
@@ -277,7 +277,7 @@ export default [
       },
       {
         key: '感受',
-        value: '激动的'
+        value: '激动的 言笑'
       },
       {
         key: '身体',
@@ -289,7 +289,8 @@ export default [
       },
       {
         key: '静物',
-        value: '树木 竹子 鲜花 蔬菜 嫩芽 鞭炮 音响 大车 火箭 大炮 闹钟 裙子'
+        value:
+          '树木 竹子 筐 鲜花 蔬菜 嫩芽 鞭炮 音响 鼓 大车 大道 火箭 大炮 车 闹钟 裙子'
       },
       {
         key: '动物',
@@ -335,7 +336,7 @@ export default [
       },
       {
         key: '物象',
-        value: '长者'
+        value: '长者 草木 富 顺 命 寡发'
       },
       {
         key: '属性',
@@ -357,7 +358,7 @@ export default [
       },
       {
         key: '感受',
-        value: '舒畅的'
+        value: '舒畅的 号啕'
       },
       {
         key: '身体',
@@ -416,7 +417,7 @@ export default [
       },
       {
         key: '物象',
-        value: '外柔内刚'
+        value: '外柔内刚 疑 律'
       },
       {
         key: '属性',
@@ -474,7 +475,7 @@ export default [
       },
       {
         key: '颜色',
-        value: '黑'
+        value: '黑色'
       },
       {
         key: '数目',
@@ -495,7 +496,7 @@ export default [
       },
       {
         key: '物象',
-        value: '覆者'
+        value: '覆者 实 高地 冥'
       },
       {
         key: '属性',
@@ -514,6 +515,10 @@ export default [
       {
         key: '性格',
         value: '憨厚 固执'
+      },
+      {
+        key: '感受',
+        value: '害羞的'
       },
       {
         key: '身体',
@@ -550,7 +555,7 @@ export default [
       },
       {
         key: '颜色',
-        value: '黄'
+        value: '棕色'
       },
       {
         key: '数目',
@@ -571,7 +576,7 @@ export default [
       },
       {
         key: '物象',
-        value: '方者 断者'
+        value: '方者 断者 邑户 厚'
       },
       {
         key: '属性',
@@ -592,6 +597,10 @@ export default [
         value: '谦让 实诚'
       },
       {
+        key: '感受',
+        value: '懦弱的'
+      },
+      {
         key: '身体',
         value: '腹 胃 肉 女性生殖器'
       },
@@ -602,7 +611,7 @@ export default [
       {
         key: '静物',
         value:
-          '方物 柔物 布帛 丝绵 衣服 箱包 袋子 五谷 米面 日用品 瓦器  瓷器 石灰 水泥 砖沙 粉状物'
+          '方物 柔物 布帛 丝绵 衣服 箱包 袋子 五谷 米面 日用品 瓦器 瓷器 石灰 水泥 砖沙 粉状物'
       },
       {
         key: '动物',
@@ -627,7 +636,7 @@ export default [
       },
       {
         key: '颜色',
-        value: '黄'
+        value: '黄色'
       },
       {
         key: '数目',
