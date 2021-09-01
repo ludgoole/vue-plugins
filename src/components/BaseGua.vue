@@ -1,6 +1,6 @@
 <template>
   <div class="BaseGua">
-    <ul>
+    <ul @click="onClick(guaXiang)">
       <li
         v-for="(yao, index) in guaXiang"
         :key="index"
@@ -13,13 +13,14 @@
             'is-dong': index === 6 - dongYaoOrder
           }
         ]"
-        @click="onClick(yao, index)"
+        @click="onChange(yao, index)"
       ></li>
     </ul>
   </div>
 </template>
 
 <script>
+import _ from 'lodash'
 export default {
   name: 'BaseGua',
   props: {
@@ -53,7 +54,11 @@ export default {
     }
   },
   methods: {
-    onClick(yao, index) {
+    onClick() {
+      console.log(this.guaXiang.join(''))
+      this.$emit('click', this.guaXiang.join(''))
+    },
+    onChange(yao, index) {
       const guaXiang = _.cloneDeep(this.guaXiang)
       guaXiang[index] = yao === 0 ? 1 : 0
 

@@ -1,39 +1,35 @@
 <template>
-  <div class="GuaXiang flex flex-column">
+  <div class="LeiXiang flex flex-column">
     <van-nav-bar
-      :title="gua.guaMing"
-      :right-text="gua.baGong"
+      :title="gua.name"
+      :right-text="gua.wuxing"
       left-arrow
       @click-left="$router.go(-1)"
       @click-right="save"
     />
-    <div class="GuaXiang-container flex-1">
-      <div class="GuaXiang-daXiang">{{ gua.daXiang }}</div>
-      <div class="GuaXiang-guaXiang">
+    <div class="LeiXiang-container flex-1">
+      <div class="LeiXiang-leiXiang">
         <BaseGua
           :gua-xiang="gua.guaXiang"
           :size="200"
           @change="change"
         ></BaseGua>
       </div>
-      <div class="GuaXiang-guaCi">{{ gua.guaCi }}</div>
-      <div class="GuaXiang-yao">
+      <div class="LeiXiang-xiang">
+        <van-field
+          v-model="dangerous"
+          rows="1"
+          autosize
+          clearable
+          label="征兆"
+          label-width="28"
+          type="textarea"
+          placeholder="请输入征兆"
+        />
         <ul>
-          <li v-for="(item, index) in gua.yaoCi" :key="index">
-            <p class="GuaXiang-yaoCi">{{ item }}</p>
-            <p class="GuaXiang-yaoXiang">按：{{ gua.yaoXiang[index] }}</p>
-            <p class="GuaXiang-fengxian">
-              <van-field
-                v-model="dangerousList[index]"
-                rows="1"
-                autosize
-                clearable
-                label="风险"
-                label-width="28"
-                type="textarea"
-                placeholder="请输入危险源"
-              />
-            </p>
+          <li v-for="xiang in gua.leixiang" :key="xiang.order">
+            <span>{{ xiang.key }}:</span>
+            {{ xiang.value }}
           </li>
         </ul>
       </div>
@@ -43,18 +39,18 @@
 
 <script>
 import localforage from 'localforage'
-import ZHOUYI from '@/mock/zhouyi'
+import BAGUA from '@/mock/bagua'
 import BaseGua from '@/components/BaseGua.vue'
 export default {
-  name: 'GuaXiang',
+  name: 'LeiXiang',
   components: {
     BaseGua
   },
   data() {
     return {
-      ZHOUYI,
+      BAGUA,
       gua: {},
-      dangerousList: Array(6).fill('')
+      dangerous: ''
     }
   },
   computed: {
@@ -74,45 +70,35 @@ export default {
       this.setDangerousList()
     },
     async setDangerousList() {
-      const { timestamp, search } = this
+      const { timestamp } = this
       const mine = await localforage.getItem('MEI_HUA__mine')
       const item = mine.find(item => item.timestamp === +timestamp)
 
-      item &&
-        item[`${search}.dangerousList`] &&
-        (this.dangerousList = item[`${search}.dangerousList`])
+      item && (this.dangerous = item.dangerous)
     },
     toSearch(search) {
       this.gua =
-        ZHOUYI.find(gua => {
+        BAGUA.find(gua => {
           if (Number.isNaN(+search)) {
-            // 八宫-乾宫一世
-            if (search.length === 4) {
-              return gua.baGong === search
-            } else {
-              // 卦名-乾
-              return gua.guaMing === search
-            }
+            return gua.name === search
           } else {
-            // 卦象-111111
-            if (search.length === 6) {
+            if (search.length === 3) {
               return gua.guaXiang.join('') === search
             } else {
-              // 卦序-1
-              return gua.guaXu === +search
+              return gua.order === +search
             }
           }
-        }) || ZHOUYI[0]
+        }) || BAGUA[0]
     },
     change(guaXiang) {
-      this.gua = ZHOUYI.find(gua => gua.guaXiang.join('') === guaXiang)
+      this.gua = BAGUA.find(gua => gua.guaXiang.join('') === guaXiang)
     },
     async save() {
-      const { search, dangerousList, timestamp } = this
+      const { dangerous, timestamp } = this
       const mine = await localforage.getItem('MEI_HUA__mine')
       const item = mine.find(item => item.timestamp === +timestamp)
       const index = mine.findIndex(item => item.timestamp === +timestamp)
-      item[`${search}.dangerousList`] = dangerousList
+      item.dangerous = dangerous
 
       // 如果存过，覆盖
       // 如果没有，添加
@@ -128,7 +114,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.GuaXiang {
+.LeiXiang {
   &-container {
     padding: 0 20px;
     overflow-y: auto;
@@ -139,7 +125,7 @@ export default {
     }
   }
 
-  &-guaXiang {
+  &-leiXiang {
     text-align: center;
   }
 
@@ -147,36 +133,26 @@ export default {
     font-weight: bold;
   }
 
-  &-yao {
-    li {
-      margin-top: 20px;
-    }
-
-    p {
-      margin-top: 4px;
-      font-size: 14px;
-    }
-  }
-
   &-yaoCi {
+    margin-top: 10px;
     font-size: 16px;
   }
 
   &-yaoXiang {
     color: $text-color-regular;
+    font-size: 14px;
+    // font-style: italic;
   }
 
-  &-fengxian {
-    /deep/ .van-field {
-      padding: 0;
+  /deep/ .van-field {
+    padding: 0;
 
-      &__label {
-        color: $color-danger;
-      }
+    &__label {
+      color: $color-danger;
+    }
 
-      &__control {
-        color: $color-danger;
-      }
+    &__control {
+      color: $color-danger;
     }
   }
 }

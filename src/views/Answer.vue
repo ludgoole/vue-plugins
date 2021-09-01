@@ -51,9 +51,18 @@
             :gua-xiang="benGua.guaXiang"
             :size="40"
             :dong-yao-order="dongYao.order"
+            @click="toGuaXiang"
           ></BaseGua>
-          <BaseGua :gua-xiang="dongYao.guaXiang" :size="40"></BaseGua>
-          <BaseGua :gua-xiang="bianGua.guaXiang" :size="40"></BaseGua>
+          <BaseGua
+            :gua-xiang="dongYao.guaXiang"
+            :size="40"
+            @click="toLeiXiang"
+          ></BaseGua>
+          <BaseGua
+            :gua-xiang="bianGua.guaXiang"
+            :size="40"
+            @click="toGuaXiang"
+          ></BaseGua>
         </div>
         <p class="Answer-zhigua text-center">
           {{ benGua.guaMing }}之{{ bianGua.guaMing }}
@@ -68,11 +77,31 @@
           <span>变卦</span>
         </p>
         <div class="Answer-bagua flex flex-justify flex-bottom">
-          <BaseGua :gua-xiang="tiGua.guaXiang" :size="44"></BaseGua>
-          <BaseGua :gua-xiang="yongGua.guaXiang" :size="44"></BaseGua>
-          <BaseGua :gua-xiang="shangHuGua.guaXiang" :size="44"></BaseGua>
-          <BaseGua :gua-xiang="xiaHuGua.guaXiang" :size="44"></BaseGua>
-          <BaseGua :gua-xiang="bianYongGua.guaXiang" :size="44"></BaseGua>
+          <BaseGua
+            :gua-xiang="tiGua.guaXiang"
+            :size="44"
+            @click="toLeiXiang"
+          ></BaseGua>
+          <BaseGua
+            :gua-xiang="yongGua.guaXiang"
+            :size="44"
+            @click="toLeiXiang"
+          ></BaseGua>
+          <BaseGua
+            :gua-xiang="shangHuGua.guaXiang"
+            :size="44"
+            @click="toLeiXiang"
+          ></BaseGua>
+          <BaseGua
+            :gua-xiang="xiaHuGua.guaXiang"
+            :size="44"
+            @click="toLeiXiang"
+          ></BaseGua>
+          <BaseGua
+            :gua-xiang="bianYongGua.guaXiang"
+            :size="44"
+            @click="toLeiXiang"
+          ></BaseGua>
         </div>
         <p class="Answer-leixiang flex flex-justify text-center">
           <span>{{ tiGua.name }}</span>
@@ -159,8 +188,6 @@ import ZHOUYI from '@/mock/zhouyi'
 import WUXING from '@/mock/wuxing'
 import JIXIONG from '@/mock/jixiong'
 import BaseGua from '@/components/BaseGua.vue'
-window.localforage = localforage
-window.Lunar = Lunar
 export default {
   name: 'Home',
   components: {
@@ -360,7 +387,7 @@ export default {
       }
       const mine = (await localforage.getItem('MEI_HUA__mine')) || []
       const currAnswerIndex = mine.findIndex(
-        answer => answer.timestamp === this.timestamp
+        answer => answer.timestamp === +this.timestamp
       )
 
       // 如果存过，覆盖
@@ -372,6 +399,24 @@ export default {
       localforage
         .setItem('MEI_HUA__mine', mine)
         .then(mine => this.$toast({ msg: '保存成功', location: 'middle' }))
+    },
+    toGuaXiang(search) {
+      this.$router.push({
+        path: '/guaXiang',
+        query: {
+          search,
+          timestamp: this.timestamp
+        }
+      })
+    },
+    toLeiXiang(search) {
+      this.$router.push({
+        path: '/leiXiang',
+        query: {
+          search,
+          timestamp: this.timestamp
+        }
+      })
     }
   }
 }

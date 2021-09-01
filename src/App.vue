@@ -80,7 +80,7 @@ export default {
   box-sizing: border-box;
   height: 100vh;
   padding-top: 24px;
-  color: #2c3e50;
+  // color: #2c3e50;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   // text-align: center;
   -webkit-font-smoothing: antialiased;

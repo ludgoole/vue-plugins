@@ -2,7 +2,7 @@
   <div class="Query">
     <van-search
       v-model="value"
-      placeholder="111111 | 乾 | 1 | 乾宫一世"
+      placeholder="111111 | 111 | 乾 | 1 | 乾宫一世"
       @search="onSearch"
     />
     <van-grid :column-num="4">
@@ -40,12 +40,21 @@ export default {
   },
   methods: {
     onSearch(search) {
-      this.$router.push({
-        path: '/guaXiang',
-        query: {
-          search
-        }
-      })
+      if (!Number.isNaN(+search) && search.length === 3) {
+        this.$router.push({
+          path: '/leiXiang',
+          query: {
+            search
+          }
+        })
+      } else {
+        this.$router.push({
+          path: '/guaXiang',
+          query: {
+            search
+          }
+        })
+      }
     }
   }
 }

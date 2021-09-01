@@ -51,6 +51,17 @@ const routes = [
       import(/* webpackChunkName: "query" */ '../views/GuaXiang.vue')
   },
   {
+    path: '/leiXiang',
+    name: 'LeiXiang',
+    meta: {
+      title: '',
+      leftText: '',
+      rightText: ''
+    },
+    component: () =>
+      import(/* webpackChunkName: "query" */ '../views/LeiXiang.vue')
+  },
+  {
     path: '/star',
     name: 'Star',
     meta: {
