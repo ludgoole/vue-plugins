@@ -70,11 +70,13 @@ export default {
       this.setDangerousList()
     },
     async setDangerousList() {
-      const { timestamp } = this
+      const { timestamp, search } = this
       const mine = await localforage.getItem('MEI_HUA__mine')
       const item = mine.find(item => item.timestamp === +timestamp)
 
-      item && (this.dangerous = item.dangerous)
+      item &&
+        item[`${search}.dangerous`] &&
+        (this.dangerous = item[`${search}.dangerous`])
     },
     toSearch(search) {
       this.gua =
@@ -94,7 +96,7 @@ export default {
       this.gua = BAGUA.find(gua => gua.guaXiang.join('') === guaXiang)
     },
     async save() {
-      const { dangerous, timestamp } = this
+      const { dangerous, timestamp, search } = this
       const mine = (await localforage.getItem('MEI_HUA__mine')) || []
       const item = mine.find(item => item.timestamp === +timestamp)
       const index = mine.findIndex(item => item.timestamp === +timestamp)
@@ -102,7 +104,7 @@ export default {
       if (!item) {
         return this.$toast({ msg: '请先保存卦例', location: 'middle' })
       } else {
-        item.dangerous = dangerous
+        item[`${search}.dangerous`] = dangerous
 
         // 如果存过，覆盖
         // 如果没有，添加
