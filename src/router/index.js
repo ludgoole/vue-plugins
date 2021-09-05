@@ -77,7 +77,7 @@ const routes = [
     meta: {
       title: '我的',
       leftText: '',
-      rightText: ''
+      rightText: '保存'
     },
     component: () => import(/* webpackChunkName: "mine" */ '../views/Mine.vue')
   }

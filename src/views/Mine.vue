@@ -37,9 +37,31 @@ export default {
     this.$bus.$off('global.rightClick').$on('global.rightClick', this.save)
   },
   async mounted() {
-    this.list = (await localforage.getItem('MEI_HUA__mine')) || []
+    this.init()
   },
   methods: {
+    init() {
+      const self = this
+      this.api.readFile(
+        {
+          path: 'fs://meihua.json'
+        },
+        function(ret, err) {
+          if (ret.status) {
+            localforage.getItem('MEI_HUA__mine').then(mine => {
+              const saveData = JSON.parse(ret.data || '[]')
+              const localData = mine || []
+              const restData = localData.filter(
+                item => !saveData.some(v => v.timestamp === item.timestamp)
+              )
+              self.list = [...saveData, ...restData]
+            })
+          } else {
+            self.$toast({ msg: err.msg, location: 'middle' })
+          }
+        }
+      )
+    },
     getTime(timestamp) {
       return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
     },
@@ -64,16 +86,6 @@ export default {
         }
       })
     },
-    save() {
-      localforage.clear().then(mine => {
-        this.$toast({ msg: '清除成功', location: 'middle' })
-
-        localforage.getItem('MEI_HUA__mine').then(mine => {
-          this.list = mine || []
-          // this.$toast('下载成功')
-        })
-      })
-    },
     toDelete(item) {
       localforage.getItem('MEI_HUA__mine').then(mine => {
         const index = mine.findIndex(v => v.timestamp === item.timestamp)
@@ -82,7 +94,31 @@ export default {
           this.$toast({ msg: '删除成功', location: 'middle' })
         })
       })
+    },
+    save() {
+      const self = this
+      if (this.list.length === 0) {
+        return self.$toast({ msg: '暂无数据', location: 'middle' })
+      }
+
+      this.api.writeFile(
+        {
+          path: 'fs://meihua.json',
+          data: JSON.stringify(self.list)
+        },
+        function(ret, err) {
+          if (ret.status) {
+            self.$toast({ msg: '保存成功', location: 'middle' })
+          } else {
+            self.$toast({ msg: err.msg, location: 'middle' })
+          }
+        }
+      )
     }
+  },
+  onReady() {
+    this.$toast({ msg: '成功', location: 'middle' })
+    this.save()
   }
 }
 </script>
