@@ -57,7 +57,11 @@ export default {
               self.list = [...saveData, ...restData]
             })
           } else {
-            self.$toast({ msg: err.msg, location: 'middle' })
+            localforage.getItem('MEI_HUA__mine').then(mine => {
+              self.list = mine || []
+            })
+
+            // self.$toast({ msg: err.msg, location: 'middle' })
           }
         }
       )

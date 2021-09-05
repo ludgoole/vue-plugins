@@ -195,6 +195,7 @@ export default {
         path: '/answer',
         query: {
           question: this.question,
+          timestamp: Date.now(),
           ...query
         }
       })

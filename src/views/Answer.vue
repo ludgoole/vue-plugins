@@ -405,7 +405,8 @@ export default {
         path: '/guaXiang',
         query: {
           search,
-          timestamp: this.timestamp
+          timestamp: this.timestamp,
+          dateTime: this.dateTime
         }
       })
     },

@@ -55,7 +55,6 @@ export default {
   },
   methods: {
     onClick() {
-      console.log(this.guaXiang.join(''))
       this.$emit('click', this.guaXiang.join(''))
     },
     onChange(yao, index) {

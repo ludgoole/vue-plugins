@@ -22,7 +22,7 @@
           <li v-for="(item, index) in gua.yaoCi" :key="index">
             <p class="GuaXiang-yaoCi">{{ item }}</p>
             <p class="GuaXiang-yaoXiang">按：{{ gua.yaoXiang[index] }}</p>
-            <p class="GuaXiang-fengxian">
+            <p class="GuaXiang-fengxian" v-if="timestamp">
               <van-field
                 v-model="dangerousList[index]"
                 rows="1"
@@ -109,19 +109,23 @@ export default {
     },
     async save() {
       const { search, dangerousList, timestamp } = this
-      const mine = await localforage.getItem('MEI_HUA__mine')
+      const mine = (await localforage.getItem('MEI_HUA__mine')) || []
       const item = mine.find(item => item.timestamp === +timestamp)
       const index = mine.findIndex(item => item.timestamp === +timestamp)
-      item[`${search}.dangerousList`] = dangerousList
 
-      // 如果存过，覆盖
-      // 如果没有，添加
-      index > -1 ? mine.splice(index, 1, item) : mine.push(item)
+      if (!item) {
+        return this.$toast({ msg: '请先保存卦例', location: 'middle' })
+      } else {
+        item[`${search}.dangerousList`] = dangerousList
 
-      await localforage.setItem('MEI_HUA__mine', mine)
+        // 如果存过，覆盖
+        // 如果没有，添加
+        index > -1 ? mine.splice(index, 1, item) : mine.push(item)
 
-      this.$toast({ msg: '保存成功', location: 'middle' })
-      console.log('mine', item)
+        await localforage.setItem('MEI_HUA__mine', mine)
+
+        this.$toast({ msg: '保存成功', location: 'middle' })
+      }
     }
   }
 }
