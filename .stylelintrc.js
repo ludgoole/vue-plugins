@@ -1,11 +1,13 @@
 module.exports = {
-  // 扩展第三方插件规范stylelint-config-standard
-  extends: 'stylelint-config-standard',
+  extends: ['stylelint-config-standard', 'stylelint-config-rational-order'],
+  plugins: ['stylelint-scss'],
   rules: {
-    'function-url-quotes': 'always',
-    indentation: 4, // 缩进4位
-    'number-leading-zero': null,
-    'unit-whitelist': ['em', 'rem', 's', '%', 'px', 'deg'],
-    'unit-case': 'lower'
+    indentation: 2,
+    'no-missing-end-of-source-newline': null,
+    'max-nesting-depth': 3,
+    'selector-max-compound-selectors': 3,
+    'at-rule-no-unknown': null,
+    'scss/at-rule-no-unknown': true,
+    'number-leading-zero': null
   }
 }

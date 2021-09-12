@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/renders/RePopup.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1630931409528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1630931409528,
+            "name": "Commit-0",
+            "content": "<!--\r\n<template>\r\n  <div v-if=\"isShow\">\r\n    <slot name=\"header\" v-show=\"isShowSync\">\r\n      <header class=\"flex flex-justify\">\r\n        <h3>{{title}}</h3>\r\n        <i>×</i>\r\n      </header>\r\n    </slot>\r\n    <slot></slot>\r\n    <slot name=\"footer\">\r\n      <footer class=\"flex flex-center\">\r\n        <bttton @click=\"sure\">确认</bttton>\r\n        <bttton @click=\"cancel\">取消</bttton>\r\n      </footer>\r\n    </slot>\r\n  </div>\r\n</template>\r\n-->\r\n<script>\r\nexport default {\r\n  name: 'RePopup',\r\n  props: {\r\n    value: {\r\n      type: Boolean,\r\n      default: true\r\n    },\r\n    isShowSync: {\r\n      type: Boolean,\r\n      default: true\r\n    },\r\n    title: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  mounted() {\r\n    console.log('popup')\r\n  },\r\n  methods: {\r\n    cancel() {\r\n      this.$emit('input', false)\r\n      console.log('cancel', this.value)\r\n    },\r\n    sure() {\r\n      this.$emit('input', true)\r\n      this.$emit('update:isShowSync', false)\r\n      console.log('sure', this.value)\r\n    }\r\n  },\r\n  render(h, props) {\r\n    console.log('this', this, props)\r\n    if (!this.value) return null\r\n\r\n    return h(\r\n      'div',\r\n      {\r\n        style: {\r\n          display: this.isShowSync ? 'block' : 'none'\r\n        }\r\n      },\r\n      [\r\n        this.$slots.header\r\n          ? this.$slots.header\r\n          : h(\r\n              'header',\r\n              {\r\n                class: {\r\n                  flex: true,\r\n                  'flex-justify': true\r\n                }\r\n              },\r\n              [h('h3', this.title), h('i', 'x')]\r\n            ),\r\n        this.$slots.default,\r\n        this.$scopedSlots.footer\r\n          ? this.$scopedSlots.footer({ cancel: 'this.cancel' })\r\n          : h(\r\n              'footer',\r\n              {\r\n                class: {\r\n                  flex: true,\r\n                  'flex-center': true\r\n                }\r\n              },\r\n              [\r\n                h(\r\n                  'button',\r\n                  {\r\n                    on: {\r\n                      click: this.sure\r\n                    }\r\n                  },\r\n                  '确认'\r\n                ),\r\n                h(\r\n                  'button',\r\n                  {\r\n                    on: {\r\n                      click: this.cancel\r\n                    }\r\n                  },\r\n                  '取消'\r\n                )\r\n              ]\r\n            )\r\n      ]\r\n    )\r\n\r\n    // if (this.vaule) {\r\n    //   return h('div', [\r\n    //     h(this.$slots.header, [h('h3', this.title), h('i', 'x')]),\r\n    //     this.$slots.default,\r\n    //     this.$scopedSlots.footer({\r\n    //       cancel: this.cancel\r\n    //     })\r\n    //   ])\r\n    // } else {\r\n    //   console.log('this', this.value, props)\r\n    //   return h('div', 'NO_DATA')\r\n    // }\r\n  }\r\n}\r\n</script>\r\n"
+        }
+    ]
+}

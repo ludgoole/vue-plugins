@@ -36,6 +36,7 @@ export default {
   a {
     font-weight: bold;
     color: #2c3e50;
+
     &.router-link-exact-active {
       color: #42b983;
       font-size: 12px;
@@ -64,6 +65,7 @@ export default {
   height: 100px;
   background: url(./assets/image/hope.jpg);
 }
+
 .img2 {
   width: 100px;
   height: 100px;

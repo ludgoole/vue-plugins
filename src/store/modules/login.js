@@ -1,21 +1,18 @@
-import $ from '@/api'
-import path from '@/api/path'
+import { login } from '@/api'
 
 export default {
   state: {
     token: ''
   },
-  getters: {
-
-  },
+  getters: {},
   mutations: {
-    SET_TOKEN (state, token) {
+    SET_TOKEN(state, token) {
       state.token = token
     }
   },
   actions: {
-    async login ({ commit }, params = {}) {
-      const data = await $.post(path.login, params)
+    async login({ commit }, params = {}) {
+      const data = await login(params)
       commit('SET_TOKEN', data.token)
 
       return data

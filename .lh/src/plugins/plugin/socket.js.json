@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/plugins/plugin/socket.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1630932076635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1630932084482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,16 @@\n-// 引入 VueSocketIO\r\n-import VueSocketIO from 'vue-socket.io'\r\n+// // 引入 VueSocketIO\r\n+// import VueSocketIO from 'vue-socket.io'\r\n \r\n-function installPlugin(Vue) {\r\n-  console.log('VueSocketIO')\r\n-  Vue\r\n-    .use\r\n-    // new VueSocketIO({\r\n-    //   debug: true,\r\n-    //   // 服务器端地址\r\n-    //   connection: 'http://localhost:3000',\r\n-    //   vuex: {}\r\n-    // })\r\n-    ()\r\n-}\r\n+// function installPlugin(Vue) {\r\n+//   console.log('VueSocketIO')\r\n+//   Vue.use(\r\n+//     // new VueSocketIO({\r\n+//     //   debug: true,\r\n+//     //   // 服务器端地址\r\n+//     //   connection: 'http://localhost:3000',\r\n+//     //   vuex: {}\r\n+//     // })\r\n+//   )\r\n+// }\r\n \r\n-export default { installPlugin }\r\n+// export default { installPlugin }\r\n"
+                },
+                {
+                    "date": 1630932105713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+// // 引入 VueSocketIO\r\n+// import VueSocketIO from 'vue-socket.io'\r\n+\r\n+function installPlugin(Vue) {\r\n+  // console.log('VueSocketIO')\r\n+  Vue\r\n+    .use\r\n+    // new VueSocketIO({\r\n+    //   debug: true,\r\n+    //   // 服务器端地址\r\n+    //   connection: 'http://localhost:3000',\r\n+    //   vuex: {}\r\n+    // })\r\n+    ()\r\n+}\r\n+\r\n+export default { installPlugin }\r\n"
+                },
+                {
+                    "date": 1630932124907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+// // 引入 VueSocketIO\r\n+// import VueSocketIO from 'vue-socket.io'\r\n+\r\n+function installPlugin(Vue) {\r\n+  // console.log('VueSocketIO')\r\n+  Vue\r\n+    .use\r\n+    // new VueSocketIO({\r\n+    //   debug: true,\r\n+    //   // 服务器端地址\r\n+    //   connection: 'http://localhost:3000',\r\n+    //   vuex: {}\r\n+    // })\r\n+    ()\r\n+}\r\n+\r\n+export default { installPlugin }\r\n"
+                },
+                {
+                    "date": 1630932141398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,50 +1,16 @@\n-// // 引入 VueSocketIO\r\n-// import VueSocketIO from 'vue-socket.io'\r\n+// 引入 VueSocketIO\r\n+import VueSocketIO from 'vue-socket.io'\r\n \r\n function installPlugin(Vue) {\r\n-  // console.log('VueSocketIO')\r\n-  Vue\r\n-    .use\r\n-    // new VueSocketIO({\r\n-    //   debug: true,\r\n-    //   // 服务器端地址\r\n-    //   connection: 'http://localhost:3000',\r\n-    //   vuex: {}\r\n-    // })\r\n-    ()\r\n+  console.log('VueSocketIO')\r\n+  // Vue.use(\r\n+  //   // new VueSocketIO({\r\n+  //   //   debug: true,\r\n+  //   //   // 服务器端地址\r\n+  //   //   connection: 'http://localhost:3000',\r\n+  //   //   vuex: {}\r\n+  //   // })\r\n+  // )\r\n }\r\n \r\n export default { installPlugin }\r\n-// // 引入 VueSocketIO\r\n-// import VueSocketIO from 'vue-socket.io'\r\n-\r\n-function installPlugin(Vue) {\r\n-  // console.log('VueSocketIO')\r\n-  Vue\r\n-    .use\r\n-    // new VueSocketIO({\r\n-    //   debug: true,\r\n-    //   // 服务器端地址\r\n-    //   connection: 'http://localhost:3000',\r\n-    //   vuex: {}\r\n-    // })\r\n-    ()\r\n-}\r\n-\r\n-export default { installPlugin }\r\n-// // 引入 VueSocketIO\r\n-// import VueSocketIO from 'vue-socket.io'\r\n-\r\n-// function installPlugin(Vue) {\r\n-//   console.log('VueSocketIO')\r\n-//   Vue.use(\r\n-//     // new VueSocketIO({\r\n-//     //   debug: true,\r\n-//     //   // 服务器端地址\r\n-//     //   connection: 'http://localhost:3000',\r\n-//     //   vuex: {}\r\n-//     // })\r\n-//   )\r\n-// }\r\n-\r\n-// export default { installPlugin }\r\n"
+                },
+                {
+                    "date": 1630932146456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+// 引入 VueSocketIO\r\n+// import VueSocketIO from 'vue-socket.io'\r\n+\r\n+function installPlugin(Vue) {\r\n+  // console.log('VueSocketIO')\r\n+  // Vue.use(\r\n+  //   // new VueSocketIO({\r\n+  //   //   debug: true,\r\n+  //   //   // 服务器端地址\r\n+  //   //   connection: 'http://localhost:3000',\r\n+  //   //   vuex: {}\r\n+  //   // })\r\n+  // )\r\n+}\r\n+\r\n+export default { installPlugin }\r\n"
+                }
+            ],
+            "date": 1630932076635,
+            "name": "Commit-0",
+            "content": "// 引入 VueSocketIO\r\nimport VueSocketIO from 'vue-socket.io'\r\n\r\nfunction installPlugin(Vue) {\r\n  console.log('VueSocketIO')\r\n  Vue\r\n    .use\r\n    // new VueSocketIO({\r\n    //   debug: true,\r\n    //   // 服务器端地址\r\n    //   connection: 'http://localhost:3000',\r\n    //   vuex: {}\r\n    // })\r\n    ()\r\n}\r\n\r\nexport default { installPlugin }\r\n"
+        }
+    ]
+}

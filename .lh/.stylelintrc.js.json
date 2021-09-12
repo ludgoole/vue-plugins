@@ -1,0 +1,38 @@
+{
+    "sourceFile": ".stylelintrc.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1630930718818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1630930740098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+module.exports = {\r\n+  // 扩展第三方插件规范stylelint-config-standard\r\n+  extends: 'stylelint-config-standard',\r\n+  rules: {\r\n+    'function-url-quotes': 'always',\r\n+    indentation: 2, // 缩进4位\r\n+    'number-leading-zero': null,\r\n+    'unit-whitelist': ['em', 'rem', 's', '%', 'px', 'deg'],\r\n+    'unit-case': 'lower'\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1630930897886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+module.exports = {\r\n+  extends: ['stylelint-config-standard', 'stylelint-config-rational-order'],\r\n+  plugins: ['stylelint-scss'],\r\n+  rules: {\r\n+    indentation: 2,\r\n+    'no-missing-end-of-source-newline': null,\r\n+    'max-nesting-depth': 3,\r\n+    'selector-max-compound-selectors': 3,\r\n+    'at-rule-no-unknown': null,\r\n+    'scss/at-rule-no-unknown': true,\r\n+    'number-leading-zero': null\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1630930903046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+module.exports = {\r\n+  extends: ['stylelint-config-standard', 'stylelint-config-rational-order'],\r\n+  plugins: ['stylelint-scss'],\r\n+  rules: {\r\n+    indentation: 2,\r\n+    'no-missing-end-of-source-newline': null,\r\n+    'max-nesting-depth': 3,\r\n+    'selector-max-compound-selectors': 3,\r\n+    'at-rule-no-unknown': null,\r\n+    'scss/at-rule-no-unknown': true,\r\n+    'number-leading-zero': null\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1630930925058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+module.exports = {\r\n+  extends: ['stylelint-config-standard', 'stylelint-config-rational-order'],\r\n+  plugins: ['stylelint-scss'],\r\n+  rules: {\r\n+    indentation: 2,\r\n+    'no-missing-end-of-source-newline': null,\r\n+    'max-nesting-depth': 3,\r\n+    'selector-max-compound-selectors': 3,\r\n+    'at-rule-no-unknown': null,\r\n+    'scss/at-rule-no-unknown': true,\r\n+    'number-leading-zero': null\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1630930938461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,52 +10,4 @@\n     'scss/at-rule-no-unknown': true,\r\n     'number-leading-zero': null\r\n   }\r\n }\r\n-module.exports = {\r\n-  extends: ['stylelint-config-standard', 'stylelint-config-rational-order'],\r\n-  plugins: ['stylelint-scss'],\r\n-  rules: {\r\n-    indentation: 2,\r\n-    'no-missing-end-of-source-newline': null,\r\n-    'max-nesting-depth': 3,\r\n-    'selector-max-compound-selectors': 3,\r\n-    'at-rule-no-unknown': null,\r\n-    'scss/at-rule-no-unknown': true,\r\n-    'number-leading-zero': null\r\n-  }\r\n-}\r\n-module.exports = {\r\n-  extends: ['stylelint-config-standard', 'stylelint-config-rational-order'],\r\n-  plugins: ['stylelint-scss'],\r\n-  rules: {\r\n-    indentation: 2,\r\n-    'no-missing-end-of-source-newline': null,\r\n-    'max-nesting-depth': 3,\r\n-    'selector-max-compound-selectors': 3,\r\n-    'at-rule-no-unknown': null,\r\n-    'scss/at-rule-no-unknown': true,\r\n-    'number-leading-zero': null\r\n-  }\r\n-}\r\n-module.exports = {\r\n-  // 扩展第三方插件规范stylelint-config-standard\r\n-  extends: 'stylelint-config-standard',\r\n-  rules: {\r\n-    'function-url-quotes': 'always',\r\n-    indentation: 2, // 缩进4位\r\n-    'number-leading-zero': null,\r\n-    'unit-whitelist': ['em', 'rem', 's', '%', 'px', 'deg'],\r\n-    'unit-case': 'lower'\r\n-  }\r\n-}\r\n-module.exports = {\r\n-  // 扩展第三方插件规范stylelint-config-standard\r\n-  extends: 'stylelint-config-standard',\r\n-  rules: {\r\n-    'function-url-quotes': 'always',\r\n-    indentation: 2, // 缩进4位\r\n-    'number-leading-zero': null,\r\n-    'unit-whitelist': ['em', 'rem', 's', '%', 'px', 'deg'],\r\n-    'unit-case': 'lower'\r\n-  }\r\n-}\r\n"
+                }
+            ],
+            "date": 1630930718818,
+            "name": "Commit-0",
+            "content": "module.exports = {\r\n  // 扩展第三方插件规范stylelint-config-standard\r\n  extends: 'stylelint-config-standard',\r\n  rules: {\r\n    'function-url-quotes': 'always',\r\n    indentation: 2, // 缩进4位\r\n    'number-leading-zero': null,\r\n    'unit-whitelist': ['em', 'rem', 's', '%', 'px', 'deg'],\r\n    'unit-case': 'lower'\r\n  }\r\n}\r\n"
+        }
+    ]
+}

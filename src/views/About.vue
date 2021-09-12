@@ -27,7 +27,8 @@
       </el-button>
     </template>
     <ReHome v-if="false"></ReHome>
-    <BaseSocket></BaseSocket>
+    <!-- <BaseSocket v-if="false"></BaseSocket> -->
+    <BaseDirective></BaseDirective>
   </div>
 </template>
 
@@ -51,9 +52,9 @@ export default {
     }
   },
   mounted() {
-    this.$axios.post('/api/login').then(data => {
-      console.log('/api/login', data)
-    })
+    // this.$axios.post('/api/login').then(data => {
+    //   console.log('/api/login', data)
+    // })
   },
   provide() {
     return {

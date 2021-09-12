@@ -1,7 +1,7 @@
 // 引入 axios
-import axios from '@/api'
+import axios from '@/request'
 
-function installPlugin (Vue) {
+function installPlugin(Vue) {
   Vue.prototype.$axios = axios
 }
 

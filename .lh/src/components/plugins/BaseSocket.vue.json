@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/plugins/BaseSocket.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1630931452064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1630932022917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,35 @@\n+<template>\r\n+  <div></div>\r\n+</template>\r\n+\r\n+<script>\r\n+export default {\r\n+  // mounted() {\r\n+  //   // 发送信息给服务端\r\n+  //   this.$socket.emit('login', {\r\n+  //     username: 'username',\r\n+  //     password: 'password'\r\n+  //   })\r\n+  //   // 接收服务端的信息\r\n+  //   this.sockets.subscribe('relogin', data => {\r\n+  //     console.log(data)\r\n+  //   })\r\n+  // },\r\n+  // sockets: {\r\n+  //   connect: function() {\r\n+  //     console.log('socket connected')\r\n+  //   },\r\n+  //   customEmit: function(data) {\r\n+  //     console.log(\r\n+  //       `this method was fired by the socket server. eg: io.emit(\"customEmit\", ${data})`\r\n+  //     )\r\n+  //   }\r\n+  // },\r\n+  // methods: {\r\n+  //   clickButton: function(data) {\r\n+  //     // 发送信息给服务端\r\n+  //     this.$socket.emit('login', data)\r\n+  //   }\r\n+  // }\r\n+}\r\n+</script>\r\n"
+                }
+            ],
+            "date": 1630931452064,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div></div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n  mounted() {\r\n    // 发送信息给服务端\r\n    this.$socket.emit('login', {\r\n      username: 'username',\r\n      password: 'password'\r\n    })\r\n\r\n    // 接收服务端的信息\r\n    this.sockets.subscribe('relogin', data => {\r\n      console.log(data)\r\n    })\r\n  },\r\n  sockets: {\r\n    connect: function() {\r\n      console.log('socket connected')\r\n    },\r\n    customEmit: function(data) {\r\n      console.log(\r\n        `this method was fired by the socket server. eg: io.emit(\"customEmit\", ${data})`\r\n      )\r\n    }\r\n  },\r\n  methods: {\r\n    clickButton: function(data) {\r\n      // 发送信息给服务端\r\n      this.$socket.emit('login', data)\r\n    }\r\n  }\r\n}\r\n</script>\r\n"
+        }
+    ]
+}
