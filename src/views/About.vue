@@ -28,7 +28,8 @@
     </template>
     <ReHome v-if="false"></ReHome>
     <!-- <BaseSocket v-if="false"></BaseSocket> -->
-    <BaseDirective></BaseDirective>
+    <BaseDirective v-if="false"></BaseDirective>
+    <TopicList></TopicList>
   </div>
 </template>
 
@@ -36,6 +37,7 @@
 // @ is an alias to /src
 import components from '@/components/plugins'
 import renders from '@/components/renders'
+import TopicList from '@/components/reactive/TopicList.vue'
 
 console.log('MathJax', components, renders)
 
@@ -43,7 +45,8 @@ export default {
   name: 'Home',
   components: {
     ...components,
-    ...renders
+    ...renders,
+    TopicList
   },
   data() {
     return {
