@@ -3,7 +3,13 @@
 </template>
 
 <script>
-import * as echarts from 'echarts'
+// import * as echarts from 'echarts'
+import * as echarts from 'echarts/core'
+import { GaugeChart } from 'echarts/charts'
+import { CanvasRenderer } from 'echarts/renderers'
+
+echarts.use([GaugeChart, CanvasRenderer])
+
 const DIRECTION = ['北', '东北', '东', '东南', '南', '西南', '西', '西北']
 const BAGUA = ['坎', '艮', '震', '巽', '离', '坤', '兑', '乾']
 const WUXING = ['水', '木', '火', '金']
@@ -24,17 +30,8 @@ export default {
     options() {
       return {
         series: [
-          {
-            name: 'Pressure',
-            type: 'gauge',
-            startAngle: 90,
-            endAngle: -270,
-            splitNumber: 8,
-            min: 0,
+          this.getSeriesItem({
             max: 8,
-            detail: {
-              show: false
-            },
             axisLine: {
               lineStyle: {
                 width: 4,
@@ -42,12 +39,6 @@ export default {
                 shadowColor: 'rgba(192,145,31, 0.5)',
                 shadowBlur: 15
               }
-            },
-            splitLine: {
-              show: false
-            },
-            axisTick: {
-              show: false
             },
             axisLabel: {
               fontSize: 12,
@@ -79,27 +70,9 @@ export default {
                 name: this.alpha
               }
             ]
-          },
-          {
-            name: 'Pressure',
-            type: 'gauge',
-            startAngle: 90,
-            endAngle: -270,
-            splitNumber: 8,
-            min: 0,
+          }),
+          this.getSeriesItem({
             max: 8,
-            detail: {
-              show: false
-            },
-            axisLine: {
-              show: false
-            },
-            splitLine: {
-              show: false
-            },
-            axisTick: {
-              show: false
-            },
             axisLabel: {
               fontSize: 12,
               distance: -45,
@@ -110,34 +83,13 @@ export default {
                 }
                 return DIZHI[value]
               }
-            },
-            pointer: {
-              show: false
             }
-          },
-          {
-            name: 'Pressure',
-            type: 'gauge',
-            startAngle: 90,
-            endAngle: -270,
-            splitNumber: 8,
-            min: 0,
+          }),
+          this.getSeriesItem({
             max: 8,
-            detail: {
-              show: false
-            },
-            axisLine: {
-              show: false
-            },
-            splitLine: {
-              show: false
-            },
-            axisTick: {
-              show: false
-            },
             axisLabel: {
-              fontSize: 14,
-              distance: 25,
+              fontSize: 12,
+              distance: 28,
               color: 'rgba(192,145,31,0.7)',
               formatter: function(value) {
                 if (value === 8) {
@@ -145,31 +97,10 @@ export default {
                 }
                 return BAGUA[value]
               }
-            },
-            pointer: {
-              show: false
             }
-          },
-          {
-            name: 'Pressure',
-            type: 'gauge',
-            startAngle: 90,
-            endAngle: -270,
-            splitNumber: 4,
-            min: 0,
+          }),
+          this.getSeriesItem({
             max: 4,
-            detail: {
-              show: false
-            },
-            axisLine: {
-              show: false
-            },
-            splitLine: {
-              show: false
-            },
-            axisTick: {
-              show: false
-            },
             axisLabel: {
               fontSize: 14,
               distance: 55,
@@ -179,11 +110,8 @@ export default {
                 }
                 return WUXING[value]
               }
-            },
-            pointer: {
-              show: false
             }
-          }
+          })
         ]
       }
     }
@@ -196,6 +124,38 @@ export default {
   mounted() {
     this.myChart = echarts.init(this.$el)
     this.myChart.setOption(this.options)
+  },
+  methods: {
+    getSeriesItem({ max, axisLine, axisLabel, pointer, data = [] }) {
+      return {
+        name: 'Pressure',
+        type: 'gauge',
+        startAngle: 90,
+        endAngle: -270,
+        splitNumber: max,
+        min: 0,
+        max,
+        detail: {
+          show: false
+        },
+        axisLine: axisLine || {
+          show: false
+        },
+        splitLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        },
+        axisLabel: axisLabel || {
+          show: false
+        },
+        pointer: pointer || {
+          show: false
+        },
+        data
+      }
+    }
   }
 }
 </script>
