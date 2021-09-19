@@ -7,6 +7,7 @@ export default [
     maxTime: 1,
     animal: '鼠',
     wuxing: '水',
+    year: '坎',
     month: 11
   },
   {
@@ -17,6 +18,7 @@ export default [
     maxTime: 3,
     animal: '牛',
     wuxing: '土',
+    year: '艮',
     month: 12
   },
   {
@@ -27,6 +29,7 @@ export default [
     maxTime: 5,
     animal: '虎',
     wuxing: '木',
+    year: '艮',
     month: 1
   },
   {
@@ -37,6 +40,7 @@ export default [
     maxTime: 7,
     animal: '兔',
     wuxing: '木',
+    year: '震',
     month: 2
   },
   {
@@ -47,6 +51,7 @@ export default [
     maxTime: 9,
     animal: '龙',
     wuxing: '土',
+    year: '巽',
     month: 3
   },
   {
@@ -57,6 +62,7 @@ export default [
     maxTime: 11,
     animal: '蛇',
     wuxing: '火',
+    year: '巽',
     month: 4
   },
   {
@@ -67,6 +73,7 @@ export default [
     maxTime: 13,
     animal: '马',
     wuxing: '火',
+    year: '离',
     month: 5
   },
   {
@@ -77,6 +84,7 @@ export default [
     maxTime: 15,
     animal: '羊',
     wuxing: '土',
+    year: '坤',
     month: 6
   },
   {
@@ -87,6 +95,7 @@ export default [
     maxTime: 17,
     animal: '猴',
     wuxing: '金',
+    year: '坤',
     month: 7
   },
   {
@@ -97,6 +106,7 @@ export default [
     maxTime: 19,
     animal: '鸡',
     wuxing: '金',
+    year: '兑',
     month: 8
   },
   {
@@ -107,6 +117,7 @@ export default [
     maxTime: 21,
     animal: '狗',
     wuxing: '土',
+    year: '乾',
     month: 9
   },
   {
@@ -117,6 +128,7 @@ export default [
     maxTime: 23,
     animal: '猪',
     wuxing: '水',
+    year: '乾',
     month: 10
   }
 ]

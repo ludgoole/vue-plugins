@@ -29,6 +29,18 @@ const routes = [
       import(/* webpackChunkName: "question" */ '../views/Answer.vue')
   },
   {
+    path: '/calendar',
+    name: 'Calendar',
+    meta: {
+      title: '老黄历',
+      leftText: '',
+      leftArrow: true,
+      rightText: ''
+    },
+    component: () =>
+      import(/* webpackChunkName: "question" */ '../views/Calendar.vue')
+  },
+  {
     path: '/query',
     name: 'Query',
     meta: {

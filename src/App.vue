@@ -5,7 +5,7 @@
       :title="$route.meta.title"
       :left-text="$route.meta.leftText"
       :right-text="$route.meta.rightText"
-      :left-arrow="!!$route.meta.leftText"
+      :left-arrow="$route.meta.leftArrow"
       @click-left="onClickLeft"
       @click-right="onClickRight"
     />
@@ -58,7 +58,7 @@ export default {
   },
   methods: {
     onClickLeft() {
-      this.$route.meta.leftText && this.$router.go(-1)
+      this.$route.meta.leftArrow && this.$router.go(-1)
       // this.$toast('返回')
     },
     onClickRight() {

@@ -10,23 +10,16 @@
     <div class="Answer-container flex-1">
       <template>
         <div class="Answer-time">
-          <p>
+          <p @click="toCalendar">
             时间：<span>{{ dateTime }}</span>
           </p>
           <p>
             旧历：
             <span> {{ lunar.toString() }}{{ lunar.getTimeZhi() }}时 </span>
           </p>
-          <!-- <p>
-            四柱：<span
-              >{{ lunar.getYearInGanZhi() }}年 {{ lunar.getMonthInGanZhi() }}月
-              {{ lunar.getDayInGanZhi() }}日 {{ lunar.getTimeInGanZhi() }}时
-            </span>
-          </p> -->
           <p>
             太岁：<span
               >{{ lunar.getYearShengXiao() }}年 属{{ taiSui.wuxing }}
-              <!-- {{ lunar.getChong() }}{{ lunar.getChongShengXiao() }}对冲 -->
             </span>
           </p>
           <p>
@@ -36,12 +29,6 @@
           </p>
           <p>
             日辰：<span>{{ lunar.getDayZhi() }}日 属{{ riChen.wuxing }}</span>
-          </p>
-          <p>
-            宜：<span>{{ lunar.getDayYi().join(' ') }}</span>
-          </p>
-          <p>
-            忌：<span>{{ lunar.getDayJi().join(' ') }}</span>
           </p>
         </div>
       </template>
@@ -399,6 +386,14 @@ export default {
       localforage
         .setItem('MEI_HUA__mine', mine)
         .then(mine => this.$toast({ msg: '保存成功', location: 'middle' }))
+    },
+    toCalendar() {
+      this.$router.push({
+        path: '/calendar',
+        query: {
+          timestamp: this.timestamp
+        }
+      })
     },
     toGuaXiang(search) {
       this.$router.push({
