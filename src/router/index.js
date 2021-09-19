@@ -41,6 +41,18 @@ const routes = [
       import(/* webpackChunkName: "question" */ '../views/Calendar.vue')
   },
   {
+    path: '/compass',
+    name: 'Compass',
+    meta: {
+      title: '罗盘',
+      leftText: '',
+      leftArrow: true,
+      rightText: ''
+    },
+    component: () =>
+      import(/* webpackChunkName: "question" */ '../views/Compass.vue')
+  },
+  {
     path: '/query',
     name: 'Query',
     meta: {

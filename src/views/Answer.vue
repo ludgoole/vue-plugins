@@ -12,10 +12,12 @@
         <div class="Answer-time">
           <p @click="toCalendar">
             时间：<span>{{ dateTime }}</span>
+            <span>(老黄历)</span>
           </p>
-          <p>
+          <p @click="toCompass">
             旧历：
             <span> {{ lunar.toString() }}{{ lunar.getTimeZhi() }}时 </span>
+            <span>(罗盘)</span>
           </p>
           <p>
             太岁：<span
@@ -390,6 +392,14 @@ export default {
     toCalendar() {
       this.$router.push({
         path: '/calendar',
+        query: {
+          timestamp: this.timestamp
+        }
+      })
+    },
+    toCompass() {
+      this.$router.push({
+        path: '/compass',
         query: {
           timestamp: this.timestamp
         }
