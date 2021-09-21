@@ -28,8 +28,8 @@
     </template>
     <ReHome v-if="false"></ReHome>
     <!-- <BaseSocket v-if="false"></BaseSocket> -->
-    <BaseDirective v-if="false"></BaseDirective>
-    <TopicList></TopicList>
+    <TopicList v-if="false"></TopicList>
+    <BaseDirective></BaseDirective>
   </div>
 </template>
 

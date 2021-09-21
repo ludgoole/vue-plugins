@@ -17,7 +17,7 @@
 </template>
 <script>
 import 'viewerjs/dist/viewer.css'
-import Viewer from 'v-viewer/src/component.vue'
+import Viewer from 'viewerjs'
 export default {
   components: {
     Viewer
