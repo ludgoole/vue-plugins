@@ -9,7 +9,7 @@ import { LineChart } from 'echarts/charts'
 import { CanvasRenderer } from 'echarts/renderers'
 // 引入提示框，标题，直角坐标系，数据集，内置数据转换器组件，组件后缀都为 Component
 import {
-  // TitleComponent,
+  TitleComponent,
   // TooltipComponent,
   GridComponent
   // DatasetComponent,
@@ -17,49 +17,67 @@ import {
   // TransformComponent
 } from 'echarts/components'
 
-echarts.use([LineChart, CanvasRenderer, GridComponent])
+echarts.use([LineChart, CanvasRenderer, TitleComponent, GridComponent])
 
 export default {
   name: 'VeLine',
   props: {
-    direction: {
-      value: Number,
-      default: 1
+    color: {
+      value: String,
+      default: '#F56C6C'
     },
-    alpha: {
-      value: Number,
-      default: 0
+    title: {
+      value: String,
+      default: ''
+    },
+    xAxisData: {
+      value: Array,
+      default: []
+    },
+    data: {
+      value: Array,
+      default: []
     }
   },
   computed: {
     options() {
       return {
+        color: this.color,
+        title: {
+          text: this.title,
+          padding: [30, 0, 0, 10]
+        },
         xAxis: {
           type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+          data: this.xAxisData
         },
         yAxis: {
-          type: 'value'
+          type: 'category',
+          data: ['旺', '相', '休', '囚', '死'].reverse()
         },
         series: [this.getSeriesItem()]
       }
     }
   },
   watch: {
-    direction() {
+    data() {
       this.myChart.setOption(this.options)
     }
   },
   mounted() {
     this.myChart = echarts.init(this.$el)
     this.myChart.setOption(this.options)
+
+    this.myChart.on('click', 'series.line', params => {
+      this.$emit('click', params.name)
+    })
   },
   methods: {
     getSeriesItem() {
       return {
         type: 'line',
         smooth: true,
-        data: [820, 932, 901, 934, 1290, 1330, 1320]
+        data: this.data
       }
     }
   }

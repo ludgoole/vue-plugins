@@ -11,7 +11,7 @@
       <template>
         <div class="Answer-time">
           <p @click="toCalendar">
-            时间：<span>{{ dateTime }}</span>
+            时间：<span>{{ dateTime }} </span>
             <span>(老黄历)</span>
           </p>
           <p @click="toCompass">
@@ -19,18 +19,21 @@
             <span> {{ lunar.toString() }}{{ lunar.getTimeZhi() }}时 </span>
             <span>(罗盘)</span>
           </p>
-          <p>
-            太岁：<span
-              >{{ lunar.getYearShengXiao() }}年 属{{ taiSui.wuxing }}
-            </span>
+          <p @click="toGuaQi">
+            太岁：
+            <span>{{ lunar.getYearShengXiao() }}年 属{{ taiSui.wuxing }} </span>
+            <span>{{ getJiXiong(tiGua.wuxing, taiSui.wuxing).action }} </span>
+            <span>(流年)</span>
           </p>
           <p>
-            月建：<span
-              >{{ lunar.getMonthZhi() }}月 属{{ yueJian.wuxing }}
-            </span>
+            月建：
+            <span>{{ lunar.getMonthZhi() }}月 属{{ yueJian.wuxing }} </span>
+            <span>{{ getJiXiong(tiGua.wuxing, yueJian.wuxing).action }}</span>
           </p>
           <p>
-            日辰：<span>{{ lunar.getDayZhi() }}日 属{{ riChen.wuxing }}</span>
+            日辰：
+            <span>{{ lunar.getDayZhi() }}日 属{{ riChen.wuxing }} </span>
+            <span>{{ getJiXiong(tiGua.wuxing, riChen.wuxing).action }}</span>
           </p>
         </div>
       </template>
@@ -341,13 +344,13 @@ export default {
     }
   },
   methods: {
-    getJiXiong(benGua, huGua) {
-      const wuxing = WUXING.find(wuxing => wuxing.name === benGua)
-      const jixiong = wuxing.relation.find(jixiong => jixiong.name === huGua)
+    getJiXiong(ti, yong) {
+      const wuxing = WUXING.find(wuxing => wuxing.name === ti)
+      const jixiong = wuxing.relation.find(jixiong => jixiong.name === yong)
       return jixiong
     },
-    getRelation(benGua, huGua) {
-      return this.getJiXiong(benGua, huGua).fortune
+    getRelation(ti, yong) {
+      return this.getJiXiong(ti, yong).fortune
     },
     getLeiXiang(name) {
       return BAGUA.find(gua => gua.name === name).leixiang
@@ -406,6 +409,15 @@ export default {
         path: '/compass',
         query: {
           timestamp: this.timestamp
+        }
+      })
+    },
+    toGuaQi() {
+      this.$router.push({
+        path: '/guaQi',
+        query: {
+          timestamp: this.timestamp,
+          ti: this.tiGua.wuxing
         }
       })
     },
