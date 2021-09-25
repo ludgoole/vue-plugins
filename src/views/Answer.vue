@@ -209,7 +209,11 @@ export default {
       return this.query.dongYaoCount || -1
     },
     timestamp() {
-      return Number(this.query.timestamp) || Date.now()
+      return (
+        Number(this.query.timestamp) ||
+        +new Date(this.query.dateTime) ||
+        Date.now()
+      )
     },
     lunar() {
       return Lunar.fromDate(new Date(this.timestamp))

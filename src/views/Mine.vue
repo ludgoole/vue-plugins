@@ -42,29 +42,34 @@ export default {
   methods: {
     init() {
       const self = this
-      this.api.readFile(
-        {
-          path: 'fs://meihua.json'
-        },
-        function(ret, err) {
-          if (ret.status) {
-            localforage.getItem('MEI_HUA__mine').then(mine => {
-              const saveData = JSON.parse(ret.data || '[]')
-              const localData = mine || []
-              const restData = localData.filter(
-                item => !saveData.some(v => v.timestamp === item.timestamp)
-              )
-              self.list = [...saveData, ...restData]
-            })
-          } else {
-            localforage.getItem('MEI_HUA__mine').then(mine => {
-              self.list = mine || []
-            })
 
-            // self.$toast({ msg: err.msg, location: 'middle' })
+      try {
+        this.api.readFile(
+          {
+            path: 'fs://meihua.json'
+          },
+          function(ret, err) {
+            if (ret.status) {
+              localforage.getItem('MEI_HUA__mine').then(mine => {
+                const saveData = JSON.parse(ret.data || '[]')
+                const localData = mine || []
+                const restData = localData.filter(
+                  item => !saveData.some(v => v.timestamp === item.timestamp)
+                )
+                self.list = [...saveData, ...restData]
+              })
+            } else {
+              localforage.getItem('MEI_HUA__mine').then(mine => {
+                self.list = mine || []
+              })
+            }
           }
-        }
-      )
+        )
+      } catch (e) {
+        localforage.getItem('MEI_HUA__mine').then(mine => {
+          self.list = mine || []
+        })
+      }
     },
     getTime(timestamp) {
       return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
@@ -105,19 +110,23 @@ export default {
         return self.$toast({ msg: '暂无数据', location: 'middle' })
       }
 
-      this.api.writeFile(
-        {
-          path: 'fs://meihua.json',
-          data: JSON.stringify(self.list)
-        },
-        function(ret, err) {
-          if (ret.status) {
-            self.$toast({ msg: '保存成功', location: 'middle' })
-          } else {
-            self.$toast({ msg: err.msg, location: 'middle' })
+      try {
+        this.api.writeFile(
+          {
+            path: 'fs://meihua.json',
+            data: JSON.stringify(self.list)
+          },
+          function(ret, err) {
+            if (ret.status) {
+              self.$toast({ msg: '保存成功', location: 'middle' })
+            } else {
+              self.$toast({ msg: err.msg, location: 'middle' })
+            }
           }
-        }
-      )
+        )
+      } catch (err) {
+        self.$toast({ msg: err, location: 'middle' })
+      }
     }
   },
   onReady() {
