@@ -9,7 +9,9 @@
       @click-left="onClickLeft"
       @click-right="onClickRight"
     />
-    <router-view class="router-view flex-1" />
+    <keep-alive :include="keepAlive">
+      <router-view class="router-view flex-1" />
+    </keep-alive>
     <div class="navbar">
       <van-grid>
         <van-grid-item
@@ -31,6 +33,7 @@
 export default {
   data() {
     return {
+      keepAlive: ['Star'],
       list: [
         {
           name: '卜卦',

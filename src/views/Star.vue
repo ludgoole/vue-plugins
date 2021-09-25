@@ -30,6 +30,7 @@ export default {
   methods: {
     goAnswer(item) {
       const {
+        dateTime,
         question,
         shangGuaCount,
         xiaGuaCount,
@@ -39,6 +40,7 @@ export default {
       this.$router.push({
         path: '/answer',
         query: {
+          dateTime,
           question,
           shangGuaCount,
           xiaGuaCount,
