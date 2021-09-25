@@ -53,6 +53,18 @@ const routes = [
       import(/* webpackChunkName: "question" */ '../views/Compass.vue')
   },
   {
+    path: '/guaQi',
+    name: 'GuaQi',
+    meta: {
+      title: '卦气',
+      leftText: '',
+      leftArrow: true,
+      rightText: ''
+    },
+    component: () =>
+      import(/* webpackChunkName: "question" */ '../views/GuaQi.vue')
+  },
+  {
     path: '/query',
     name: 'Query',
     meta: {
