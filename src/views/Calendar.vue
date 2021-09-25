@@ -16,6 +16,7 @@
     <p v-else class="Calendar-date-time" @click="isShowSearsh = true">
       <span>
         {{ moment.format('YYYY-MM-DD') }}
+        <van-icon name="edit" />
       </span>
     </p>
     <p class="Calendar-day mt-20">
