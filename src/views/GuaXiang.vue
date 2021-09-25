@@ -9,7 +9,12 @@
     />
     <div class="GuaXiang-container flex-1">
       <div class="GuaXiang-daXiang">{{ gua.daXiang }}</div>
-      <div class="GuaXiang-guaXiang">
+      <div
+        class="GuaXiang-guaXiang"
+        v-touch
+        @swipeLeft="next"
+        @swipeRight="prev"
+      >
         <BaseGua
           :gua-xiang="gua.guaXiang"
           :size="200"
@@ -106,6 +111,14 @@ export default {
     },
     change(guaXiang) {
       this.gua = ZHOUYI.find(gua => gua.guaXiang.join('') === guaXiang)
+    },
+    prev(e) {
+      const guaXu = this.gua.guaXu === 1 ? 64 : this.gua.guaXu - 1
+      this.gua = ZHOUYI.find(gua => gua.guaXu === guaXu)
+    },
+    next(e) {
+      const guaXu = this.gua.guaXu === 64 ? 1 : this.gua.guaXu + 1
+      this.gua = ZHOUYI.find(gua => gua.guaXu === guaXu)
     },
     async save() {
       const { search, dangerousList, timestamp } = this
