@@ -20,39 +20,41 @@
     </div>
     <div class="GuaQi-liu-nian">
       <VeLine
-        title="流年"
+        :title="`流年(${year}年)`"
         color="#F56C6C"
         :xAxisData="years"
-        :data="liuNian"
+        :data="liuNians"
+        :markLine="liuNian"
       ></VeLine>
     </div>
 
     <div class="GuaQi-liu-yue">
       <VeLine
-        title="流月"
+        :title="`流月(${month}月)`"
         color="#E6A23C"
         :xAxisData="months"
-        :data="liuYue"
-        @click="val => (month = val)"
+        :data="liuYues"
+        :markLine="liuYue"
       ></VeLine>
-      {{ month }}
     </div>
 
     <div class="GuaQi-liu-ri">
       <VeLine
-        title="流日"
+        :title="`流日(${day}日)`"
         color="#67C23A"
         :xAxisData="days"
-        :data="liuRi"
+        :data="liuRis"
+        :markLine="liuRi"
       ></VeLine>
     </div>
 
     <div class="GuaQi-liu-shi">
       <VeLine
-        title="流时"
+        :title="`流时(${hour}时)`"
         color="#409EFF"
         :xAxisData="hours"
-        :data="liuShi"
+        :data="liuShis"
+        :markLine="liuShi"
       ></VeLine>
     </div>
   </div>
@@ -83,6 +85,7 @@ export default {
       day: 25,
       minDay: 1,
       maxDay: 30,
+      hour: 22,
       minHour: 0,
       maxHour: 24
     }
@@ -105,7 +108,7 @@ export default {
     hours() {
       return this.getArray(this.minHour, this.maxHour)
     },
-    liuNian() {
+    liuNians() {
       return this.years
         .map(year => Lunar.fromDate(new Date(year, '01', '01')))
         .map(lunar => {
@@ -116,7 +119,7 @@ export default {
           return this.getJiXiongAction(this.ti, dizhi.wuxing)
         })
     },
-    liuYue() {
+    liuYues() {
       return this.months
         .map(month => Lunar.fromDate(new Date(this.year, month, '01')))
         .map(lunar => {
@@ -127,7 +130,7 @@ export default {
           return this.getJiXiongAction(this.ti, dizhi.wuxing)
         })
     },
-    liuRi() {
+    liuRis() {
       return this.days
         .map(day => Lunar.fromDate(new Date(this.year, this.month, day)))
         .map(lunar => {
@@ -138,7 +141,7 @@ export default {
           return this.getJiXiongAction(this.ti, dizhi.wuxing)
         })
     },
-    liuShi() {
+    liuShis() {
       return this.hours
         .map(hour =>
           Lunar.fromDate(new Date(this.year, this.month, this.day, hour))
@@ -150,9 +153,31 @@ export default {
 
           return this.getJiXiongAction(this.ti, dizhi.wuxing)
         })
+    },
+    liuNian() {
+      const index = this.years.findIndex(year => year === this.year * 1)
+      return this.liuNians[index]
+    },
+    liuYue() {
+      const index = this.months.findIndex(
+        month => ('0' + month).slice(-2) === this.month
+      )
+      return this.liuYues[index]
+    },
+    liuRi() {
+      const index = this.days.findIndex(
+        day => ('0' + day).slice(-2) === this.day
+      )
+      return this.liuRis[index]
+    },
+    liuShi() {
+      const index = this.hours.findIndex(
+        hour => ('0' + hour).slice(-2) === this.hour
+      )
+      return this.liuShis[index]
     }
   },
-  mounted() {
+  created() {
     ;[this.year, this.month, this.day, this.hour] = this.date
 
     this.ti = this.$route.query.ti || '金'

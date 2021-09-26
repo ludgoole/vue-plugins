@@ -4,11 +4,11 @@
 
 <script>
 // import * as echarts from 'echarts'
-import * as echarts from 'echarts/core'
-import { GaugeChart } from 'echarts/charts'
-import { CanvasRenderer } from 'echarts/renderers'
+// import * as echarts from 'echarts/core'
+// import { GaugeChart } from 'echarts/charts'
+// import { CanvasRenderer } from 'echarts/renderers'
 
-echarts.use([GaugeChart, CanvasRenderer])
+// echarts.use([GaugeChart, CanvasRenderer])
 
 const DIRECTION = ['北', '东北', '东', '东南', '南', '西南', '西', '西北']
 const BAGUA = ['坎', '艮', '震', '巽', '离', '坤', '兑', '乾']
@@ -122,7 +122,7 @@ export default {
     }
   },
   mounted() {
-    this.myChart = echarts.init(this.$el)
+    this.myChart = this.$echarts.init(this.$el)
     this.myChart.setOption(this.options)
   },
   methods: {

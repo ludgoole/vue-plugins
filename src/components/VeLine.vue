@@ -3,22 +3,6 @@
 </template>
 
 <script>
-// import * as echarts from 'echarts'
-import * as echarts from 'echarts/core'
-import { LineChart } from 'echarts/charts'
-import { CanvasRenderer } from 'echarts/renderers'
-// 引入提示框，标题，直角坐标系，数据集，内置数据转换器组件，组件后缀都为 Component
-import {
-  TitleComponent,
-  // TooltipComponent,
-  GridComponent
-  // DatasetComponent,
-  // DatasetComponentOption,
-  // TransformComponent
-} from 'echarts/components'
-
-echarts.use([LineChart, CanvasRenderer, TitleComponent, GridComponent])
-
 export default {
   name: 'VeLine',
   props: {
@@ -37,6 +21,10 @@ export default {
     data: {
       value: Array,
       default: []
+    },
+    markLine: {
+      value: String,
+      default: ''
     }
   },
   computed: {
@@ -65,7 +53,7 @@ export default {
     }
   },
   mounted() {
-    this.myChart = echarts.init(this.$el)
+    this.myChart = this.$echarts.init(this.$el)
     this.myChart.setOption(this.options)
 
     this.myChart.on('click', 'series.line', params => {
@@ -77,7 +65,18 @@ export default {
       return {
         type: 'line',
         smooth: true,
-        data: this.data
+        data: this.data,
+        markLine: {
+          silent: true,
+          lineStyle: {
+            color: '#7232dd'
+          },
+          data: [
+            {
+              yAxis: this.markLine
+            }
+          ]
+        }
       }
     }
   }
