@@ -71,6 +71,7 @@
           <span>互卦</span>
           <span>变卦</span>
         </p>
+
         <div class="Answer-bagua flex flex-justify flex-bottom">
           <BaseGua
             :gua-xiang="tiGua.guaXiang"
@@ -98,13 +99,7 @@
             @click="toLeiXiang"
           ></BaseGua>
         </div>
-        <p class="Answer-leixiang flex flex-justify text-center">
-          <span>{{ tiGua.name }}</span>
-          <span>{{ yongGua.name }}</span>
-          <span>{{ shangHuGua.name }}</span>
-          <span>{{ xiaHuGua.name }}</span>
-          <span>{{ bianYongGua.name }}</span>
-        </p>
+
         <p class="Answer-liuqin flex flex-justify text-center">
           <span>自己</span>
           <span>{{ getJiXiong(tiGua.wuxing, yongGua.wuxing).liuqin }}</span>
@@ -112,6 +107,15 @@
           <span>{{ getJiXiong(tiGua.wuxing, xiaHuGua.wuxing).liuqin }}</span>
           <span>{{ getJiXiong(tiGua.wuxing, bianYongGua.wuxing).liuqin }}</span>
         </p>
+
+        <p class="Answer-leixiang flex flex-justify text-center">
+          <span>{{ tiGua.name }}</span>
+          <span>{{ yongGua.name }}</span>
+          <span>{{ shangHuGua.name }}</span>
+          <span>{{ xiaHuGua.name }}</span>
+          <span>{{ bianYongGua.name }}</span>
+        </p>
+
         <p class="Answer-wuxing flex flex-justify text-center">
           <span>{{ tiGua.wuxing }}</span>
           <span>{{ yongGua.wuxing }}</span>
@@ -119,6 +123,7 @@
           <span>{{ xiaHuGua.wuxing }}</span>
           <span>{{ bianYongGua.wuxing }}</span>
         </p>
+
         <p class="Answer-shengke flex flex-justify text-center">
           <span>{{ getJiXiong(tiGua.wuxing, riChen.wuxing).affect }} </span>
           <span>{{ getRelation(tiGua.wuxing, yongGua.wuxing) }}</span>
@@ -126,6 +131,7 @@
           <span>{{ getRelation(tiGua.wuxing, xiaHuGua.wuxing) }}</span>
           <span>{{ getRelation(tiGua.wuxing, bianYongGua.wuxing) }}</span>
         </p>
+
         <van-collapse v-model="activeName" accordion>
           <van-collapse-item title="断卦" name="0">
             <p class="text-justify" v-html="jianYu"></p>
@@ -498,7 +504,8 @@ export default {
   }
 
   &-liuqin {
-    font-size: 10px;
+    margin: 4px 0;
+    font-size: 12px;
 
     span {
       width: 44px;
@@ -506,8 +513,6 @@ export default {
   }
 
   &-wuxing {
-    margin: 10px 0;
-
     span {
       width: 44px;
     }
