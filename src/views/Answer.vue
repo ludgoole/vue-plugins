@@ -23,17 +23,20 @@
             太岁：
             <span>{{ lunar.getYearShengXiao() }}年 属{{ taiSui.wuxing }} </span>
             <span>{{ getJiXiong(tiGua.wuxing, taiSui.wuxing).action }} </span>
+            <span>{{ getJiXiong(tiGua.wuxing, taiSui.wuxing).liuqin }} </span>
             <span>(流年)</span>
           </p>
           <p>
             月建：
             <span>{{ lunar.getMonthZhi() }}月 属{{ yueJian.wuxing }} </span>
-            <span>{{ getJiXiong(tiGua.wuxing, yueJian.wuxing).action }}</span>
+            <span>{{ getJiXiong(tiGua.wuxing, yueJian.wuxing).action }} </span>
+            <span>{{ getJiXiong(tiGua.wuxing, yueJian.wuxing).liuqin }}</span>
           </p>
           <p>
             日辰：
             <span>{{ lunar.getDayZhi() }}日 属{{ riChen.wuxing }} </span>
-            <span>{{ getJiXiong(tiGua.wuxing, riChen.wuxing).action }}</span>
+            <span>{{ getJiXiong(tiGua.wuxing, riChen.wuxing).action }} </span>
+            <span>{{ getJiXiong(tiGua.wuxing, riChen.wuxing).liuqin }}</span>
           </p>
         </div>
       </template>
@@ -102,6 +105,13 @@
           <span>{{ xiaHuGua.name }}</span>
           <span>{{ bianYongGua.name }}</span>
         </p>
+        <p class="Answer-liuqin flex flex-justify text-center">
+          <span>自己</span>
+          <span>{{ getJiXiong(tiGua.wuxing, yongGua.wuxing).liuqin }}</span>
+          <span>{{ getJiXiong(tiGua.wuxing, shangHuGua.wuxing).liuqin }}</span>
+          <span>{{ getJiXiong(tiGua.wuxing, xiaHuGua.wuxing).liuqin }}</span>
+          <span>{{ getJiXiong(tiGua.wuxing, bianYongGua.wuxing).liuqin }}</span>
+        </p>
         <p class="Answer-wuxing flex flex-justify text-center">
           <span>{{ tiGua.wuxing }}</span>
           <span>{{ yongGua.wuxing }}</span>
@@ -110,7 +120,7 @@
           <span>{{ bianYongGua.wuxing }}</span>
         </p>
         <p class="Answer-shengke flex flex-justify text-center">
-          <span>{{ getJiXiong(tiGua.wuxing, taiSui.wuxing).affect }} </span>
+          <span>{{ getJiXiong(tiGua.wuxing, riChen.wuxing).affect }} </span>
           <span>{{ getRelation(tiGua.wuxing, yongGua.wuxing) }}</span>
           <span>{{ getRelation(tiGua.wuxing, shangHuGua.wuxing) }}</span>
           <span>{{ getRelation(tiGua.wuxing, xiaHuGua.wuxing) }}</span>
@@ -481,6 +491,14 @@ export default {
 
   &-leixiang {
     margin: 10px 0;
+
+    span {
+      width: 44px;
+    }
+  }
+
+  &-liuqin {
+    font-size: 10px;
 
     span {
       width: 44px;

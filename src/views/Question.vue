@@ -131,8 +131,9 @@ export default {
             params.xiaGuaCount = Math.ceil(text / 2)
           } else if (text.split(' ').length === 2) {
             const [first, second] = text.split(' ')
-            params.shangGuaCount = first
-            params.xiaGuaCount = second
+            params.shangGuaCount = first * 1
+            params.xiaGuaCount = second * 1
+            params.dongYaoCount = params.shangGuaCount + params.xiaGuaCount
           } else {
             const [first, second, third] = text.split(' ')
             params.shangGuaCount = first

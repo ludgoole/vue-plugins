@@ -7,7 +7,7 @@ export default [
         affect: '比',
         action: '旺',
         fortune: '吉',
-        liushen: '兄弟',
+        liuqin: '兄弟',
         score: '100'
       },
       {
@@ -15,7 +15,7 @@ export default [
         affect: '耗',
         action: '囚',
         fortune: '吉',
-        liushen: '妻财',
+        liuqin: '妻财',
         score: '40'
       },
       {
@@ -23,7 +23,7 @@ export default [
         affect: '泄',
         action: '休',
         fortune: '凶',
-        liushen: '子孙',
+        liuqin: '子孙',
         score: '60'
       },
       {
@@ -31,7 +31,7 @@ export default [
         affect: '克',
         action: '死',
         fortune: '凶',
-        liushen: '官鬼',
+        liuqin: '官鬼',
         score: '20'
       },
       {
@@ -39,7 +39,7 @@ export default [
         affect: '生',
         action: '相',
         fortune: '吉',
-        liushen: '父母',
+        liuqin: '父母',
         score: '80'
       }
     ]
@@ -52,7 +52,7 @@ export default [
         affect: '克',
         action: '死',
         fortune: '凶',
-        liushen: '官鬼',
+        liuqin: '官鬼',
         score: '20'
       },
       {
@@ -60,7 +60,7 @@ export default [
         affect: '比',
         action: '旺',
         fortune: '吉',
-        liushen: '兄弟',
+        liuqin: '兄弟',
         score: '100'
       },
       {
@@ -68,7 +68,7 @@ export default [
         affect: '生',
         action: '相',
         fortune: '吉',
-        liushen: '父母',
+        liuqin: '父母',
         score: '80'
       },
       {
@@ -76,7 +76,7 @@ export default [
         affect: '泄',
         action: '休',
         fortune: '凶',
-        liushen: '子孙',
+        liuqin: '子孙',
         score: '40'
       },
       {
@@ -84,7 +84,7 @@ export default [
         affect: '耗',
         action: '囚',
         fortune: '吉',
-        liushen: '妻财',
+        liuqin: '妻财',
         score: '60'
       }
     ]
@@ -97,7 +97,7 @@ export default [
         affect: '生',
         action: '相',
         fortune: '吉',
-        liushen: '父母',
+        liuqin: '父母',
         score: '80'
       },
       {
@@ -105,7 +105,7 @@ export default [
         affect: '泄',
         action: '休',
         fortune: '凶',
-        liushen: '子孙',
+        liuqin: '子孙',
         score: '40'
       },
       {
@@ -113,7 +113,7 @@ export default [
         affect: '比',
         action: '旺',
         fortune: '吉',
-        liushen: '兄弟',
+        liuqin: '兄弟',
         score: '100'
       },
       {
@@ -121,7 +121,7 @@ export default [
         affect: '耗',
         action: '囚',
         fortune: '吉',
-        liushen: '妻财',
+        liuqin: '妻财',
         score: '60'
       },
       {
@@ -129,7 +129,7 @@ export default [
         affect: '克',
         action: '死',
         fortune: '凶',
-        liushen: '官鬼',
+        liuqin: '官鬼',
         score: '20'
       }
     ]
@@ -142,7 +142,7 @@ export default [
         affect: '耗',
         action: '囚',
         fortune: '吉',
-        liushen: '妻财',
+        liuqin: '妻财',
         score: '60'
       },
       {
@@ -150,7 +150,7 @@ export default [
         affect: '生',
         action: '相',
         fortune: '吉',
-        liushen: '父母',
+        liuqin: '父母',
         score: '80'
       },
       {
@@ -158,7 +158,7 @@ export default [
         affect: '克',
         action: '死',
         fortune: '凶',
-        liushen: '官鬼',
+        liuqin: '官鬼',
         score: '20'
       },
       {
@@ -166,7 +166,7 @@ export default [
         affect: '比',
         action: '旺',
         fortune: '吉',
-        liushen: '兄弟',
+        liuqin: '兄弟',
         score: '100'
       },
       {
@@ -174,7 +174,7 @@ export default [
         affect: '泄',
         action: '休',
         fortune: '凶',
-        liushen: '子孙',
+        liuqin: '子孙',
         score: '40'
       }
     ]
@@ -187,7 +187,7 @@ export default [
         affect: '泄',
         action: '休',
         fortune: '凶',
-        liushen: '子孙',
+        liuqin: '子孙',
         score: '40'
       },
       {
@@ -195,7 +195,7 @@ export default [
         affect: '克',
         action: '死',
         fortune: '凶',
-        liushen: '官鬼',
+        liuqin: '官鬼',
         score: '20'
       },
       {
@@ -203,7 +203,7 @@ export default [
         affect: '耗',
         action: '囚',
         fortune: '吉',
-        liushen: '妻财',
+        liuqin: '妻财',
         score: '60'
       },
       {
@@ -211,7 +211,7 @@ export default [
         affect: '生',
         action: '相',
         fortune: '吉',
-        liushen: '父母',
+        liuqin: '父母',
         score: '80'
       },
       {
@@ -219,7 +219,7 @@ export default [
         affect: '比',
         action: '旺',
         fortune: '吉',
-        liushen: '兄弟',
+        liuqin: '兄弟',
         score: '100'
       }
     ]
