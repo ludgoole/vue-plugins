@@ -41,6 +41,9 @@
           <p>
             旬空：
             <span>{{ lunar.getDayXunKong() }}</span>
+            <span v-for="(item, index) in xunkong" :key="index">
+              {{ getJiXiong(tiGua.wuxing, item.wuxing).liuqin }}
+            </span>
           </p>
         </div>
       </template>
@@ -160,15 +163,13 @@
             <p>时辰：{{ today }}</p>
             <p>
               天数：
-              <span>{{
-                dongYaoCount > -1
-                  ? dongYaoCount
-                  : tiGua.order + yongGua.order + riChen.order
-              }}</span>
-              | <span>{{ dongYao.order }}</span> |
-              <span>{{ tiGua.order + bianYongGua.order }}</span> |
-              <span>{{ `${tiGua.order}${bianYongGua.order}` }}</span> |
-              <span>{{ `${bianYongGua.order}${tiGua.order}` }}</span>
+              <span>{{ tiGua.order + yongGua.order + riChen.order }}</span> |
+              <span>{{ tiGua.order + bianYongGua.order }}</span>
+            </p>
+            <p>
+              年龄：
+              <span>{{ `${tiGua.order}${yongGua.order}` }}</span> |
+              <span>{{ `${tiGua.order}${bianYongGua.order}` }}</span>
             </p>
           </van-collapse-item>
           <van-collapse-item title="感悟" name="4">
@@ -257,6 +258,11 @@ export default {
     riChen() {
       return DIZHI.find(
         dizhi => dizhi.name === this.lunar.getDayInGanZhi().slice(-1)
+      )
+    },
+    xunkong() {
+      return DIZHI.filter(dizhi =>
+        this.lunar.getDayXunKong().includes(dizhi.name)
       )
     },
     shangGua() {
@@ -499,14 +505,6 @@ export default {
     }
   }
 
-  &-leixiang {
-    margin: 10px 0;
-
-    span {
-      width: 44px;
-    }
-  }
-
   &-liuqin {
     margin: 4px 0;
     font-size: 12px;
@@ -516,20 +514,32 @@ export default {
     }
   }
 
+  &-leixiang {
+    margin: 10px 0;
+
+    span {
+      width: 44px;
+    }
+  }
+
   &-wuxing {
+    margin: 10px 0;
+
     span {
       width: 44px;
     }
   }
 
   &-shengke {
+    margin: 10px 0;
+
     span {
       width: 44px;
     }
   }
 
   .van-collapse {
-    margin-top: 40px;
+    margin-top: 20px;
 
     .van-cell__title {
       font-weight: bold;
