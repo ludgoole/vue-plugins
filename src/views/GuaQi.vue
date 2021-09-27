@@ -87,7 +87,7 @@ export default {
       maxDay: 30,
       hour: 22,
       minHour: 0,
-      maxHour: 24
+      maxHour: 23
     }
   },
   computed: {

@@ -35,6 +35,9 @@ export default {
           text: this.title,
           padding: [30, 0, 0, 10]
         },
+        tooltip: {
+          show: true
+        },
         xAxis: {
           type: 'category',
           data: this.xAxisData

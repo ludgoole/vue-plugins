@@ -38,6 +38,10 @@
             <span>{{ getJiXiong(tiGua.wuxing, riChen.wuxing).action }} </span>
             <span>{{ getJiXiong(tiGua.wuxing, riChen.wuxing).liuqin }}</span>
           </p>
+          <p>
+            旬空：
+            <span>{{ lunar.getDayXunKong() }}</span>
+          </p>
         </div>
       </template>
       <template>
