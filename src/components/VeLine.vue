@@ -25,6 +25,10 @@ export default {
     markLine: {
       value: String,
       default: ''
+    },
+    areaStyle: {
+      value: Boolean,
+      default: false
     }
   },
   computed: {
@@ -69,6 +73,9 @@ export default {
         type: 'line',
         smooth: true,
         data: this.data,
+        areaStyle: {
+          opacity: this.areaStyle ? 0.6 : 0
+        },
         markLine: {
           silent: true,
           lineStyle: {

@@ -135,10 +135,17 @@ export default {
             params.xiaGuaCount = second * 1
             params.dongYaoCount = params.shangGuaCount + params.xiaGuaCount
           } else {
-            const [first, second, third] = text.split(' ')
-            params.shangGuaCount = first
-            params.xiaGuaCount = second
-            params.dongYaoCount = third
+            const [first, second, third, fourth] = text.split(' ')
+            params.shangGuaCount = first * 1
+            params.xiaGuaCount = second * 1
+
+            if (third.length >= 4) {
+              params.dongYaoCount = params.shangGuaCount + params.xiaGuaCount
+              params.timestamp = +new Date(third)
+            } else {
+              params.dongYaoCount = third
+              params.timestamp = +new Date(fourth)
+            }
           }
           break
         case 'character':

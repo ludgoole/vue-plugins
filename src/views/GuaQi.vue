@@ -18,10 +18,21 @@
         >水</van-button
       >
     </div>
+    <div class="GuaQi-yun-cheng">
+      <VeLine
+        color="#7232dd"
+        :title="`运程(一生)`"
+        :xAxisData="lifes"
+        :data="yunChengs"
+        :markLine="yunCheng"
+        :areaStyle="true"
+      ></VeLine>
+    </div>
+
     <div class="GuaQi-liu-nian">
       <VeLine
-        :title="`流年(${year}年)`"
         color="#F56C6C"
+        :title="`流年(${year}年)`"
         :xAxisData="years"
         :data="liuNians"
         :markLine="liuNian"
@@ -30,8 +41,8 @@
 
     <div class="GuaQi-liu-yue">
       <VeLine
-        :title="`流月(${month}月)`"
         color="#E6A23C"
+        :title="`流月(${month}月)`"
         :xAxisData="months"
         :data="liuYues"
         :markLine="liuYue"
@@ -40,8 +51,8 @@
 
     <div class="GuaQi-liu-ri">
       <VeLine
-        :title="`流日(${day}日)`"
         color="#67C23A"
+        :title="`流日(${day}日)`"
         :xAxisData="days"
         :data="liuRis"
         :markLine="liuRi"
@@ -50,8 +61,8 @@
 
     <div class="GuaQi-liu-shi">
       <VeLine
-        :title="`流时(${hour}时)`"
         color="#409EFF"
+        :title="`流时(${hour}时)`"
         :xAxisData="hours"
         :data="liuShis"
         :markLine="liuShi"
@@ -92,9 +103,21 @@ export default {
   },
   computed: {
     date() {
-      return moment(+this.$route.query.timestamp)
-        .format('YYYY-MM-DD-HH')
-        .split('-')
+      return moment(+this.$route.query.timestamp).format('YYYY-MM-DD HH:mm:ss')
+    },
+    lifes() {
+      // return [
+      //   '10-19',
+      //   '20-29',
+      //   '30-39',
+      //   '40-49',
+      //   '50-59',
+      //   '60-69',
+      //   '70-79',
+      //   '80-89',
+      //   '90-99'
+      // ]
+      return ['15', '25', '35', '45', '55', '65', '75', '85', '95']
     },
     years() {
       return this.getArray(this.minYear, this.maxYear)
@@ -108,9 +131,18 @@ export default {
     hours() {
       return this.getArray(this.minHour, this.maxHour)
     },
+    yunChengs() {
+      const wuxings = ['金', '金', '火', '木', '木', '水', '土', '土', '金']
+
+      return wuxings.map(wuxing => this.getJiXiongAction(this.ti, wuxing))
+    },
     liuNians() {
       return this.years
-        .map(year => Lunar.fromDate(new Date(year, '01', '01')))
+        .map(year => {
+          return Lunar.fromDate(
+            new Date(this.date.replace(/\d{4}-(.*)/, `${year}-$1`))
+          )
+        })
         .map(lunar => {
           const dizhi = DIZHI.find(
             dizhi => dizhi.name === lunar.getYearInGanZhi().slice(-1)
@@ -121,18 +153,27 @@ export default {
     },
     liuYues() {
       return this.months
-        .map(month => Lunar.fromDate(new Date(this.year, month, '01')))
+        .map(month => {
+          return Lunar.fromDate(
+            new Date(this.date.replace(/(\d{4})-\d{2}-(.*)/, `$1-${month}-$2`))
+          )
+        })
         .map(lunar => {
           const dizhi = DIZHI.find(
             dizhi => dizhi.name === lunar.getMonthInGanZhi().slice(-1)
           )
-
           return this.getJiXiongAction(this.ti, dizhi.wuxing)
         })
     },
     liuRis() {
       return this.days
-        .map(day => Lunar.fromDate(new Date(this.year, this.month, day)))
+        .map(day => {
+          return Lunar.fromDate(
+            new Date(
+              this.date.replace(/(\d{4}-\d{2})-\d{2} (.*)/, `$1-${day} $2`)
+            )
+          )
+        })
         .map(lunar => {
           const dizhi = DIZHI.find(
             dizhi => dizhi.name === lunar.getDayInGanZhi().slice(-1)
@@ -143,9 +184,11 @@ export default {
     },
     liuShis() {
       return this.hours
-        .map(hour =>
-          Lunar.fromDate(new Date(this.year, this.month, this.day, hour))
-        )
+        .map(hour => {
+          return Lunar.fromDate(
+            new Date(this.date.replace(/(.*) \d{2}:(.*)/, `$1 ${hour}:$2`))
+          )
+        })
         .map(lunar => {
           const dizhi = DIZHI.find(
             dizhi => dizhi.name === lunar.getTimeInGanZhi().slice(-1)
@@ -153,6 +196,10 @@ export default {
 
           return this.getJiXiongAction(this.ti, dizhi.wuxing)
         })
+    },
+    yunCheng() {
+      // 30岁
+      return this.liuNians[2]
     },
     liuNian() {
       const index = this.years.findIndex(year => year === this.year * 1)
@@ -178,7 +225,8 @@ export default {
     }
   },
   created() {
-    ;[this.year, this.month, this.day, this.hour] = this.date
+    ;[this.year, this.month, this.day] = this.date.split(' ')[0].split('-')
+    this.hour = this.date.split(' ')[1].split(':')[0]
 
     this.ti = this.$route.query.ti || '金'
   },

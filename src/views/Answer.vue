@@ -21,7 +21,7 @@
           </p>
           <p @click="toGuaQi">
             太岁：
-            <span>{{ lunar.getYearShengXiao() }}年 属{{ taiSui.wuxing }} </span>
+            <span>{{ lunar.getYearZhi() }}年 属{{ taiSui.wuxing }} </span>
             <span>{{ getJiXiong(tiGua.wuxing, taiSui.wuxing).action }} </span>
             <span>{{ getJiXiong(tiGua.wuxing, taiSui.wuxing).liuqin }} </span>
             <span>(流年)</span>
@@ -44,6 +44,13 @@
             <span v-for="(item, index) in xunkong" :key="index">
               {{ getJiXiong(tiGua.wuxing, item.wuxing).liuqin }}
             </span>
+          </p>
+          <p>
+            墓库：
+            <span>{{ muku }} </span>
+            <span>{{ muku === lunar.getYearZhi() ? '年库 ' : '' }}</span>
+            <span>{{ muku === lunar.getMonthZhi() ? '月库 ' : '' }}</span>
+            <span>{{ muku === lunar.getDayZhi() ? '日库 ' : '' }}</span>
           </p>
         </div>
       </template>
@@ -107,7 +114,7 @@
           ></BaseGua>
         </div>
 
-        <p class="Answer-liuqin flex flex-justify text-center">
+        <p class="Answer-liuqin relation flex flex-justify text-center">
           <span>自己</span>
           <span>{{ getJiXiong(tiGua.wuxing, yongGua.wuxing).liuqin }}</span>
           <span>{{ getJiXiong(tiGua.wuxing, shangHuGua.wuxing).liuqin }}</span>
@@ -115,7 +122,7 @@
           <span>{{ getJiXiong(tiGua.wuxing, bianYongGua.wuxing).liuqin }}</span>
         </p>
 
-        <p class="Answer-leixiang flex flex-justify text-center">
+        <p class="Answer-leixiang relation flex flex-justify text-center">
           <span>{{ tiGua.name }}</span>
           <span>{{ yongGua.name }}</span>
           <span>{{ shangHuGua.name }}</span>
@@ -123,7 +130,7 @@
           <span>{{ bianYongGua.name }}</span>
         </p>
 
-        <p class="Answer-wuxing flex flex-justify text-center">
+        <p class="Answer-wuxing relation flex flex-justify text-center">
           <span>{{ tiGua.wuxing }}</span>
           <span>{{ yongGua.wuxing }}</span>
           <span>{{ shangHuGua.wuxing }}</span>
@@ -131,8 +138,18 @@
           <span>{{ bianYongGua.wuxing }}</span>
         </p>
 
-        <p class="Answer-shengke flex flex-justify text-center">
-          <span>{{ getJiXiong(tiGua.wuxing, riChen.wuxing).affect }} </span>
+        <p class="Answer-shengke relation flex flex-justify text-center">
+          <span>{{ getJiXiong(tiGua.wuxing, riChen.wuxing).action }} </span>
+          <span>{{ getJiXiong(tiGua.wuxing, yongGua.wuxing).affect }}</span>
+          <span>{{ getJiXiong(tiGua.wuxing, shangHuGua.wuxing).affect }}</span>
+          <span>{{ getJiXiong(tiGua.wuxing, xiaHuGua.wuxing).affect }}</span>
+          <span>{{ getJiXiong(tiGua.wuxing, bianYongGua.wuxing).affect }}</span>
+        </p>
+
+        <p class="Answer-jixiong relation flex flex-justify text-center">
+          <span class="text-bold">
+            {{ getRelation(tiGua.wuxing, riChen.wuxing) }}
+          </span>
           <span>{{ getRelation(tiGua.wuxing, yongGua.wuxing) }}</span>
           <span>{{ getRelation(tiGua.wuxing, shangHuGua.wuxing) }}</span>
           <span>{{ getRelation(tiGua.wuxing, xiaHuGua.wuxing) }}</span>
@@ -264,6 +281,9 @@ export default {
       return DIZHI.filter(dizhi =>
         this.lunar.getDayXunKong().includes(dizhi.name)
       )
+    },
+    muku() {
+      return DIZHI.find(dizhi => dizhi.wuxing === this.tiGua.wuxing).muku
     },
     shangGua() {
       const order = this.shangGuaCount % 8
@@ -508,29 +528,9 @@ export default {
   &-liuqin {
     margin: 4px 0;
     font-size: 12px;
-
-    span {
-      width: 44px;
-    }
   }
 
-  &-leixiang {
-    margin: 10px 0;
-
-    span {
-      width: 44px;
-    }
-  }
-
-  &-wuxing {
-    margin: 10px 0;
-
-    span {
-      width: 44px;
-    }
-  }
-
-  &-shengke {
+  .relation {
     margin: 10px 0;
 
     span {

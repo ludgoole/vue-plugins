@@ -14,7 +14,7 @@ export default [
         name: '木',
         affect: '耗',
         action: '囚',
-        fortune: '吉',
+        fortune: '凶',
         liuqin: '妻财',
         score: '40'
       },
@@ -83,7 +83,7 @@ export default [
         name: '土',
         affect: '耗',
         action: '囚',
-        fortune: '吉',
+        fortune: '凶',
         liuqin: '妻财',
         score: '60'
       }
@@ -120,7 +120,7 @@ export default [
         name: '火',
         affect: '耗',
         action: '囚',
-        fortune: '吉',
+        fortune: '凶',
         liuqin: '妻财',
         score: '60'
       },
@@ -141,7 +141,7 @@ export default [
         name: '金',
         affect: '耗',
         action: '囚',
-        fortune: '吉',
+        fortune: '凶',
         liuqin: '妻财',
         score: '60'
       },
@@ -202,7 +202,7 @@ export default [
         name: '水',
         affect: '耗',
         action: '囚',
-        fortune: '吉',
+        fortune: '凶',
         liuqin: '妻财',
         score: '60'
       },
