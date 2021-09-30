@@ -116,6 +116,16 @@ const routes = [
       rightText: '保存'
     },
     component: () => import(/* webpackChunkName: "mine" */ '../views/Mine.vue')
+  },
+  {
+    path: '/chat',
+    name: 'Chat',
+    meta: {
+      title: '',
+      leftText: '',
+      rightText: ''
+    },
+    component: () => import(/* webpackChunkName: "chat" */ '../views/Chat.vue')
   }
 ]
 

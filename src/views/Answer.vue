@@ -130,7 +130,9 @@
           <span>{{ bianYongGua.name }}</span>
         </p>
 
-        <p class="Answer-wuxing relation flex flex-justify text-center">
+        <p
+          class="Answer-wuxing relation text-color flex flex-justify text-center"
+        >
           <span>{{ tiGua.wuxing }}</span>
           <span>{{ yongGua.wuxing }}</span>
           <span>{{ shangHuGua.wuxing }}</span>
@@ -138,7 +140,9 @@
           <span>{{ bianYongGua.wuxing }}</span>
         </p>
 
-        <p class="Answer-shengke relation flex flex-justify text-center">
+        <p
+          class="Answer-shengke relation text-color flex flex-justify text-center"
+        >
           <span>{{ getJiXiong(tiGua.wuxing, riChen.wuxing).action }} </span>
           <span>{{ getJiXiong(tiGua.wuxing, yongGua.wuxing).affect }}</span>
           <span>{{ getJiXiong(tiGua.wuxing, shangHuGua.wuxing).affect }}</span>
@@ -536,6 +540,14 @@ export default {
     span {
       width: 44px;
     }
+  }
+
+  .light-color {
+    color: $text-color-secondary;
+  }
+
+  .text-color {
+    color: $text-color-regular;
   }
 
   .van-collapse {

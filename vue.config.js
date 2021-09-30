@@ -11,6 +11,13 @@ module.exports = {
     }
   },
   devServer: {
-    disableHostCheck: true
+    disableHostCheck: true,
+    proxy: {
+      '/api': {
+        target: 'https://api.qingyunke.com',
+        ws: false,
+        changeOrigin: true
+      }
+    }
   }
 }

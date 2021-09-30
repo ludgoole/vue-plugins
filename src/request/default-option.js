@@ -4,11 +4,11 @@ const env = process.env.VUE_APP_FLAG
 
 const ENV_INFO = {
   development: '',
-  'development:mock': 'https://www.fastmock.site/mock/f59dafeec5617867a33cfe76324c906f/',
+  'development:mock':
+    'https://www.fastmock.site/mock/f59dafeec5617867a33cfe76324c906f/',
 
-  production: 'http://192.168.0.106/',
+  production: 'https://api.qingyunke.com',
   'production:test': 'http://localhost:3000/'
-
 }
 
 export default {
