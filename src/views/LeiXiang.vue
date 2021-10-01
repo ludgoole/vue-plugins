@@ -15,8 +15,9 @@
           @change="change"
         ></BaseGua>
       </div>
-      <div class="LeiXiang-xiang" v-if="timestamp">
+      <div class="LeiXiang-xiang">
         <van-field
+          v-if="timestamp"
           v-model="dangerous"
           rows="1"
           autosize

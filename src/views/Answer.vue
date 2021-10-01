@@ -47,7 +47,7 @@
           </p>
           <p>
             墓库：
-            <span>{{ muku }} </span>
+            <span>{{ muku || '空' }} </span>
             <span>{{ muku === lunar.getYearZhi() ? '年库 ' : '' }}</span>
             <span>{{ muku === lunar.getMonthZhi() ? '月库 ' : '' }}</span>
             <span>{{ muku === lunar.getDayZhi() ? '日库 ' : '' }}</span>
@@ -143,7 +143,7 @@
         <p
           class="Answer-shengke relation text-color flex flex-justify text-center"
         >
-          <span>{{ getJiXiong(tiGua.wuxing, riChen.wuxing).action }} </span>
+          <span>{{ getJiXiong(tiGua.wuxing, yueJian.wuxing).action }} </span>
           <span>{{ getJiXiong(tiGua.wuxing, yongGua.wuxing).affect }}</span>
           <span>{{ getJiXiong(tiGua.wuxing, shangHuGua.wuxing).affect }}</span>
           <span>{{ getJiXiong(tiGua.wuxing, xiaHuGua.wuxing).affect }}</span>
@@ -152,7 +152,7 @@
 
         <p class="Answer-jixiong relation flex flex-justify text-center">
           <span class="text-bold">
-            {{ getRelation(tiGua.wuxing, riChen.wuxing) }}
+            {{ getRelation(tiGua.wuxing, yueJian.wuxing) }}
           </span>
           <span>{{ getRelation(tiGua.wuxing, yongGua.wuxing) }}</span>
           <span>{{ getRelation(tiGua.wuxing, shangHuGua.wuxing) }}</span>

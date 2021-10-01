@@ -36,6 +36,7 @@
         :xAxisData="years"
         :data="liuNians"
         :markLine="liuNian"
+        @click="val => (year = val)"
       ></VeLine>
     </div>
 
@@ -46,6 +47,7 @@
         :xAxisData="months"
         :data="liuYues"
         :markLine="liuYue"
+        @click="val => (month = val)"
       ></VeLine>
     </div>
 
@@ -56,6 +58,7 @@
         :xAxisData="days"
         :data="liuRis"
         :markLine="liuRi"
+        @click="val => (day = val)"
       ></VeLine>
     </div>
 
@@ -66,6 +69,7 @@
         :xAxisData="hours"
         :data="liuShis"
         :markLine="liuShi"
+        @click="val => (hour = val)"
       ></VeLine>
     </div>
   </div>
@@ -206,21 +210,15 @@ export default {
       return this.liuNians[index]
     },
     liuYue() {
-      const index = this.months.findIndex(
-        month => ('0' + month).slice(-2) === this.month
-      )
+      const index = this.months.findIndex(month => month === Number(this.month))
       return this.liuYues[index]
     },
     liuRi() {
-      const index = this.days.findIndex(
-        day => ('0' + day).slice(-2) === this.day
-      )
+      const index = this.days.findIndex(day => day === Number(this.day))
       return this.liuRis[index]
     },
     liuShi() {
-      const index = this.hours.findIndex(
-        hour => ('0' + hour).slice(-2) === this.hour
-      )
+      const index = this.hours.findIndex(hour => hour === Number(this.hour))
       return this.liuShis[index]
     }
   },

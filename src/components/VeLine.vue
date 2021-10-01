@@ -57,6 +57,9 @@ export default {
   watch: {
     data() {
       this.myChart.setOption(this.options)
+    },
+    title() {
+      this.myChart.setOption(this.options)
     }
   },
   mounted() {
