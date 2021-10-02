@@ -21,6 +21,7 @@
           @change="change"
         ></BaseGua>
       </div>
+      <div class="GuaXiang-leixiang font-size-10">{{ gua.leiXiang }}</div>
       <div class="GuaXiang-guaCi">{{ gua.guaCi }}</div>
       <div class="GuaXiang-yao">
         <ul>

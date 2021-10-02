@@ -37,6 +37,7 @@
     "reset.css": "^2.0.2",
     "smooth-scrollbar": "^8.5.3",
     "v-click-outside": "^3.1.2",
+    "v-tips": "^0.0.2",
     "v-viewer": "^1.5.1",
     "vant": "^2.12.24",
     "vue": "^2.6.11",

@@ -65,7 +65,7 @@
           <BaseGua
             :gua-xiang="dongYao.guaXiang"
             :size="40"
-            @click="toLeiXiang"
+            @click="toGuaXiang(huGua.guaMing)"
           ></BaseGua>
           <BaseGua
             :gua-xiang="bianGua.guaXiang"
@@ -131,8 +131,26 @@
         <p class="Answer-leixiang relation flex flex-justify text-center">
           <span>{{ tiGua.name }}</span>
           <span>{{ yongGua.name }}</span>
-          <span>{{ shangHuGua.name }}</span>
-          <span>{{ xiaHuGua.name }}</span>
+          <span
+            v-tips="
+              dongYao.order < 3
+                ? `${huGua.guaMing}: ${
+                    getJiXiong(shangHuGua.wuxing, xiaHuGua.wuxing).affect
+                  }`
+                : '用'
+            "
+            >{{ shangHuGua.name }}</span
+          >
+          <span
+            v-tips="
+              dongYao.order > 3
+                ? `${huGua.guaMing}: ${
+                    getJiXiong(xiaHuGua.wuxing, shangHuGua.wuxing).affect
+                  }`
+                : '用'
+            "
+            >{{ xiaHuGua.name }}</span
+          >
           <span>{{ bianYongGua.name }}</span>
         </p>
 
