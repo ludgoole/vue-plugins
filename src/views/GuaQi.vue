@@ -99,7 +99,7 @@ export default {
       maxMonth: 12,
       day: 25,
       minDay: 1,
-      maxDay: 30,
+      maxDay: 31,
       hour: 22,
       minHour: 0,
       maxHour: 23

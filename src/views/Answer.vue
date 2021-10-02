@@ -74,7 +74,13 @@
           ></BaseGua>
         </div>
         <p class="Answer-zhigua text-center">
-          {{ benGua.guaMing }}之{{ bianGua.guaMing }}
+          {{ benGua.guaMing
+          }}<span class="font-size-10" v-if="benGua.chongHe"
+            >({{ benGua.chongHe }})</span
+          >之{{ bianGua.guaMing
+          }}<span class="font-size-10" v-if="bianGua.chongHe"
+            >({{ bianGua.chongHe }})</span
+          >
         </p>
       </template>
       <template>
@@ -152,7 +158,11 @@
 
         <p class="Answer-jixiong relation flex flex-justify text-center">
           <span class="text-bold">
-            {{ getRelation(tiGua.wuxing, yueJian.wuxing) }}
+            {{
+              getJiXiong(tiGua.wuxing, yueJian.wuxing).action === '囚'
+                ? '凶'
+                : getRelation(tiGua.wuxing, yueJian.wuxing)
+            }}
           </span>
           <span>{{ getRelation(tiGua.wuxing, yongGua.wuxing) }}</span>
           <span>{{ getRelation(tiGua.wuxing, shangHuGua.wuxing) }}</span>
@@ -162,7 +172,12 @@
 
         <van-collapse v-model="activeName" accordion>
           <van-collapse-item title="断卦" name="0">
-            <p class="text-justify" v-html="jianYu"></p>
+            <!-- <p class="text-justify" v-html="jianYu"></p> -->
+            <p class="text-justify" v-html="jianYu.split(/<br>\s+<br>/)[0]"></p>
+            <p
+              class="text-justify font-size-10 margin-top-10"
+              v-html="jianYu.split(/<br>\s+<br>/)[1]"
+            ></p>
           </van-collapse-item>
           <van-collapse-item title="吉凶" name="1">
             <p>流年，{{ liuNian }}</p>

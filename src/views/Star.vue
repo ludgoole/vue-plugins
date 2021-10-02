@@ -23,7 +23,7 @@ export default {
   name: 'Star',
   data() {
     return {
-      active: 0,
+      active: 1,
       DIANJI
     }
   },
