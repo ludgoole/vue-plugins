@@ -27,7 +27,7 @@ export default [
     typeSort: 9,
     type: '出行',
     dateTime: '2003-03-07',
-    question: '预测行人',
+    question: '三十天后人能回来',
     shangGuaCount: 12,
     xiaGuaCount: 24,
     dongYaoCount: 36,

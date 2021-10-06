@@ -133,7 +133,7 @@
           <span>{{ yongGua.name }}</span>
           <span
             v-tips="
-              dongYao.order < 3
+              dongYao.order <= 3
                 ? `${huGua.guaMing}: ${
                     getJiXiong(shangHuGua.wuxing, xiaHuGua.wuxing).affect
                   }`
