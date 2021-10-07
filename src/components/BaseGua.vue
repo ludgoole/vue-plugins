@@ -25,7 +25,7 @@
           v-if="Object.keys(shiYing).length"
           class="BaseGua-shiYing font-size-10"
         >
-          {{ shiYing[index + 1] }}
+          {{ shiYing[6 - index] }}
         </p>
       </li>
     </ul>
