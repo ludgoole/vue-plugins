@@ -17,7 +17,9 @@
       >
         <BaseGua
           :gua-xiang="gua.guaXiang"
-          :size="200"
+          :na-jia="gua.naJia"
+          :shi-ying="gua.shiYing"
+          :size="160"
           @change="change"
         ></BaseGua>
       </div>
@@ -128,7 +130,13 @@ export default {
       const index = mine.findIndex(item => item.timestamp === +timestamp)
 
       if (!item) {
-        return this.$toast({ msg: '请先保存卦例', location: 'middle' })
+        if (timestamp) {
+          return this.$toast({ msg: '请先保存卦例', location: 'middle' })
+        } else {
+          let baGongOrder = this.gua.baGongOrder + 1
+          baGongOrder % 10 >= 8 && (baGongOrder = baGongOrder - 8)
+          this.gua = ZHOUYI.find(gua => gua.baGongOrder === baGongOrder)
+        }
       } else {
         item[`${search}.dangerousList`] = dangerousList
 

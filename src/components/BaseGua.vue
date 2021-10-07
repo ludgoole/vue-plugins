@@ -4,17 +4,30 @@
       <li
         v-for="(yao, index) in guaXiang"
         :key="index"
-        :style="style"
-        :class="[
-          'BaseGua-yao',
-          {
-            'is-yin': yao === 0,
-            'is-yang': yao === 1,
-            'is-dong': index === 6 - dongYaoOrder
-          }
-        ]"
+        class="flex flex-middle"
         @click="onChange(yao, index)"
-      ></li>
+      >
+        <p v-if="naJia.length" class="BaseGua-naJia font-size-10">
+          {{ naJia[index] }}
+        </p>
+        <p
+          :style="style"
+          :class="[
+            'BaseGua-yao',
+            {
+              'is-yin': yao === 0,
+              'is-yang': yao === 1,
+              'is-dong': index === 6 - dongYaoOrder
+            }
+          ]"
+        ></p>
+        <p
+          v-if="Object.keys(shiYing).length"
+          class="BaseGua-shiYing font-size-10"
+        >
+          {{ shiYing[index + 1] }}
+        </p>
+      </li>
     </ul>
   </div>
 </template>
@@ -31,6 +44,18 @@ export default {
     guaXiang: {
       type: Array,
       require: true
+    },
+    naJia: {
+      type: Array,
+      default: function() {
+        return []
+      }
+    },
+    shiYing: {
+      type: Object,
+      default: function() {
+        return {}
+      }
     },
     dongYaoOrder: {
       type: Number,
@@ -49,7 +74,7 @@ export default {
       return {
         width: width + 'px',
         height: height + 'px',
-        margin: `${height / 2}px 0`
+        margin: `${height / 2}px`
       }
     }
   },
@@ -75,7 +100,7 @@ export default {
     position: relative;
     width: 100%;
     height: 100%;
-    margin: 10px 0;
+    margin: 10px;
 
     &.is-yin {
       &::before {
