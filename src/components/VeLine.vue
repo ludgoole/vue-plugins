@@ -67,7 +67,7 @@ export default {
     this.myChart.setOption(this.options)
 
     this.myChart.on('click', 'series.line', params => {
-      this.$emit('click', params.name)
+      this.$emit('click', params.name, params.data)
     })
   },
   methods: {

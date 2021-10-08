@@ -26,7 +26,16 @@
         :data="yunChengs"
         :markLine="yunCheng"
         :areaStyle="true"
+        @click="lifesClick"
       ></VeLine>
+    </div>
+    <div class="GuaQi-yun-cheng">
+      <VeBar
+        :color="colors[status]"
+        :title="`${age}岁(${status})`"
+        :xAxisData="ages"
+        :data="tenYears"
+      ></VeBar>
     </div>
 
     <div class="GuaQi-liu-nian">
@@ -78,20 +87,32 @@
 <script>
 import WUXING from '@/mock/wuxing'
 import DIZHI from '@/mock/dizhi'
+import ZHOUYI from '@/mock/zhouyi'
 import { Lunar } from 'lunar-javascript'
 import moment from 'moment'
 import VeLine from '@/components/VeLine.vue'
+import VeBar from '@/components/VeBar.vue'
 
 export default {
   name: 'GuaQi',
   components: {
-    VeLine
+    VeLine,
+    VeBar
   },
   data() {
     return {
       wuxing: ['木', '土', '金'],
+      colors: {
+        旺: '#91cc75',
+        相: '#73c0de',
+        休: '#fac858',
+        囚: '#5470c6',
+        死: '#ee6666'
+      },
+      status: '旺',
       ti: '金',
       year: 2021,
+      age: 10,
       minYear: 2000,
       maxYear: 2030,
       month: 9,
@@ -123,6 +144,11 @@ export default {
       // ]
       return ['15', '25', '35', '45', '55', '65', '75', '85', '95']
     },
+    ages() {
+      return Array(10)
+        .fill(1)
+        .map((v, i) => i + this.age)
+    },
     years() {
       return this.getArray(this.minYear, this.maxYear)
     },
@@ -139,6 +165,49 @@ export default {
       const wuxings = ['金', '金', '火', '木', '木', '水', '土', '土', '金']
 
       return wuxings.map(wuxing => this.getJiXiongAction(this.ti, wuxing))
+    },
+    tenYears() {
+      const baGuas = [
+        '',
+        '111',
+        '011',
+        '101',
+        '001',
+        '110',
+        '010',
+        '100',
+        '000'
+      ]
+      const wuxings = [
+        '金',
+        '金',
+        '金',
+        '火',
+        '木',
+        '木',
+        '水',
+        '土',
+        '土',
+        '金'
+      ]
+      const guaMings = this.ages.map(age => {
+        const shi = Math.floor(age / 10) % 8
+        const ge = (age % 10) % 8
+        const shangGuaOrder = shi === 0 ? 8 : shi
+        const xiaGuaOrder = ge === 0 ? 8 : ge
+        return ZHOUYI.find(
+          gua =>
+            gua.guaXiang.join('') ===
+            baGuas[shangGuaOrder] + baGuas[xiaGuaOrder]
+        ).guaMing
+      })
+
+      return wuxings.map((wuxing, i) => {
+        return {
+          value: this.getJiXiongScore(this.ti, wuxing),
+          guaMing: guaMings[i]
+        }
+      })
     },
     liuNians() {
       return this.years
@@ -229,6 +298,10 @@ export default {
     this.ti = this.$route.query.ti || '金'
   },
   methods: {
+    lifesClick(val, status) {
+      this.age = val - 5
+      this.status = status
+    },
     getArray(min, max) {
       return Array(max - min + 1)
         .fill(1)
@@ -238,6 +311,11 @@ export default {
       const wuxing = WUXING.find(wuxing => wuxing.name === ti)
       const jixiong = wuxing.relation.find(jixiong => jixiong.name === yong)
       return jixiong.action
+    },
+    getJiXiongScore(ti, yong) {
+      const wuxing = WUXING.find(wuxing => wuxing.name === ti)
+      const jixiong = wuxing.relation.find(jixiong => jixiong.name === yong)
+      return jixiong.score
     }
   }
 }
