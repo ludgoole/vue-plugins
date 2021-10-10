@@ -199,19 +199,22 @@ export default {
       this.goAnswer(params)
     },
     goAnswer(query) {
-      if (this.question === '聊天') {
-        this.$router.push({
-          path: '/chat'
-        })
-      } else {
-        this.$router.push({
-          path: '/answer',
-          query: {
-            question: this.question,
-            timestamp: Date.now(),
-            ...query
-          }
-        })
+      switch (this.question) {
+        case '聊天':
+          this.$router.push('/chat')
+          break
+        case '游戏':
+          this.$router.push('/game')
+          break
+        default:
+          this.$router.push({
+            path: '/answer',
+            query: {
+              question: this.question,
+              timestamp: Date.now(),
+              ...query
+            }
+          })
       }
     }
   }
