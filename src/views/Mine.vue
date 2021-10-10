@@ -1,13 +1,30 @@
 <template>
   <div class="Mine">
     <van-swipe-cell v-for="(item, index) in list" :key="index">
+      <van-field
+        v-if="item.isEdit"
+        v-model="item.question"
+        label=""
+        @blur="toEdit(item)"
+        placeholder="请输入问题"
+      />
       <van-cell
+        v-else
         :title="item.question"
         :label="getTime(item.timestamp)"
         :value="item.zhigua"
         @click="goAnswer(item)"
         is-link
       />
+      <template #left>
+        <van-button
+          square
+          text="编辑"
+          type="info"
+          class="edit-button"
+          @click="$set(item, 'isEdit', true)"
+        />
+      </template>
       <template #right>
         <van-button
           square
@@ -24,7 +41,6 @@
 <script>
 // @ is an alias to /src
 import moment from 'moment'
-// import { download } from '@/util'
 import localforage from 'localforage'
 export default {
   name: 'Mine',
@@ -42,34 +58,27 @@ export default {
   methods: {
     init() {
       const self = this
-
-      try {
-        this.api.readFile(
-          {
-            path: 'fs://meihua.json'
-          },
-          function(ret, err) {
-            if (ret.status) {
-              localforage.getItem('MEI_HUA__mine').then(mine => {
-                const saveData = JSON.parse(ret.data || '[]')
-                const localData = mine || []
-                const restData = localData.filter(
-                  item => !saveData.some(v => v.timestamp === item.timestamp)
-                )
-                self.list = [...saveData, ...restData]
-              })
-            } else {
-              localforage.getItem('MEI_HUA__mine').then(mine => {
-                self.list = mine || []
-              })
-            }
+      localforage.getItem('MEI_HUA__mine').then(mine => {
+        if (mine) {
+          self.list = mine
+        } else {
+          try {
+            this.api.readFile(
+              {
+                path: 'fs://meihua.json'
+              },
+              function(ret, err) {
+                if (ret.status) {
+                  const saveData = JSON.parse(ret.data || '[]')
+                  self.list = saveData
+                }
+              }
+            )
+          } catch (err) {
+            self.$toast({ msg: err, location: 'middle' })
           }
-        )
-      } catch (e) {
-        localforage.getItem('MEI_HUA__mine').then(mine => {
-          self.list = mine || []
-        })
-      }
+        }
+      })
     },
     getTime(timestamp) {
       return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
@@ -96,13 +105,26 @@ export default {
       })
     },
     toDelete(item) {
-      localforage.getItem('MEI_HUA__mine').then(mine => {
-        const index = mine.findIndex(v => v.timestamp === item.timestamp)
-        this.list.splice(index, 1)
-        localforage.setItem('MEI_HUA__mine', this.list).then(() => {
-          this.$toast({ msg: '删除成功', location: 'middle' })
-        })
+      const index = this.list.findIndex(v => v.timestamp === item.timestamp)
+      this.list.splice(index, 1)
+
+      this.toUpdate(this.list).then(() => {
+        this.$toast({ msg: '删除成功', location: 'middle' })
       })
+    },
+    toEdit(item) {
+      const index = this.list.findIndex(v => v.timestamp === item.timestamp)
+      item.isEdit = false
+      this.$set(this.list, index, item)
+
+      this.toUpdate(this.list).then(() => {
+        this.$toast({ msg: '编辑成功', location: 'middle' })
+      })
+    },
+    toUpdate(mine) {
+      return localforage
+        .setItem('MEI_HUA__mine', mine)
+        .then(mine => console.log(mine))
     },
     save() {
       const self = this
@@ -137,6 +159,10 @@ export default {
 </script>
 <style lang="scss">
 .Mine {
+  .edit-button {
+    height: 100%;
+  }
+
   .delete-button {
     height: 100%;
   }
