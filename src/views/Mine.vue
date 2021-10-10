@@ -52,7 +52,7 @@ export default {
   created() {
     this.$bus.$off('global.rightClick').$on('global.rightClick', this.save)
   },
-  async mounted() {
+  mounted() {
     this.init()
   },
   methods: {

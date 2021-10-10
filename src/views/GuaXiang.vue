@@ -23,7 +23,9 @@
           @change="change"
         ></BaseGua>
       </div>
-      <div class="GuaXiang-leixiang font-size-10">{{ gua.leiXiang }}</div>
+      <div class="GuaXiang-leixiang font-size-10" @click="toGame">
+        {{ gua.leiXiang }}
+      </div>
       <div class="GuaXiang-guaCi">{{ gua.guaCi }}</div>
       <div class="GuaXiang-yao">
         <ul>
@@ -111,6 +113,14 @@ export default {
             }
           }
         }) || ZHOUYI[0]
+    },
+    toGame() {
+      this.$router.push({
+        path: '/game',
+        query: {
+          guaXu: this.gua.guaXu
+        }
+      })
     },
     change(guaXiang) {
       this.gua = ZHOUYI.find(gua => gua.guaXiang.join('') === guaXiang)

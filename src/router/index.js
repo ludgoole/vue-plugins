@@ -76,6 +76,17 @@ const routes = [
       import(/* webpackChunkName: "query" */ '../views/Query.vue')
   },
   {
+    path: '/game',
+    name: 'Game',
+    meta: {
+      title: '卦象组合',
+      leftText: '',
+      leftArrow: true,
+      rightText: '保存'
+    },
+    component: () => import(/* webpackChunkName: "query" */ '../views/Game.vue')
+  },
+  {
     path: '/guaXiang',
     name: 'GuaXiang',
     meta: {
