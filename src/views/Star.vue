@@ -1,6 +1,6 @@
 <template>
   <div class="Star">
-    <van-tabs v-model="active">
+    <van-tabs sticky offset-top="66" v-model="active" @change="change">
       <van-tab v-for="item in DIANJI" :key="item.name" :title="item.name">
         <van-cell
           class="text-justify"
@@ -8,7 +8,7 @@
           :key="index"
           :title="item.question"
           :label="item.describle"
-          @click="goAnswer(item)"
+          @click="goAnswer(item, index)"
           is-link
         />
       </van-tab>
@@ -27,8 +27,16 @@ export default {
       DIANJI
     }
   },
+  mounted() {
+    this.$bus
+      .$off('Answer.goBack')
+      .$on('Answer.goBack', ({ index }) => index && this.scrollTo(index))
+  },
   methods: {
-    goAnswer(item) {
+    change() {
+      this.scrollTo(0)
+    },
+    goAnswer(item, index) {
       const {
         dateTime,
         question,
@@ -40,6 +48,7 @@ export default {
       this.$router.push({
         path: '/answer',
         query: {
+          index,
           dateTime,
           question,
           shangGuaCount,
@@ -48,6 +57,13 @@ export default {
           jianyu
         }
       })
+    },
+    scrollTo(index) {
+      const tabs = this.$el.querySelectorAll('.van-tab__pane')[this.active]
+      setTimeout(() => {
+        const el = tabs.querySelectorAll('.van-cell')[index]
+        el.scrollIntoView({ block: 'center', behavior: 'smooth' })
+      }, 100)
     }
   }
 }

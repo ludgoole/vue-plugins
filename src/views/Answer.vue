@@ -4,7 +4,7 @@
       :title="question"
       right-text="保存"
       left-arrow
-      @click-left="$router.go(-1)"
+      @click-left="goBack"
       @click-right="save"
     />
     <div class="Answer-container flex-1">
@@ -437,6 +437,10 @@ export default {
     },
     getLeiXiang(name) {
       return BAGUA.find(gua => gua.name === name).leixiang
+    },
+    goBack() {
+      this.$router.go(-1)
+      this.$bus.$emit('Answer.goBack', this.$route.query)
     },
     async save() {
       const {

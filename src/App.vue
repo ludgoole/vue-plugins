@@ -62,6 +62,7 @@ export default {
   methods: {
     onClickLeft() {
       this.$route.meta.leftArrow && this.$router.go(-1)
+      this.$bus.$emit('global.leftClick', this.$route.query)
       // this.$toast('返回')
     },
     onClickRight() {
