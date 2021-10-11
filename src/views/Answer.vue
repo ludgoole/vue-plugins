@@ -191,15 +191,40 @@
         <van-collapse v-model="activeName" accordion>
           <van-collapse-item title="断卦" name="0">
             <!-- <p class="text-justify" v-html="jianYu"></p> -->
-            <p class="text-justify" v-html="jianYu.split(/<br>\s+<br>/)[0]"></p>
-            <p
-              class="text-justify font-size-10 margin-top-10"
-              v-html="jianYu.split(/<br>\s+<br>/)[1]"
-            ></p>
+            <template v-if="jianYu">
+              <p
+                class="text-justify"
+                v-html="jianYu.split(/<br>\s+<br>/)[0]"
+              ></p>
+              <p
+                class="text-justify font-size-10 margin-top-10"
+                v-html="jianYu.split(/<br>\s+<br>/)[1]"
+              ></p>
+            </template>
+            <template v-else>
+              <p class="text-justify">
+                {{
+                  benGua.yiXiang
+                    .split('，')
+                    .slice(0, 2)
+                    .join('，') + ';'
+                }}
+              </p>
+              <p class="text-justify">
+                {{
+                  benGua.yiXiang
+                    .split('，')
+                    .slice(2)
+                    .join('，')
+                }}
+              </p>
+            </template>
           </van-collapse-item>
           <van-collapse-item title="吉凶" name="1">
-            <p>流年，{{ liuNian }}</p>
-            <p>近来，{{ jixiong }}</p>
+            <p class="text-justify">{{ yaoCi }}</p>
+            <p class="text-justify font-size-10">
+              流年，{{ liuNian }}; 近来，{{ jixiong }}
+            </p>
           </van-collapse-item>
           <van-collapse-item title="细节" name="2">
             <van-tabs v-model="active">
@@ -382,9 +407,12 @@ export default {
       return BAGUA.find(gua => gua.guaXiang.join() === guaXiang.join())
     },
     jianYu() {
+      return this.query.jianyu
+    },
+    yaoCi() {
       const { benGua, dongYao } = this
       const yaoCi = benGua.yaoCi[dongYao.order - 1]
-      return this.query.jianyu || yaoCi.split('：')[1].slice(0, -1)
+      return yaoCi.split('：')[1].slice(0, -1)
     },
     liuNian() {
       const { tiGua, taiSui, getJiXiong } = this

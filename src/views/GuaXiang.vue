@@ -8,7 +8,10 @@
       @click-right="save"
     />
     <div class="GuaXiang-container flex-1">
-      <div class="GuaXiang-daXiang">{{ gua.daXiang }}</div>
+      <div class="GuaXiang-daXiang">
+        <p>{{ gua.daXiang }}</p>
+        <p class="font-size-10">{{ gua.yiXiang }}</p>
+      </div>
       <div
         class="GuaXiang-guaXiang"
         v-touch
