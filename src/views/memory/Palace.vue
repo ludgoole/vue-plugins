@@ -94,7 +94,6 @@ const getImages = () => [
     name: '1'
   }
 ]
-let name = 1000
 
 export default {
   data() {
@@ -118,6 +117,9 @@ export default {
     },
     cacheData() {
       this.undateImages()
+    },
+    maxLen() {
+      return this.images.length
     }
   },
   methods: {
@@ -156,7 +158,6 @@ export default {
       }
     },
     addPicture() {
-      name++
       try {
         this.api.getPicture(
           {
@@ -172,7 +173,7 @@ export default {
           (ret, err) => {
             if (ret) {
               this.images.push({
-                name,
+                name: this.maxLen,
                 url: ret.base64Data,
                 points: getPoints()
               })
