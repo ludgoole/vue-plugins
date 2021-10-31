@@ -11,7 +11,6 @@
         >{{ tag }}</van-tag
       >
     </div>
-    {{ images.map(v => v.name) }}
     <van-swipe :show-indicators="false" :autoplay="autoplay">
       <van-swipe-item v-for="(image, index) in images" :key="index">
         <img width="100%" v-lazy="image.url" @click="preview(index)" />
@@ -208,10 +207,6 @@ export default {
           a.name.replace(/(\d+).*/, '$1') - b.name.replace(/(\d+).*/, '$1')
       )
       this.toUpdate('排序成功')
-
-      setTimeout(() => {
-        alert(JSON.stringify(this.images.map(v => v.name)))
-      })
     },
     toUpdate(msg) {
       this.cacheData[this.currTag] = this.images
