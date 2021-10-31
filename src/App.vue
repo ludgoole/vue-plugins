@@ -10,9 +10,12 @@
       @click-right="onClickRight"
     />
     <keep-alive :include="keepAlive">
-      <router-view class="router-view flex-1" />
+      <router-view
+        class="router-view flex-1"
+        :class="{ 'has-navbar': hasNavbar }"
+      />
     </keep-alive>
-    <div class="navbar">
+    <div class="navbar" v-if="hasNavbar">
       <van-grid>
         <van-grid-item
           v-for="item in list"
@@ -59,6 +62,11 @@ export default {
       currName: ''
     }
   },
+  computed: {
+    hasNavbar() {
+      return this.$route.meta.type === 'meihua'
+    }
+  },
   methods: {
     onClickLeft() {
       this.$route.meta.leftArrow && this.$router.go(-1)
@@ -91,8 +99,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 
   .router-view {
-    margin-bottom: 90px;
     overflow-y: auto;
+
+    &.has-navbar {
+      margin-bottom: 90px;
+    }
   }
 
   .navbar {

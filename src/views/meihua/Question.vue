@@ -206,6 +206,9 @@ export default {
         case '游戏':
           this.$router.push('/game')
           break
+        case '记忆宫殿':
+          this.$router.push('/palace')
+          break
         default:
           this.$router.push({
             path: '/answer',

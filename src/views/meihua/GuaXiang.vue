@@ -88,7 +88,7 @@ export default {
     },
     async setDangerousList() {
       const { timestamp, search } = this
-      const mine = await localforage.getItem('MEI_HUA__mine')
+      const mine = (await localforage.getItem('MEI_HUA__mine')) || []
       const item = mine.find(item => item.timestamp === +timestamp)
 
       item &&
