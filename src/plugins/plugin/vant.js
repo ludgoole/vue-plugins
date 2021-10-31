@@ -17,6 +17,10 @@ import {
   CellGroup,
   Search,
   SwipeCell,
+  Swipe,
+  SwipeItem,
+  Lazyload,
+  ImagePreview,
   Tag
 } from 'vant'
 const components = [
@@ -35,11 +39,15 @@ const components = [
   CellGroup,
   Search,
   SwipeCell,
+  Swipe,
+  SwipeItem,
+  Lazyload,
   Tag
 ]
 function installPlugin(Vue) {
   components.forEach(component => Vue.use(component))
   Vue.prototype.$toast = Toast
+  Vue.prototype.$ImagePreview = ImagePreview
 }
 
 export default { installPlugin }

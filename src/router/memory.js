@@ -6,7 +6,7 @@ const routes = [
       title: '记忆宫殿',
       leftArrow: true,
       leftText: '',
-      rightText: ''
+      rightText: '保存'
     },
     component: () =>
       import(/* webpackChunkName: "Palace" */ '../views/memory/Palace.vue')
