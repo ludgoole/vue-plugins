@@ -179,7 +179,7 @@ export default {
         '000'
       ]
       const wuxings = [
-        '金',
+        '土',
         '金',
         '金',
         '火',

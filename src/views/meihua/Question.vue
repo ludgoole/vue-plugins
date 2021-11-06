@@ -63,7 +63,7 @@ export default {
           type: 'number',
           text: '数字',
           icon: 'info-o',
-          ext: '13 14'
+          ext: '13 14 520 2020-02-02 20:20:20'
         },
         {
           type: 'character',
@@ -133,25 +133,22 @@ export default {
             const [first, second] = text.split(' ')
             params.shangGuaCount = first * 1
             params.xiaGuaCount = second * 1
-            params.dongYaoCount = params.shangGuaCount + params.xiaGuaCount
-          } else {
-            const [first, second, third, fourth] = text.split(' ')
+          } else if (text.split(' ').length === 3) {
+            const [first, second, third] = text.split(' ')
             params.shangGuaCount = first * 1
             params.xiaGuaCount = second * 1
-
-            if (third.length >= 4) {
-              params.dongYaoCount = params.shangGuaCount + params.xiaGuaCount
-              params.timestamp = +new Date(third)
-            } else {
-              params.dongYaoCount = third
-              params.timestamp = +new Date(fourth)
-            }
+            params.dongYaoCount = third
+          } else {
+            const [first, second, third, time, hour] = text.split(' ')
+            params.shangGuaCount = first * 1
+            params.xiaGuaCount = second * 1
+            params.dongYaoCount = third
+            params.timestamp = +new Date(`${time} ${hour}`)
           }
           break
         case 'character':
           if (!text.match(/^[\u4e00-\u9fa5]+$/))
             return this.$toast({ msg: '必须为汉字', location: 'middle' })
-
           if (text.length === 1) {
             const bh = cnchar.stroke(text)
             params.shangGuaCount = Math.floor(bh / 2)

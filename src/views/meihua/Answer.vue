@@ -476,8 +476,6 @@ export default {
         shangGuaCount,
         xiaGuaCount,
         dongYaoCount,
-        tiGua,
-        yongGua,
         riChen,
         benGua,
         bianGua,
@@ -491,7 +489,7 @@ export default {
         dongYaoCount:
           dongYaoCount > -1
             ? dongYaoCount
-            : tiGua.order + yongGua.order + riChen.order,
+            : shangGuaCount + xiaGuaCount + riChen.order,
         zhigua: `${benGua.guaMing}之${bianGua.guaMing}`,
         timestamp,
         ganwu
