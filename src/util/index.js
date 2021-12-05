@@ -36,3 +36,23 @@ export function download(json, fileName = 'download') {
   // 自触发事件
   a.click()
 }
+
+export function compareVersion(v1, v2, isEqual) {
+  if (v1 === v2) return !!isEqual
+
+  const a1 = v1.split('.')
+  const a2 = v2.split('.')
+  while (a1.length || a2.length) {
+    // 补0
+    const s1 = +a1[0] || 0
+    const s2 = +a2[0] || 0
+
+    // 递归
+    if (s1 === s2) {
+      a1.shift()
+      a2.shift()
+    } else {
+      return s1 > s2
+    }
+  }
+}
