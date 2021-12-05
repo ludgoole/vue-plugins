@@ -29,7 +29,8 @@
     <ReHome v-if="false"></ReHome>
     <!-- <BaseSocket v-if="false"></BaseSocket> -->
     <TopicList v-if="false"></TopicList>
-    <BaseDirective></BaseDirective>
+    <BaseDirective v-if="false"></BaseDirective>
+    <TopicInfoList v-if="true"></TopicInfoList>
   </div>
 </template>
 
@@ -38,6 +39,7 @@
 import components from '@/components/plugins'
 import renders from '@/components/renders'
 import TopicList from '@/components/reactive/TopicList.vue'
+import TopicInfoList from '@/components/reactive/TopicInfoList.vue'
 
 console.log('MathJax', components, renders)
 
@@ -46,7 +48,8 @@ export default {
   components: {
     ...components,
     ...renders,
-    TopicList
+    TopicList,
+    TopicInfoList
   },
   data() {
     return {

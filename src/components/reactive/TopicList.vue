@@ -33,7 +33,7 @@
             <ul class="TopicList-options flex flex-center">
               <li
                 class="TopicList-option"
-                v-for="({ value, extend }, index) in options"
+                v-for="({ value }, index) in options"
                 :key="index"
               >
                 <el-button :type="answers.includes(value) ? 'primary' : ''">
@@ -199,7 +199,8 @@ export default {
       ],
       currTopicInfo: {
         score: 0
-      }
+      },
+      topicInfoList: []
     }
   },
   mounted() {
@@ -213,5 +214,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped></style>
