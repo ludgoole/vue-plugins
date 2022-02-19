@@ -33,8 +33,9 @@
       <div class="GuaXiang-yao">
         <ul>
           <li v-for="(item, index) in gua.yaoCi" :key="index">
-            <p class="GuaXiang-yaoCi">{{ item }}</p>
+            <p class="GuaXiang-yaoCi text-bold">{{ item }}</p>
             <p class="GuaXiang-yaoXiang">按：{{ gua.yaoXiang[index] }}</p>
+            <p class="GuaXiang-yaoXiang">析：{{ gua.yiLi[index].how }}</p>
             <p class="GuaXiang-fengxian" v-if="timestamp">
               <van-field
                 v-model="dangerousList[index]"
