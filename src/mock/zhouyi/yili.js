@@ -1936,1683 +1936,1712 @@ export default [
   ],
   [
     {
-      situation: '',
+      situation: '戒烟，求职，恋爱，扩张',
       how: '前进遭遇挫折，不受信任，放宽心来',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      premise: '心态好',
+      why: '环境不利，实力不足，方法不对',
+      or: '顺利',
+      story: '点亮',
+      note: '世上无难事，只怕有心人'
     },
     {
-      situation: '',
+      situation: '资金链断裂，被拒绝，难关无法攻克',
       how: '前进处处碰壁而发愁，坚守正道，上面会有人帮忙',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
+      premise: '贵人',
+      why: '机会，平台，支持',
+      or: '放弃，自暴自弃',
+      story: '辞退',
       note: '莫愁前路无知己，天下谁人不识君'
     },
     {
-      situation: '',
+      situation: '团队，创业，渡难关',
       how: '众人信服，愿意追随',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      premise: '贤德',
+      why: '信任，关怀',
+      or: '脱离，落井下石',
+      story: '借钱',
+      note: '惟贤惟德，以德服人'
     },
     {
-      situation: '',
+      situation: '领导，拍马屁',
       how: '前进，像鼫鼠没有一技之长',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      premise: '投机取巧',
+      why: '尝过甜头，形势所迫',
+      or: '精进，专研',
+      story: '前端',
+      note: '墙头草，两边倒'
     },
     {
-      situation: '',
+      situation: '买卖，谈判，辞职',
       how: '没有后悔，失与得不用忧虑',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      premise: '大度',
+      why: '有更重要的事',
+      or: '因小失大',
+      story: '高考',
+      note: '众人拾柴火焰高'
     },
     {
-      situation: '',
-      how: '征伐小过来建功立业',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '炫耀，表现，强势',
+      how: '征伐小国来建功立业',
+      premise: '气势',
+      why: '虚荣，不服气，面子',
+      or: '退休',
+      story: 'maya',
+      note: '廉颇老矣，尚能饭否'
     }
   ],
   [
     {
-      situation: '',
-      how: '初九：明夷于飞，垂其翼。君子于行，三日不食，有攸往， 主人有言。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '六二：明夷，夷于左股，用拯马壮，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '九三：明夷于南狩，得其大首，不可疾贞。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '六四：入于左腹，获明夷之心，于出门庭。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '六五：箕子之明夷，利贞。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '上六：不明晦，初登于天，后入于地。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    }
-  ],
-  [
-    {
-      situation: '',
-      how: '初九：闲有家，悔亡。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '六二：无攸遂，在中馈，贞吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '九三：家人嗃嗃，悔厉吉；妇子嘻嘻，终吝。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '六四：富家，大吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '九五：王假有家，勿恤，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '上九：有孚威如，终吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    }
-  ],
-  [
-    {
-      situation: '',
-      how: '初九：悔亡，丧马勿逐，自复；见恶人无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '九二：遇主于巷，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '六三：见舆曳，其牛掣，其人天且劓，无初有终。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '九四：睽孤，遇元夫，交孚，厉无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '六五：悔亡，厥宗噬肤，往何咎？',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
+      situation: '离职，拒绝，举报',
       how:
-        '上九：睽孤，见豕负涂，载鬼一车，先张之弧，后说之弧，匪寇婚媾，往遇雨则吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+        '飞鸟离开时低垂着翅膀，君子离开时没饭吃也不在乎，离开时主人(九四)有责备之意',
+      premise: '充分准备',
+      why: '不适应，不公平',
+      or: '矛盾，压力，崩溃',
+      story: '加班，不回消息',
+      note: '暗度陈仓'
+    },
+    {
+      situation: '特长生，核心竞争力',
+      how: '左腿受伤，用健壮的马代步还可拯救自己',
+      premise: '特长',
+      why: '性格，认知',
+      or: '自卑，焦虑，抑郁',
+      story: '演讲稿',
+      note: '找到自己的优势，重点培养'
+    },
+    {
+      situation: '恋爱，责备',
+      how: '夜间狩猎，收获了大的猎物，不可以深入',
+      premise: '理性',
+      why: '假象，潜在危险',
+      or: '被骗，全军覆没',
+      story: '诈骗',
+      note: '适可而止'
+    },
+    {
+      situation: '媒人，结婚，入职',
+      how: '进入左方腹地，了解了困境形成的原因，离开是非之地',
+      premise: '深入',
+      why: '没有前景',
+      or: '荒废',
+      story: '软通',
+      note: '当机立断'
+    },
+    {
+      situation: '停电，批评',
+      how: '像箕子一样，置身事外，不同流合污',
+      premise: '忍辱',
+      why: '自保',
+      or: '被害',
+      story: '电费battle',
+      note: '装疯卖傻'
+    },
+    {
+      situation: '诈骗，相亲',
+      how: '昏之又昏，起初升到天上，后来陷入地下',
+      premise: '堕落',
+      why: '单纯，没主见',
+      or: '精明',
+      story: '张苗',
+      note: '做最坏的打算，不要过分期待'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：往蹇，来誉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '写作业，打架，没米，欠债',
+      how: '在家中做好防范，不要让坏事出门',
+      premise: '远见',
+      why: '骄傲，不节制，溺爱',
+      or: '坏事传千里',
+      story: '诈骗，吵架',
+      note: '各人自扫门前雪'
+    },
+
+    {
+      situation: '家庭主妇',
+      how: '在外面没有什么作为，在家中掌管好饮食之事',
+      premise: '经济基础',
+      why: '没有后顾之忧，安宁',
+      or: '入赘，吵架',
+      story: '全职太太',
+      note: '男主外，女主内'
     },
     {
-      situation: '',
-      how: '六二：王臣蹇蹇，匪躬之故。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '批评，教育',
+      how: '治家要严厉，不要嘻嘻哈哈',
+      premise: '犯错',
+      why: '警戒线，安全线',
+      or: '一错再错',
+      story: '吸烟',
+      note: '从小偷针，长大偷金'
     },
     {
-      situation: '',
-      how: '九三：往蹇来反。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '结婚',
+      how: '旺夫旺家',
+      premise: '明事理',
+      why: '素养，学识',
+      or: '争吵',
+      story: '吵架，离婚',
+      note: '家和万事兴'
     },
     {
-      situation: '',
-      how: '六四：往蹇来连。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '班级管理，团队管理，企业管理',
+      how: '君王管理天下，像管理家庭一样，自会有人模仿，不用担心',
+      premise: '管理经验',
+      why: '开明，民生',
+      or: '骄傲，落后',
+      story: '笔记整理',
+      note: '老吾老以及人之老'
     },
     {
-      situation: '',
-      how: '九五：大蹇朋来。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
-    },
-    {
-      situation: '',
-      how: '上六：往蹇来硕，吉；利见大人。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '决策，换工作，结婚，创业',
+      how: '保持诚信，做任何事都好像父母的威严一直在身边一样',
+      premise: '家庭观念',
+      why: '商量，借智慧',
+      or: '犯错，干傻事',
+      story: '诈骗',
+      note: '子入太庙，每事问'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '破产，失业，失恋',
+      how: '马匹丢失了，不要追逐，自己会回来。就算碰到坏人，也没有后遗症',
+      premise: '自知之明',
+      why: '止损',
+      or: '重大损失',
+      story: '不回消息',
+      note: '及时止损'
     },
     {
-      situation: '',
-      how: '九二：田获三狐，得黄矢，贞吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '私奔，报信',
+      how: '在巷子里遇见了主人',
+      premise: '熟悉地形',
+      why: '不安全',
+      or: '被抓',
+      story: '丈母娘',
+      note: '人在屋檐下，不得不低头'
     },
     {
-      situation: '',
-      how: '六三：负且乘，致寇至，贞吝。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '打架，报班，传销，诈骗',
+      how: '车子被拉住，牛被限制住，人收到了刑罚，开始不好，结果是好的',
+      premise: '有明白人',
+      why: '冲动，蒙蔽',
+      or: '上当受骗',
+      story: '点亮，诈骗',
+      note: '冲动是魔鬼'
     },
     {
-      situation: '',
-      how: '九四：解而拇，朋至斯孚。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '单身，打压，孤立',
+      how: '很孤单，遇见了初九，用诚信来支援对方',
+      premise: '信义',
+      why: '排挤',
+      or: '孤独，压抑',
+      story: '相亲',
+      note: '意象对话'
     },
     {
-      situation: '',
-      how: '六五：君子维有解，吉；有孚于小人。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '梦想，恋人，事业',
+      how: '与九二遇和，不惜咬破皮肤',
+      premise: '有光',
+      why: '信念',
+      or: '后悔',
+      story: '郑亚',
+      note: '自己选的路，跪着也要走完'
     },
     {
-      situation: '',
-      how: '上六：公用射隼，于高墉之上，获之，无不利。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '接电话，搭讪，推销',
+      how:
+        '很孤单，看见猪拖着一条烂尾巴，车子上载了一车鬼，拉开弓又收起来，不是贼寇，是来求婚的，遇到雨让自己冷静下来',
+      premise: '警觉性',
+      why: '社会黑暗',
+      or: '误伤，受伤',
+      story: '诈骗',
+      note: '保持警觉性'
     }
   ],
   [
     {
-      situation: '',
-      how: '初九：已事遄往，无咎。酌损之。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '打架，赌博，走亲戚',
+      how: '前进有困难，回来被称赞',
+      premise: '远见',
+      why: '形势不利',
+      or: '堵车，围困',
+      story: '六年级寄读',
+      note: '留得青山在，不愁没柴烧'
     },
     {
-      situation: '',
-      how: '九二：利贞，征凶，弗损益之。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '父母，老师，兄弟',
+      how: '臣子为了解救君王而奔波劳走，忠心耿耿的缘故',
+      premise: '责任感',
+      why: '尽忠，知遇之恩',
+      or: '唾弃，咒骂',
+      story: '范跑跑',
+      note: '鞠躬尽瘁，死而后已'
     },
     {
-      situation: '',
-      how: '六三：三人行，则损一人；一人行，则得其友。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '堵车，考研，不回消息，输光下场',
+      how: '前进有危险，暂时退回来',
+      premise: '有退路',
+      why: '冲动，误导',
+      or: '保本，安全',
+      story: '赌博，强撩',
+      note: '识时务者为俊杰'
     },
     {
-      situation: '',
-      how: '六四：损其疾，使遄有喜，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '离职，结婚，创业，二胎',
+      how: '前进困难，后退也困难',
+      premise: '有得选',
+      why: '实力不足，能力有限，欲望过多',
+      or: '绝望',
+      story: '复读',
+      note: '进退两难'
     },
     {
-      situation: '',
-      how: '六五：或益之，十朋之龟弗克违，元吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '失业，破产，家破，人亡，意志消沉',
+      how: '处境极为困难，有志同道合的朋友前来帮忙',
+      premise: '朋友',
+      why: '大环境，政策，决策',
+      or: '死路一条',
+      story: '诈骗，失恋',
+      note: '众人拾柴火焰高'
     },
     {
-      situation: '',
-      how: '上九：弗损益之，无咎，贞吉，利有攸往，得臣无家。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '隐居，退休',
+      how: '前进困难，回过头来帮助(九五)干一番事业',
+      premise: '明君',
+      why: '嫉妒，拉拢',
+      or: '为虎作伥',
+      story: '灰色网站',
+      note: '邦无道，则可卷而怀之'
     }
   ],
   [
     {
-      situation: '',
-      how: '初九：利用为大作，元吉，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '放假，休息，旅游',
+      how: '没有后遗症',
+      premise: '有时间',
+      why: '压力过大，操劳',
+      or: '压垮',
+      story: '加班',
+      note: '无为而治'
     },
     {
-      situation: '',
-      how: '六二：或益之，十朋之龟弗克违，永贞吉。王用享于帝，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '坏习惯，老油条',
+      how: '田里捕获了三只狐狸(消灭了奸佞)，得到了黄金箭矢(有贤臣辅佐)',
+      premise: '直臣',
+      why: '朝中有人，嚣张跋扈',
+      or: '小人当道',
+      story: '吸烟',
+      note: '亲贤臣，远小人'
     },
     {
-      situation: '',
-      how: '六三：益之用凶事，无咎。有孚中行，告公用圭。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '干部，业务员，骗子',
+      how: '欺负下级，拍上级马屁，招致祸端',
+      premise: '花言巧语',
+      why: '生存，发展',
+      or: '安分守己，平庸',
+      story: '设计师',
+      note: '接受自己的平庸'
     },
     {
-      situation: '',
-      how: '六四：中行，告公从。利用为依迁国。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '小团体，焦虑',
+      how: '解开被绑的拇指(摆脱小人的束缚)，有朋友前来相助',
+      premise: '有朋友',
+      why: '纠缠，诱导',
+      or: '安贫乐道',
+      story: '上流人',
+      note: '不以物喜，不以己悲'
     },
     {
-      situation: '',
-      how: '九五：有孚惠心，勿问元吉。有孚惠我德。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '管理，新上任',
+      how: '君子能够消除隐患，同时让小人心服口服',
+      premise: '魄力',
+      why: '腐败，风气',
+      or: '造反，破产',
+      story: '重构',
+      note: '以德服人，恩威并施'
     },
     {
-      situation: '',
-      how: '上九：莫益之，或击之，立心勿恒，凶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '竞争，打架',
+      how: '公侯用箭射杀高墙上的恶鸟(打击外部势力)',
+      premise: '实力',
+      why: '被威胁',
+      or: '被灭',
+      story: '前端ES',
+      note: '该出手时就出手'
     }
   ],
   [
     {
-      situation: '',
-      how: '初九：壮于前趾，往不胜为咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '过马路，让座，请吃饭',
+      how: '停下正在做的事去帮助别人，适当的减损一点',
+      premise: '爱心',
+      why: '怜悯，善念',
+      or: '冷漠，孤僻',
+      story: '借钱',
+      note: '勿以善小而不为'
     },
     {
-      situation: '',
-      how: '九二：惕号，莫夜有戎，勿恤。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '不救穷，不帮凶，不劝酒',
+      how: '不减损反而有益',
+      premise: '理性',
+      why: '泥足深陷',
+      or: '帮凶',
+      story: '劝酒',
+      note: '助纣为虐'
     },
     {
-      situation: '',
-      how: '九三：壮于頄，有凶。君子夬夬，独行遇雨，若濡有愠，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '恋爱，选举，当家',
+      how: '三个人在一起会损掉一个人，一个人的时候可以得到志同道合的朋友',
+      premise: '志趣相投',
+      why: '竞争',
+      or: '相残，孤独',
+      story: '档口',
+      note: '成全'
     },
     {
-      situation: '',
-      how: '九四：臀无肤，其行次且。牵羊悔亡，闻言不信。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '坏习惯，不良情绪，过错',
+      how: '损掉自己的毛病，有人(初九)来帮忙很高兴',
+      premise: '自律',
+      why: '纵容，解压，逃避',
+      or: '堕落',
+      story: '吸烟',
+      note: '勿以恶小而为之'
     },
     {
-      situation: '',
-      how: '九五：苋陆夬夬，中行无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '报恩，孝顺',
+      how: '得到价值十朋的大乌龟，不要拒绝',
+      premise: '孝心',
+      why: '恩情',
+      or: '不孝，无情',
+      story: '打火机',
+      note: '子欲养而亲不待'
     },
     {
-      situation: '',
-      how: '上六：无号，终有凶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '创业，研发',
+      how: '不减损有收益，得到忠心的臣子，舍弃小家，恩泽大家',
+      premise: '无私',
+      why: '责任感',
+      or: '衰败',
+      story: '新冠疫苗',
+      note: '舍小家为大家'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：系于金柅，贞吉，有攸往，见凶，羸豕孚蹢躅。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '政府部门，国家单位，公司',
+      how: '有了(六四)支持，可以展开手脚放心干',
+      premise: '有人',
+      why: '支持，指导',
+      or: '打压',
+      story: '档口',
+      note: '朝中有人好做官'
     },
     {
-      situation: '',
-      how: '九二：包有鱼，无咎，不利宾。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '提拔，合作',
+      how: '得到价值十朋的大乌龟，不要拒绝，用祭品祭祀(感恩回馈)',
+      premise: '能力',
+      why: '利益，回报',
+      or: '平凡',
+      story: '创新梦想',
+      note: '爱心传递'
     },
     {
-      situation: '',
-      how: '九三：臀无肤，其行次且，厉，无大咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '救灾，解决问题，救人，救急',
+      how: '拿钱财赈灾救民，办事诚信守规矩，并及时向王公汇报',
+      premise: '有基础',
+      why: '爱心，责任，回报',
+      or: '哀鸿遍野',
+      story: '鞋店',
+      note: '先斩后奏'
     },
     {
-      situation: '',
-      how: '九四：包无鱼，起凶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '扩张，换行',
+      how: '向王公汇报，得到(初九)支持，作为迁都的依据',
+      premise: '支持',
+      why: '长远发展',
+      or: '淘汰',
+      story: '公务员',
+      note: '谋定而后动'
     },
     {
-      situation: '',
-      how: '九五：以杞包瓜，含章，有陨自天。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '赈灾，自愿者',
+      how: '恩泽百姓的事，无需占卜，吉祥，百姓也会反过来称赞君王的德行',
+      premise: '有能力',
+      why: '德行，教养',
+      or: '自私，独裁',
+      story: '新冠疫苗',
+      note: '后其身而身先'
     },
     {
-      situation: '',
-      how: '上九：姤其角，吝，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '谋私利，腐败',
+      how: '对大家没有恩惠，受到攻击，是因为没有长期为百姓谋利的打算',
+      premise: '贪婪',
+      why: '享乐，上瘾',
+      or: '清贫，实事',
+      story: '内购机',
+      note: '中饱私囊'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：有孚不终，乃乱乃萃，若号一握为笑，勿恤，往无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '裸辞，离家出走，创业',
+      how: '脚趾前端盛壮，贸然前行不能取胜',
+      premise: '自信',
+      why: '经验不足',
+      or: '冷静，谋划',
+      story: '征信',
+      note: '初生牛犊不怕虎'
     },
     {
-      situation: '',
-      how: '六二：引吉，无咎，孚乃利用禴。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '面试，上任，产品上线',
+      how: '惊惧呼号，半夜有贼人袭击，不要担心，因为做好了周密准备',
+      premise: '有计划',
+      why: '经历过，警觉性高',
+      or: '大意失荆州，遭殃',
+      story: '聊天',
+      note: '运筹帷幄之中，决胜千里之外'
     },
     {
-      situation: '',
-      how: '六三：萃如，嗟如，无攸利，往无咎，小吝。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '出使，谈判，安抚',
+      how:
+        '颧骨高突怒容满面，有凶险，君子一个人前往(谈判)，反复协商，遇到雨身上打湿(有人怀疑)，心里憋屈，没有灾祸',
+      premise: '胆量',
+      why: '交情，任务',
+      or: '对干',
+      story: '三顾茅庐',
+      note: '功成不必在我'
     },
     {
-      situation: '',
-      how: '九四：大吉，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '投降，投奔，寄人篱下',
+      how:
+        '屁股上蹭破了皮，行走十分艰难，配合阳(整体)行动，不会出现令人后悔的事，不过讲话再没人相信',
+      premise: '不要脸',
+      why: '保全',
+      or: '无处容身',
+      story: '陪十兄弟',
+      note: '人在屋檐下，不得不低头'
     },
     {
-      situation: '',
-      how: '九五：萃有位，无咎。匪孚，元永贞，悔亡。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '开除，离婚，抛弃',
+      how: '下定决心斩除苋陆(上六)，达成和解，没有灾祸',
+      premise: '实力',
+      why: '忍无可忍',
+      or: '受伤害',
+      story: '不合适',
+      note: '先下手为强'
     },
     {
-      situation: '',
-      how: '上六：赍咨涕洟，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '悔恨，道歉',
+      how: '嚎啕大哭也没有用，最终必然凶险临头',
+      premise: '愧疚',
+      why: '无路可走',
+      or: '回头是岸',
+      story: '吸烟',
+      note: '放下屠刀，立地成佛'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：允升，大吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '恋爱，offer，合作',
+      how:
+        '紧紧缚在铜车闸上(控制在安全范围内)，贸然行动会有凶险，(控制不好)瘦弱的猪也会蠢蠢欲动',
+      premise: '有人克制',
+      why: '自以为是，自满',
+      or: '毒打',
+      story: '买房',
+      note: '方向比努力更重要'
     },
     {
-      situation: '',
-      how: '九二：孚乃利用禴，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '升职，中奖，捡到东西',
+      how: '得到一条鱼(初九)，对宾客(九四)不利',
+      premise: '运气',
+      why: '先到先得',
+      or: '错过',
+      story: '莎莎',
+      note: '近水楼台先得月'
     },
     {
-      situation: '',
-      how: '九三：升虚邑。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '中层干部，暗恋',
+      how: '屁股上蹭破了皮，行走十分艰难(夹在两个阳爻之间)',
+      premise: '心动',
+      why: '竞争太强',
+      or: '出众',
+      story: '拍抖音',
+      note: '进退维谷'
     },
     {
-      situation: '',
-      how: '六四：王用亨于岐山，吉无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '错过，迟到，异地恋',
+      how: '没有得到鱼(初九)，自己引起的凶事(距离初九太远，动作太慢)',
+      premise: '牵绊',
+      why: '地域，工作调动',
+      or: '如愿',
+      story: '燕子',
+      note: '捡了芝麻，丢了西瓜'
     },
     {
-      situation: '',
-      how: '六五：贞吉，升阶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '私生子，隐忍',
+      how:
+        '用杞树枝叶包起瓜果(周密控制九二九四)，内含美好(低调行事)，损失从天而降(等待新生事物的发生)',
+      premise: '忍耐力',
+      why: '时机未到',
+      or: '打草惊蛇',
+      story: '婚姻',
+      note: '该来的迟早会来'
     },
     {
-      situation: '',
-      how: '上六：冥升，利于不息之贞。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '站错队，不着急',
+      how: '错过了机缘，什么也没得到',
+      premise: '不操心',
+      why: '机会不等人',
+      or: '碰运气',
+      story: '汤圆',
+      note: '一失足成千古恨'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：臀困于株木，入于幽谷，三岁不觌。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '聚餐，约会，开会，约架',
+      how:
+        '有诚信没能坚持到底，各种乱子就会聚集到一起，看上去要哭了，握握手又笑了，不用担心，前往(六四)会没事',
+      premise: '目的地',
+      why: '有两个地方有约',
+      or: '错过',
+      story: '相亲',
+      note: '保持初心，继续前行'
     },
     {
-      situation: '',
-      how: '九二：困于酒食，朱绂方来，利用享祀，征凶，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '隐居，炒作，曝光',
+      how: '吸引(初六，六三)一同前往(九五)，使用微薄的祭祀表达自己的虔诚',
+      premise: '曝光度',
+      why: '防御',
+      or: '目的性太强，拒绝',
+      story: '牵手',
+      note: '吸引力法则'
     },
     {
-      situation: '',
-      how: '六三：困于石，据于蒺藜，入于其宫，不见其妻，凶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '双方命令，双方谈合作',
+      how:
+        '前往(九四还是九五)不知去处，只能长吁短叹，坚持本心，前往(九四)没有灾祸，有一定小麻烦',
+      premise: '有价值',
+      why: '难以权衡',
+      or: '站错队',
+      story: '部门解体',
+      note: '亲疏有别'
     },
     {
-      situation: '',
-      how: '九四：来徐徐，困于金车，吝，有终。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '讲话，出方案',
+      how: '稳定局势，和平共处，做到大吉大利，不会有灾祸',
+      premise: '稳定',
+      why: '大局着想',
+      or: '内斗',
+      story: '离婚风波',
+      note: '做大事不拘小节'
     },
     {
-      situation: '',
-      how: '九五：劓刖，困于赤绂，乃徐有说，利用祭祀。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '新官上任，家道中落',
+      how: '名正言顺，缺少支持者(初六，六三)，需要坚定不移的坚守正义',
+      premise: '血统正',
+      why: '能力不足，权利不够',
+      or: '排挤，打压',
+      story: '前端ES',
+      note: '夹着尾巴做人'
     },
     {
-      situation: '',
-      how: '上六：困于葛藟，于臲兀危；曰动悔有悔，征吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '孤立',
+      how: '叹息流泪',
+      premise: '有团体',
+      why: '不参与，不合群',
+      or: '一起玩',
+      story: '打牌',
+      note: '常联系'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：井泥不食，旧井无禽。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '贷款买房，提拔，关系升级',
+      how: '得到支持，升进',
+      premise: '有表现',
+      why: '说话漂亮，办事漂亮',
+      or: '埋没',
+      story: '前端组长',
+      note: '与人为善，与己为善'
     },
     {
-      situation: '',
-      how: '九二：井谷射鲋，瓮敝漏。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '实干，行动，业绩',
+      how: '使用微薄的祭祀表达自己的虔诚(得到六五的赏识)',
+      premise: '被赏识',
+      why: '接触少',
+      or: '埋没',
+      story: '加班加点',
+      note: '以结果为导向'
     },
     {
-      situation: '',
-      how: '九三：井渫不食，为我心恻，可用汲，王明，并受其福。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '失恋，失利，破产',
+      how: '脱离现实，寄托心灵世界',
+      premise: '失望',
+      why: '失言，行为不当，被劈腿',
+      or: '快乐幸福',
+      story: '被拒绝',
+      note: '一失足成千古恨'
     },
     {
-      situation: '',
-      how: '六四：井甃，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '创业，结婚，退休',
+      how: '周文王在岐山祭祀(顺应天命)',
+      premise: '时机成熟',
+      why: '磨合，支持',
+      or: '继续磨合',
+      story: '求职',
+      note: '天命所归'
     },
     {
-      situation: '',
-      how: '九五：井洌，寒泉食。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '创业，写作，考研',
+      how: '一步步爬楼梯，到达登峰造极地步',
+      premise: '坚持',
+      why: '信念',
+      or: '中途而废',
+      story: '周易',
+      note: '业精于勤荒于嬉'
     },
     {
-      situation: '',
-      how: '上六：井收勿幕，有孚元吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '失业，离婚，破产，人亡',
+      how: '进入低谷，自强不息，走出一条新的道路',
+      premise: '希望',
+      why: '自大，盲目',
+      or: '平稳',
+      story: '励志橘子',
+      note: '天行健，君子以自强不息'
     }
   ],
   [
     {
-      situation: '',
-      how: '初九：巩用黄牛之革。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '破产，失业',
+      how: '屁股坐在枯木桩上，独自在幽深的山谷里，三年没有人来拜访',
+      premise: '辉煌过',
+      why: '无利可图',
+      or: '高朋满座',
+      story: '舅舅',
+      note: '树倒猢狲散'
     },
     {
-      situation: '',
-      how: '六二：巳日乃革之，征吉，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '借钱',
+      how: '粮食储备不够，等待着大官(九五)前来解救，利用祭祀希望上天保佑平安',
+      premise: '有朋友',
+      why: '希望',
+      or: '绝望',
+      story: '护身符',
+      note: '求人不如求己'
     },
     {
-      situation: '',
-      how: '九三：征凶，贞厉，革言三就，有孚。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '家破人亡，沾花惹草',
+      how:
+        '前进被石头(九四)挡住，后退会被荆棘(九二)刺痛，回到家中求安慰，老婆不见了',
+      premise: '成家',
+      why: '放浪形骸',
+      or: '温馨',
+      story: '新华',
+      note: '路边的野花你别采'
     },
     {
-      situation: '',
-      how: '九四：悔亡，有孚改命，吉',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '赈灾，拨款',
+      how: '来的很慢，救援的物资被(九二)拦截',
+      premise: '有钱',
+      why: '回扣，救命',
+      or: '脱困',
+      story: '手续费',
+      note: '直来直去'
     },
     {
-      situation: '',
-      how: '九五：大人虎变，未占有孚。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '被架空，被陷害',
+      how:
+        '割了鼻子(不够敏感)，砍了脚(没有行动力)，官员(九四)不服从命令，祭祀祷告，以求保佑',
+      premise: '有价值',
+      why: '扶不起',
+      or: '掌权',
+      story: '老太太',
+      note: '活到老，学到老'
     },
     {
-      situation: '',
-      how: '上六：君子豹变，小人革面，征凶，居贞吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '绑架，传销',
+      how: '困在藤蔓中，局势动荡不安，悔之又悔，有想法赶紧行动',
+      premise: '有想法',
+      why: '蒙蔽，天真',
+      or: '安稳',
+      story: '追尾',
+      note: '天干地燥，小心火烛'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：鼎颠趾，利出否，得妾以其子，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '游手好闲，妈宝',
+      how: '井里有泥，不能食用，井太破旧了，连鸟兽都不来',
+      premise: '有井',
+      why: '不思进取',
+      or: '上进',
+      story: '万鸡公',
+      note: '被时代抛弃'
     },
     {
-      situation: '',
-      how: '九二：鼎有实，我仇有疾，不我能即，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '初创',
+      how: '井底下出现低洼处，有一条小鱼，打水的罐子破了，只能收集到一点水',
+      premise: '好项目',
+      why: '资金有限',
+      or: '扩张',
+      story: '7个各公司',
+      note: '经费有限'
     },
     {
-      situation: '',
-      how: '九三：鼎耳革，其行塞，雉膏不食，方雨亏悔，终吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '好产品，怀才不遇',
+      how: '水质很好，没有人食用，忧心忡忡，需要明王(九五)打点，方有人汲水',
+      premise: '有货',
+      why: '不识货',
+      or: '叫座',
+      story: '张之洞电影',
+      note: '叫好不叫座'
     },
     {
-      situation: '',
-      how: '九四：鼎折足，覆公餗，其形渥，凶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '路灯，同居',
+      how: '井壁修好了(通道畅通)',
+      premise: '磨合',
+      why: '理念，责任',
+      or: '坐视不管',
+      story: '拉黑',
+      note: '包装策划'
     },
     {
-      situation: '',
-      how: '六五：鼎黄耳金铉，利贞。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '开业，结婚',
+      how: '井水清凉干净，可以食用',
+      premise: '质量',
+      why: '有保障',
+      or: '退货',
+      story: '娅娅妈妈',
+      note: '打包出售'
     },
     {
-      situation: '',
-      how: '上九：鼎玉铉，大吉，无不利。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '客服，24h便利店',
+      how: '井水打完之后，不要盖上盖子',
+      premise: '存货',
+      why: '回头客',
+      or: '拉黑',
+      story: '聚餐',
+      note: '售后服务'
     }
   ],
   [
     {
-      situation: '',
-      how: '初九：震来虩虩，后笑言哑哑，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '冲撞，闹事',
+      how: '用黄牛的皮革牢牢地捆绑住，以免轻举妄动',
+      premise: '畏惧',
+      why: '时机未到',
+      or: '腹死胎中',
+      story: '重构',
+      note: '等待时机'
     },
     {
-      situation: '',
-      how: '六二：震来厉，亿丧贝，跻于九陵，勿逐，七日得。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '立flag',
+      how: '到了己日断然进行变革，前途必获吉祥，不会有灾祸',
+      premise: '魄力',
+      why: '时机成熟',
+      or: '错失良机',
+      story: '换专业',
+      note: '当机立断'
     },
     {
-      situation: '',
-      how: '六三：震苏苏，震行无眚。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '开会',
+      how: '对于变革的方案，要多次研究周密考虑',
+      premise: '有方案',
+      why: '时局变化',
+      or: '下错药',
+      story: '需求会',
+      note: '三思而后行'
     },
     {
-      situation: '',
-      how: '九四：震遂泥。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '解散',
+      how: '争取大众信赖，革除旧的的事物',
+      premise: '一致',
+      why: '没有存在价值',
+      or: '臃肿',
+      story: '砍需求',
+      note: '改朝换代'
     },
     {
-      situation: '',
-      how: '六五：震往来厉，意无丧，有事。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '上任，出产品',
+      how: '伟大的人物像猛虎一样下定决心进行变革，不必占卜吉凶，底下有人支持',
+      premise: '有成品',
+      why: '条件成熟',
+      or: '错失良机',
+      story: '发版本',
+      note: '相信自己'
     },
     {
-      situation: '',
-      how: '上六：震索索，视矍矍，征凶。震不于其躬，于其邻，无咎。婚媾有言。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '发布结束，任务完成',
+      how: '开国元勋要像豹一样把政策落到实处，小人物接受新的统治者，不再扩张',
+      premise: '圆满',
+      why: '疲惫',
+      or: '动荡不安',
+      story: '紧急开发',
+      note: '休养生息'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：艮其趾，无咎，利永贞。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '垃圾清理，反思，复盘',
+      how:
+        '烹饪食物的鼎足颠翻(九四不照顾自己)，有利于倒出鼎中陈积的污秽之物；娶妾生子可以扶为正室',
+      premise: '自省',
+      why: '不舒服',
+      or: '久积成病',
+      story: '蛀牙',
+      note: '改掉坏毛病'
     },
     {
-      situation: '',
-      how: '六二：艮其腓，不拯其随，其心不快。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '怀才不遇',
+      how:
+        '鼎中装满可供济养的食物(有真才实学)，我所求的人(九五)生病了(被蒙蔽)，不能发现我',
+      premise: '有才',
+      why: '被蒙蔽',
+      or: '被重用',
+      story: '当老师',
+      note: '是金子总会发光的'
     },
     {
-      situation: '',
-      how: '九三：艮其限，列其夤，厉熏心。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '教化，劳改',
+      how:
+        '鼎的耳朵被(九五)破坏了，无法移动，鼎中甘美的山鸡汤喝不上了，待到润雨出现(上九)才能调和(降低姿态)',
+      premise: '有高人',
+      why: '傲慢',
+      or: '赏识',
+      story: '写代码很跳',
+      note: '冲动是魔鬼'
     },
     {
-      situation: '',
-      how: '六四：艮其身，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '使坏，穿小鞋',
+      how: '烹饪食物的鼎足颠翻，鼎中的美食洒了出来，沾在鼎上脏兮兮的',
+      premise: '靠山',
+      why: '有人罩着',
+      or: '惩罚',
+      story: '跷跷板',
+      note: '嫉妒使人腐败'
     },
     {
-      situation: '',
-      how: '六五：艮其辅，言有序，悔亡。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '搭档，组队',
+      how: '鼎耳富丽堂皇，又配上了金制的鼎杠(亲近九二)',
+      premise: '有人',
+      why: '干事业',
+      or: '孤立无援',
+      story: '租房',
+      note: '男女搭配，干活不累'
     },
     {
-      situation: '',
-      how: '上九：敦艮，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '教育，启蒙',
+      how: '玉制的鼎杠(文化建设)',
+      premise: '文化',
+      why: '责任',
+      or: '暴动',
+      story: '家庭教育',
+      note: '人文关怀'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：鸿渐于干，小子厉，有言，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '地震，失恋',
+      how: '惊雷震动令人恐惧不已，然后则言笑自若(有了避雷的经验)',
+      premise: '心态好',
+      why: '总结，学经验',
+      or: '一蹶不振',
+      story: '诈骗',
+      note: '吃一堑长一智'
     },
     {
-      situation: '',
-      how: '六二：鸿渐于磐，饮食衎衎，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '杀猪盘，破产',
+      how:
+        '惊雷震动，往下走有危难；估计会丢失大量财产，跑到山陵上，不要舍不得，很快可以赚回来',
+      premise: '有钱',
+      why: '时运不济，看得开',
+      or: '自怨自艾',
+      story: '诈骗',
+      note: '钱财乃身外之物'
     },
     {
-      situation: '',
-      how: '九三：鸿渐于陆，夫征不复，妇孕不育，凶；利御寇。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '失恋，失业',
+      how: '雷震动时微微发抖，走路时要睁大眼睛，打起精神来',
+      premise: '有信心',
+      why: '自我安慰',
+      or: '接二连三',
+      story: '连环计',
+      note: '吓得手软脚如'
     },
     {
-      situation: '',
-      how: '六四：鸿渐于木，或得其桷，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '车祸，破产，失业',
+      how: '雷霆震动，惊慌失措而坠陷泥污中，不能自拔。',
+      premise: '没有防备',
+      why: '心里脆弱',
+      or: '振作',
+      story: '车祸',
+      note: '泥足深陷'
     },
     {
-      situation: '',
-      how: '九五：鸿渐于陵，妇三岁不孕，终莫之胜，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '失业，破产',
+      how: '当雷声震动之时，上下往来会有危险，没有什么损失，因为宗庙社稷还在',
+      premise: '有信念',
+      why: '希望在，责任在',
+      or: '逃跑',
+      story: '高考',
+      note: '什么都可以丢失，信心不能丢失'
     },
     {
-      situation: '',
-      how: '上九：鸿渐于陆，其羽可用为仪，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '解雇，离婚',
+      how:
+        '听到雷震之后吓得浑身颤抖，目光游移，雷震没有到达自己身上，而是发生在近邻时，老伴看到此刻窘迫的样子，会天天叨念',
+      premise: '辉煌过',
+      why: '老了，放松了',
+      or: '应对',
+      story: '面试',
+      note: '英明一世，糊涂一时'
     }
   ],
   [
     {
-      situation: '',
-      how: '初九：归妹以娣，跛能履，征吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '犯错，坏毛病',
+      how: '在脚趾迈出之前，若发现错了就该马上停止',
+      premise: '自省',
+      why: '粗心大意',
+      or: '一错再错',
+      story: '吸烟',
+      note: '立场坚定'
     },
     {
-      situation: '',
-      how: '九二：眇能视，利幽人之贞。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '小弟，需求',
+      how: '抑止在小腿上，无法拯救别人(九三)，只好跟随行动，心中感觉不畅快',
+      premise: '被束缚',
+      why: '人微言轻',
+      or: '做决策',
+      story: '产品',
+      note: '被迫行动'
     },
     {
-      situation: '',
-      how: '六三：归妹以须，反归以娣。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '购物，扩张，养鱼',
+      how: '抑止腰部的行动，以至于撕裂了脊背的肉，犹如烈火烧心',
+      premise: '有一把刷子',
+      why: '不满足',
+      or: '知足常乐',
+      story: '摸鱼',
+      note: '欲火焚身'
     },
     {
-      situation: '',
-      how: '九四：归妹愆期，迟归有时。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '被骂，不公',
+      how: '抑止身体上部的行动，伸屈自如',
+      premise: '冷静',
+      why: '形势不利',
+      or: '关系破裂',
+      story: '相亲',
+      note: '知止而后能定'
     },
     {
-      situation: '',
-      how: '六五：帝乙归妹，其君之袂，不如其娣之袂良，月几望，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '批评，议论',
+      how: '约束自己的嘴巴，不要随便乱说，说话很有分寸和条理',
+      premise: '会说',
+      why: '言多必失',
+      or: '嫉恨',
+      story: '调试',
+      note: '一言既出，驷马难追'
     },
     {
-      situation: '',
-      how: '上六：女承筐无实，士刲羊无血，无攸利。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '读书，修心',
+      how: '以敦厚笃实的德行抑止邪欲',
+      premise: '静下心来',
+      why: '欲望太多',
+      or: '欲壑难填',
+      story: 'chill more',
+      note: '功德圆满'
     }
   ],
   [
     {
-      situation: '',
-      how: '初九：遇其配主，虽旬无咎，往有尚。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '入职，拜访',
+      how: '鸿雁在水岸边上，小雁缺乏经验处处碰壁，需要建立一套自己的行为指南',
+      premise: '有想法',
+      why: '人生地不熟',
+      or: '出洋相',
+      story: '代码改造',
+      note: '学经验'
     },
     {
-      situation: '',
-      how: '六二：丰其蔀，日中见斗，往得疑疾，有孚发若，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '安稳，拆迁户',
+      how: '鸿雁在石头上，吃喝不愁很快乐',
+      premise: '稳定',
+      why: '有人保障',
+      or: '露宿街头',
+      story: 'BVT问题',
+      note: '居安思危'
     },
     {
-      situation: '',
-      how: '九三：丰其沛，日中见沫，折其右肱，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '外遇，灰色产业',
+      how:
+        '鸿雁在陆地上，男人出征没有回来，妇人(六四)怀孕没有生育，抵抗贼寇(六四的诱惑)有利',
+      premise: '有路子',
+      why: '猎奇，刺激',
+      or: '安稳，平淡',
+      story: '鹏鹏',
+      note: '路边的野花不要采'
     },
     {
-      situation: '',
-      how: '九四：丰其蔀，日中见斗，遇其夷主，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '抱大腿',
+      how: '鸿雁在山林中，有机会抓住方形的木头(九五)，才能免去麻烦',
+      premise: '有大腿',
+      why: '根基不稳',
+      or: '危险',
+      story: '豪豪',
+      note: '飞上枝头变凤凰'
     },
     {
-      situation: '',
-      how: '六五：来章，有庆誉，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '打拼',
+      how: '鸿雁在山陵上，妇人(六二)三年没有怀孕，历经千辛万苦，终于遇合',
+      premise: '忠诚',
+      why: '信念',
+      or: '背叛',
+      story: '涛涛',
+      note: '破镜重圆'
     },
     {
-      situation: '',
-      how: '上六：丰其屋，蔀其家，窥其户，阒其无人，三岁不觌，凶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '退休',
+      how: '鸿雁回到陆地上，羽毛(德行)可以供人瞻仰',
+      premise: '德行',
+      why: '精力有限，知足',
+      or: '猜忌',
+      story: '老彭',
+      note: '功成身退'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：旅琐琐，斯其所取灾。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '伴娘，借宿',
+      how: '妹妹作为偏偏房陪姐姐出嫁，跛脚还能走路(行事小心)',
+      premise: '有主',
+      why: '不是主角',
+      or: '喧宾夺主',
+      story: '走亲戚',
+      note: '小心使得万年船'
     },
     {
-      situation: '',
-      how: '六二：旅即次，怀其资，得童仆贞。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '轻信，杀猪盘',
+      how: '少了一只眼睛还能看得见(看事不周全)，把自己关起来(等待时机)',
+      premise: '智慧未开',
+      why: '懒，不开窍',
+      or: '周全，识破',
+      story: '一件代发',
+      note: '准备周全，不可慌忙下决定'
     },
     {
-      situation: '',
-      how: '九三：旅焚其次，丧其童仆，贞厉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '吹牛，幻想',
+      how: '想要嫁个好人家，结果成了偏房',
+      premise: '长相',
+      why: '片面',
+      or: '实际',
+      story: '傍大款',
+      note: '打脸'
     },
     {
-      situation: '',
-      how: '九四：旅于处，得其资斧，我心不快。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '相亲',
+      how: '过了出嫁的的年纪，等时机成熟会有好姻缘的',
+      premise: '不迁就',
+      why: '不合适',
+      or: '幸福',
+      story: '圣斗士',
+      note: '别急，迟到的也许是最好的'
     },
     {
-      situation: '',
-      how: '六五：射雉一矢亡，终以誉命。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '陪嫁，促销',
+      how:
+        '帝乙的妹妹出嫁，其所穿的衣裙还不如陪嫁的侧室的衣裙艳丽华美，不要自满(降低要求)',
+      premise: '不出众',
+      why: '缺陷',
+      or: '脱销',
+      story: '相亲',
+      note: '捆绑销售'
     },
     {
-      situation: '',
-      how: '上九：鸟焚其巢，旅人先笑，后号啕。丧牛于易，凶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '创业，高富帅',
+      how: '女子的筐篮里空空荡荡没有实物，男子用刀宰羊却不见出血',
+      premise: '幻想',
+      why: '没能力',
+      or: '安稳',
+      story: '网红',
+      note: '来去一场空'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：进退，利武人之贞。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '求职，恋爱',
+      how: '遇到与自己相配的主人(九四)，虽然会经历十天那么久，前往会有一番作为',
+      premise: '主人',
+      why: '志趣相投',
+      or: '埋没',
+      story: '燕子',
+      note: '士为知己者死'
     },
     {
-      situation: '',
-      how: '九二：巽在床下，用史巫纷若吉，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '误会，嫉妒',
+      how:
+        '遮蔽屋顶的草席被增大，白天只能看到北斗星(进入日食)，前往会被猜忌，保持谦逊的态度',
+      premise: '出众',
+      why: '损害利益',
+      or: '和谐',
+      story: '新员工',
+      note: '越描越黑'
     },
     {
-      situation: '',
-      how: '九三：频巽，吝。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '破产，癌症',
+      how: '用来遮蔽的窗帘被增大，白天只能看到小星星(日食)，右臂被折断才能保全',
+      premise: '勇气',
+      why: '活命',
+      or: '惨遭毒手',
+      story: '旧代码',
+      note: '舍军保帅'
     },
     {
-      situation: '',
-      how: '六四：悔亡，田获三品。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '招人，求助',
+      how:
+        '遮蔽屋顶的草席被增大，白天只能看到北斗星(离开日食)，遇到能帮助自己的人(初九)，吉祥',
+      premise: '有高人',
+      why: '能力不足',
+      or: '无助',
+      story: '车祸',
+      note: '一遇风云变化龙'
     },
     {
-      situation: '',
-      how: '九五：贞吉悔亡，无不利。无初有终，先庚三日，后庚三日，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '合伙',
+      how: '能招来光明(有美德的贤能之士)，会有喜庆和美誉',
+      premise: '有魅力',
+      why: '收益',
+      or: '孤家寡人',
+      story: '近聘',
+      note: '酒香不拍巷子深'
     },
     {
-      situation: '',
-      how: '上九：巽在床下，丧其资斧，贞凶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '贪污，使坏',
+      how:
+        '装修房子，家里遮的严严实实(保镖)，有人偷窥，发现一个人没有，多年不出门，肯定会凶险',
+      premise: '肥差',
+      why: '欲望',
+      or: '克制',
+      story: '蘑菇酱',
+      note: '昔日王谢堂前燕，飞入寻常百姓家'
     }
   ],
   [
     {
-      situation: '',
-      how: '初九：和兑，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '旅游，搬迁',
+      how: '路途中有很多琐屑的事，搞得自己焦头烂额，很容易发生灾祸',
+      premise: '没准备',
+      why: '人手不足',
+      or: '顺利',
+      story: '搬家',
+      note: '琐事缠身'
     },
     {
-      situation: '',
-      how: '九二：孚兑，吉，悔亡。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '出差',
+      how: '旅行在外住在客舍，带着足够的资财，得到忠心的僮仆',
+      premise: '有旅馆',
+      why: '条件允许',
+      or: '漂泊',
+      story: '园区',
+      note: '入境随俗'
     },
     {
-      situation: '',
-      how: '六三：来兑，凶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '纵火，穿小鞋，劫财',
+      how: '旅途中所住的客店失火，童仆跑掉了',
+      premise: '有钱',
+      why: '贪婪',
+      or: '安稳',
+      story: '诈骗',
+      note: '小人作祟'
     },
     {
-      situation: '',
-      how: '九四：商兑，未宁，介疾有喜。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '北漂',
+      how: '长期居于异乡，尽管得到了钱财之助，但是时刻要利斧提防，心情不愉快',
+      premise: '稳定',
+      why: '能力出众',
+      or: '回老家',
+      story: '回武汉',
+      note: '惶惶不可终日'
     },
     {
-      situation: '',
-      how: '九五：孚于剥，有厉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '读书，修养，报班',
+      how: '射雉(离即文化)，一箭射中，最终获得荣誉和爵命',
+      premise: '静下心',
+      why: '虚心',
+      or: '暴富',
+      story: '舅妈',
+      note: '大彻大悟'
     },
     {
-      situation: '',
-      how: '上六：引兑。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '地震，火灾，诈骗',
+      how:
+        '鸟巢失火被烧掉，外出之人先喜悦欢笑，后来号啕痛哭；在边界丢失了牛(舒适的环境)',
+      premise: '稳定',
+      why: '运气',
+      or: '平安',
+      story: '大地震',
+      note: '天灾人祸'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：用拯马壮，吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '离职，结婚，出国，考研',
+      how: '犹豫不决，需要武人的气魄，当机立断',
+      premise: '怀疑',
+      why: '不自信',
+      or: '做决定',
+      story: '离职',
+      note: '脑袋掉了也不过碗大的疤'
     },
     {
-      situation: '',
-      how: '九二：涣奔其机，悔亡。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '决策，学习',
+      how: '躺在床下(谦卑)，听取史(过去)巫(未来)的意见',
+      premise: '谦卑',
+      why: '目标',
+      or: '浑浑噩噩',
+      story: '图书馆',
+      note: '全面吸收新领域的知识和智慧'
     },
     {
-      situation: '',
-      how: '六三：涣其躬，无悔。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '发号施令，做产品，读书',
+      how: '变化无常，心无主见',
+      premise: '有想法',
+      why: '格格不入',
+      or: '有所突破',
+      story: '读书',
+      note: '遭遇瓶颈期，无法突破'
     },
     {
-      situation: '',
-      how: '六四：涣其群，元吉。涣有丘，匪夷所思。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '送礼，问候',
+      how: '没有悔恨，田猎中捕获了三种猎物(上下打点)',
+      premise: '经济保障',
+      why: '打通关系',
+      or: '孤立',
+      story: '新入职',
+      note: '左右逢源'
     },
     {
-      situation: '',
-      how: '九五：涣汗其大号，涣王居，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '新知识，旅游，产品发布',
+      how:
+        '起初虽然会不顺利，但是最后却能畅通无阻。在庚日的前三日做准备，在庚日的后三日看成效，在这七天行事，定获吉祥',
+      premise: '准备',
+      why: '变化无常',
+      or: '宕机',
+      story: '计划',
+      note: '一朝成名天下知'
     },
     {
-      situation: '',
-      how: '上九：涣其血，去逖出，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '退休，辞退',
+      how: '躺在床下(被打趴)，丧失了钱财和斧头(武装力量)',
+      premise: '懦弱',
+      why: '没利用价值',
+      or: '淦',
+      story: '光谷信息',
+      note: '落后就要挨打'
     }
   ],
   [
     {
-      situation: '',
-      how: '初九：不出户庭，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '安慰，寒暄，问候',
+      how: '讲话心平气和',
+      premise: '微笑',
+      why: '舒心',
+      or: '争吵',
+      story: 'welink',
+      note: '欲令入佛道，先以欲勾牵'
     },
     {
-      situation: '',
-      how: '九二：不出门庭，凶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '演讲，推销',
+      how: '讲话要自信',
+      premise: '真诚',
+      why: '获取信任',
+      or: '怀疑',
+      story: '劳动合同',
+      note: '自信人生三百年'
     },
     {
-      situation: '',
-      how: '六三：不节若，则嗟若，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '奉劝，打击，批评',
+      how: '一味劝说，讨好',
+      premise: '冲动',
+      why: '想说服',
+      or: '冷静',
+      story: '牵手',
+      note: '己所不欲勿施于人'
     },
     {
-      situation: '',
-      how: '六四：安节，亨。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '会议，讨论',
+      how: '商量没有结果，内心不安宁，需要把九五(同上六)隔离开来',
+      premise: '有人',
+      why: '不合理',
+      or: '劳累',
+      story: '砍需求',
+      note: '凡事好商量'
     },
     {
-      situation: '',
-      how: '九五：甘节，吉；往有尚。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '出格，渣男',
+      how: '没有诚信(底下人都不信任)',
+      premise: '有资源',
+      why: '鬼迷心窍',
+      or: '信任',
+      story: '李鹏',
+      note: '忠言逆耳'
     },
     {
-      situation: '',
-      how: '上六：苦节，贞凶，悔亡。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '妃子，小三，外遇，推销',
+      how: '引诱，魅惑',
+      premise: '美色',
+      why: '利益',
+      or: '冷落',
+      story: '买房',
+      note: '吹枕边风'
     }
   ],
   [
     {
-      situation: '',
-      how: '初九：虞吉，有他不燕。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '车祸，灾难',
+      how: '借助健壮的马匹来拯救',
+      premise: '有救援',
+      why: '无助',
+      or: '自救',
+      story: '相亲',
+      note: '等待戈多'
     },
     {
-      situation: '',
-      how: '九二：鸣鹤在阴，其子和之，我有好爵，吾与尔靡之。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '找工作，闯荡，恋爱',
+      how: '找到可以依靠的平台(九五)',
+      premise: '主动',
+      why: '渴望',
+      or: '被动',
+      story: '聊天',
+      note: '求人不如求己'
     },
     {
-      situation: '',
-      how: '六三：得敌，或鼓或罢，或泣或歌。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '升职加薪，闭关',
+      how: '去掉自身的欲望',
+      premise: '自省',
+      why: '顿悟',
+      or: '执迷不悟',
+      story: '吸烟',
+      note: '灭人欲存天理'
     },
     {
-      situation: '',
-      how: '六四：月几望，马匹亡，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '北漂，换房',
+      how: '解散小群体，建立更大的目标',
+      premise: '理想',
+      why: '动力，激情',
+      or: '安逸',
+      story: '小城市',
+      note: '舍小家为大家'
     },
     {
-      situation: '',
-      how: '九五：有孚挛如，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '拜访，请人',
+      how: '发号施令，汗流浃背，丢掉架子',
+      premise: '高位',
+      why: '求贤',
+      or: '臃肿',
+      story: '借钱',
+      note: '礼贤下士'
     },
     {
-      situation: '',
-      how: '上九：翰音登于天，贞凶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '治病，禁闭，离婚',
+      how: '放出脏血，把毒物排出去',
+      premise: '痛苦',
+      why: '长痛不如短痛',
+      or: '苦海',
+      story: '离职',
+      note: '置之死地而后生'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：飞鸟以凶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '幼儿，灾难',
+      how: '不迈出庭院，没有危害',
+      premise: '收心',
+      why: '形势不利',
+      or: '危险',
+      story: '消息轰炸',
+      note: '守时待机'
     },
     {
-      situation: '',
-      how: '六二：过其祖，遇其妣；不及其君，遇其臣；无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '啃老，自闭',
+      how: '不迈出庭大门，凶险',
+      premise: '自卑',
+      why: '缺陷',
+      or: '闯荡',
+      story: '周末',
+      note: '宅男'
     },
     {
-      situation: '',
-      how: '九三：弗过防之，从或戕之，凶。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '闯红灯，打瞌睡，矿工',
+      how: '本该约束节制的，却不能节制，事后却嗟叹后悔不已',
+      premise: '有规矩',
+      why: '不负责任',
+      or: '守规矩',
+      story: '变道',
+      note: '点子低'
     },
     {
-      situation: '',
-      how: '九四：无咎，弗过遇之。往厉必戒，勿用永贞。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '等红灯，正常上班',
+      how: '安然实行节制',
+      premise: '自律',
+      why: '有责任',
+      or: '违纪',
+      story: 'arcgis',
+      note: '遵纪守法'
     },
     {
-      situation: '',
-      how: '六五：密云不雨，自我西郊，公弋取彼在穴。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '推行政策，制定制度',
+      how: '心甘情愿地节制',
+      premise: '合理',
+      why: '受过苦',
+      or: '腐败',
+      story: '分配任务',
+      note: '约法三章'
     },
     {
-      situation: '',
-      how: '上六：弗遇过之，飞鸟离之，凶，是谓灾眚。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '严法，家规',
+      how: '因节制过分，则会感到苦涩，若坚持不改，会发生凶险',
+      premise: '自律',
+      why: '自责',
+      or: '放纵',
+      story: '吸烟',
+      note: '禁欲'
     }
   ],
   [
     {
-      situation: '',
-      how: '初九：曳其轮，濡其尾，无咎。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '背景调查，查户口',
+      how: '仔细考量(是否诚信)，有第三者出现(会影响相互信任)，会感到不安',
+      premise: '有求于人',
+      why: '不信任',
+      or: '上当受骗',
+      story: '京东客服',
+      note: '征信调查'
     },
     {
-      situation: '',
-      how: '六二：妇丧其茀，勿逐，七日得。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '恋爱，喝酒，聚餐',
+      how: '仙鹤在阴蔽之处鸣叫，小鹤跟着应和。我有醇香的美酒，愿与你一同畅饮',
+      premise: '志趣相投',
+      why: '有故事',
+      or: '话不投机半句多',
+      story: '相亲',
+      note: '情投意合'
     },
     {
-      situation: '',
-      how: '九三：高宗伐鬼方，三年克之，小人勿用。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '上当，受骗，蛊惑',
+      how:
+        '遭遇强大的敌人(上九)，或者击鼓进攻，或者因疲惫而败退，或者因为惧怕而哭泣，或者由于躲过灾难而高歌',
+      premise: '轻信',
+      why: '警觉性不够',
+      or: '提防',
+      story: '诈骗',
+      note: '被玩弄于鼓掌之中'
     },
     {
-      situation: '',
-      how: '六四：繻有衣袽，终日戒。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '猜忌，拉帮结派',
+      how: '月亮将圆而未盈，好马(初九)失掉了',
+      premise: '有业绩',
+      why: '怀疑',
+      or: '贬谪',
+      story: '白月光',
+      note: '丢了芝麻，捡了西瓜'
     },
     {
-      situation: '',
-      how: '九五：东邻杀牛，不如西邻之禴祭，实受其福。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '开脱，保释',
+      how: '具有诚信之德并以其牵系天下人心',
+      premise: '识人之能',
+      why: '热心肠',
+      or: '混乱',
+      story: '丽丽',
+      note: '大爱无疆'
     },
     {
-      situation: '',
-      how: '上六：濡其首，厉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '目标，梦想',
+      how: '锦鸡凭借华美的外表，高声鸣叫要去登天',
+      premise: '胆量',
+      why: '利益',
+      or: '解放前',
+      story: '老板',
+      note: '画大饼'
     }
   ],
   [
     {
-      situation: '',
-      how: '初六：濡其尾，吝',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '接任务，承诺',
+      how: '飞鸟向上强飞将会出现凶险',
+      premise: '自信',
+      why: '过分自信',
+      or: '衡量',
+      story: '教辅作业',
+      note: '枪打出头鸟'
     },
     {
-      situation: '',
-      how: '九二：曳其轮，贞吉。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '结婚，入职',
+      how:
+        '以为会遇到祖父(开创之君)，没想到遇到祖母(守成之君)；(六五)达不到君王的能力，只有臣子的能耐',
+      premise: '能力出众',
+      why: '期望过高',
+      or: '平凡',
+      story: '中软',
+      note: '期望越大，失望越大'
     },
     {
-      situation: '',
-      how: '六三：未济，征凶，利涉大川。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '排队，屯食物',
+      how: '不要飞过头，小心提防；跟着往上飞，会被戕害',
+      premise: '自知',
+      why: '恐慌',
+      or: '冷静',
+      story: '888',
+      note: '众人皆醉我独醒'
     },
     {
-      situation: '',
-      how: '九四：贞吉，悔亡，震用伐鬼方，三年有赏于大国。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '留任，放手',
+      how: '不要飞过头，往后会遇到赏识自己的人',
+      premise: '有人',
+      why: '时不对',
+      or: '惺惺相惜',
+      story: '郑亚',
+      note: '留得青山在，不愁没柴烧'
     },
     {
-      situation: '',
-      how: '六五：贞吉，无悔，君子之光，有孚，吉。',
-      premise: '',
-      why: '',
-      or: '',
+      situation: '招聘，拜访',
+      how:
+        '从西郊而来的乌云密布在天空，却不能降雨。王公(六五)用细绳系在箭上射取那些藏在穴中的野兽(隐士六二)',
+      premise: '有办法',
+      why: '救援',
+      or: '拒绝',
       story: '',
-      note: ''
+      note: '三顾茅庐'
     },
     {
-      situation: '',
-      how: '上九：有孚于饮酒，无咎，濡其首，有孚失是。',
-      premise: '',
-      why: '',
-      or: '',
-      story: '',
-      note: ''
+      situation: '加班，创业',
+      how: '没有相遇，越过去了，飞鸟陷入罗网，有凶祸',
+      premise: '能力',
+      why: '目标远大',
+      or: '知足',
+      story: '一件代发',
+      note: '咎由自取'
+    }
+  ],
+  [
+    {
+      situation: '黄灯停，吵架不发作',
+      how: '拖住车的轮子，小狐狸渡河时沾湿了尾巴',
+      premise: '克制',
+      why: '经验不足',
+      or: '栽了',
+      story: '急刹车',
+      note: '小心驶得万年船'
+    },
+    {
+      situation: '揩油，偷盗，占便宜',
+      how:
+        '贵妇人丢失了贵重的首饰(被轻薄)，不用去寻找了，七日之内会失而复得的(负荆请罪)',
+      premise: '后台硬',
+      why: '恐惧',
+      or: '惩罚',
+      story: '早上动静',
+      note: '打狗还得看主人'
+    },
+    {
+      situation: '价格战，内卷',
+      how:
+        '高宗武丁征伐地处西北的鬼方国，经过三年的连续战斗才获得胜利，在治理时不可任用贪功冒进的小人',
+      premise: '战力',
+      why: '威胁',
+      or: '内化',
+      story: '口水战',
+      note: '杀敌一千，自损八百'
+    },
+    {
+      situation: '节俭，快餐',
+      how: '当划船过河时，要准备好破布棉絮，以防止船漏水，整天保持戒备',
+      premise: '没钱',
+      why: '消耗',
+      or: '安稳',
+      story: '四爷',
+      note: '穷的响当当'
+    },
+    {
+      situation: '假名牌，请客',
+      how:
+        '东边邻国杀牛羊来举行盛大祭礼，不如西边的邻国举行的薄祀，这样才能实享神赐的福分',
+      premise: '虚荣',
+      why: '好面子',
+      or: '实在',
+      story: '太空被',
+      note: '打肿脸充胖子'
+    },
+    {
+      situation: '考试失利，投资失败',
+      how: '小狐狸渡河时弄湿了头，有危险',
+      premise: '有资本',
+      why: '决策错误',
+      or: '安稳过河',
+      story: '高考',
+      note: '种孽因得孽果'
+    }
+  ],
+  [
+    {
+      situation: '冲刺，晋级',
+      how: '小狐狸在渡河时被弄湿了尾巴，会有麻烦',
+      premise: '自信',
+      why: '自以为是',
+      or: '消停',
+      story: '一件代发',
+      note: '人心不足蛇吞象'
+    },
+    {
+      situation: '禁闭，泼冷水',
+      how: '拖住车轮，使其速度不要太快',
+      premise: '反对者',
+      why: '不理性',
+      or: '受伤',
+      story: '点亮',
+      note: '不要做无谓的牺牲'
+    },
+    {
+      situation: '失败，毒打',
+      how: '事情未完成，急躁冒进去远行，有凶险，但有利于渡过大河急流',
+      premise: '有希望',
+      why: '积累经验',
+      or: '消沉',
+      story: '拉黑',
+      note: '吃一堑长一智'
+    },
+    {
+      situation: '竞争，敌对',
+      how: '用和平的方式解决鬼方的问题，国家三年内得到兴盛',
+      premise: '威胁',
+      why: '共赢',
+      or: '俱损',
+      story: '吵架',
+      note: '以和为贵'
+    },
+    {
+      situation: '施舍，捐款',
+      how:
+        '坚守正道可获吉祥，没有悔恨；这是君子所具有的美德的光辉，有诚实守信的德行可获吉祥',
+      premise: '善心',
+      why: '修行',
+      or: '自私',
+      story: '游泳淹水',
+      note: '佛光普照'
+    },
+    {
+      situation: '宴会，友情，作业辅导',
+      how: '诚信地饮酒，没有过错。纵情滥饮，被酒淋湿了头，虽有诚信但是失了法度',
+      premise: '有爱',
+      why: '不受控制',
+      or: '温和',
+      story: '牵手',
+      note: '一波未平，一波又起'
     }
   ]
 ]
