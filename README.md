@@ -50,3 +50,18 @@ git branch --set-upstream-to=origin/apicloud apicloud
 ```js
 git checkout origin/apicloud --track
 ```
+
+### apicloud 调试
+
+#### 1.打包编译
+
+```
+npm run build
+npm run generate
+```
+
+#### 2.删除最外层 config.xml
+
+#### 3.widget/index.html 页面内
+
+右键 > wifi 预览页面 (Alt + O)
