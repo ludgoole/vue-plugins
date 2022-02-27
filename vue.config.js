@@ -3,11 +3,10 @@ const webpack = require('webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
 const resolve = filepath => path.resolve(__dirname, filepath)
-const undevelopment = process.env.NODE_ENV === 'development'
 
 module.exports = {
   outputDir: 'dist',
-  publicPath: undevelopment ? './' : '/',
+  publicPath: './',
   filenameHashing: false,
   productionSourceMap: false,
   css: {
