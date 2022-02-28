@@ -1,7 +1,7 @@
 <template>
   <div>
     pos: {{ x }}, {{ y }}
-    <div class="p-5px mt-[0.3px] flex-center"></div>
+    <div class="p-5px mt-[0.3px] flex-center btn btn-red">1222</div>
   </div>
 </template>
 
