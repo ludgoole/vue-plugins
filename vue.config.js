@@ -12,9 +12,24 @@ module.exports = {
   css: {
     loaderOptions: {
       scss: {
-        prependData: `@import "~@/assets/style/index.scss";`
+        // "sass-loader": "^8.0.2"
+        // prependData: `@import "~@/assets/style/index.scss";`
+        additionalData: `@import "~@/assets/style/variable.scss";`
       }
     }
+  },
+  // Can't import the named export x from non EcmaScript module (only default export is available) 报错
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          include: /node_modules/,
+          test: /\.mjs$/,
+          type: 'javascript/auto'
+        }
+      ]
+    },
+    plugins: []
   },
 
   // 链式配置
