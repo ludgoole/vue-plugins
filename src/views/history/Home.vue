@@ -1,5 +1,8 @@
 <template>
-  <div>pos: {{ x }}, {{ y }}</div>
+  <div>
+    pos: {{ x }}, {{ y }}
+    <div class="p-5px mt-[0.3px] flex-center"></div>
+  </div>
 </template>
 
 <script>

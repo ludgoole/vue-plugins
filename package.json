@@ -63,6 +63,7 @@
     "stylelint-webpack-plugin": "^2.1.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^4.1.1",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "windicss-webpack-plugin": "^1.6.6"
   }
 }

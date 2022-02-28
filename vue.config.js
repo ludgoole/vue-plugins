@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
 const resolve = filepath => path.resolve(__dirname, filepath)
+const WindiCSSWebpackPlugin = require('windicss-webpack-plugin')
 
 module.exports = {
   outputDir: 'dist',
@@ -29,7 +30,15 @@ module.exports = {
         }
       ]
     },
-    plugins: []
+    plugins: [new WindiCSSWebpackPlugin()]
+  },
+
+  pluginOptions: {
+    windicss: {
+      // 禁用预检样式
+      preflight: false
+      // see https://github.com/windicss/vite-plugin-windicss/blob/main/packages/plugin-utils/src/options.ts
+    }
   },
 
   // 链式配置
