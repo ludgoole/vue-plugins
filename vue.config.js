@@ -19,10 +19,11 @@ module.exports = {
       }
     }
   },
-  // Can't import the named export x from non EcmaScript module (only default export is available) 报错
   configureWebpack: {
     module: {
       rules: [
+        // vueuse
+        // Can't import the named export x from non EcmaScript module (only default export is available) 报错
         {
           include: /node_modules/,
           test: /\.mjs$/,
