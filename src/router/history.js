@@ -1,13 +1,11 @@
 const routes = [
   {
+    path: '/',
+    redirect: '/history/home'
+  },
+  {
     path: '/home',
     name: 'Home',
-    meta: {
-      title: '历史',
-      leftArrow: true,
-      leftText: '',
-      rightText: ''
-    },
     component: () =>
       import(/* webpackChunkName: "chat" */ '../views/history/Home.vue')
   }
