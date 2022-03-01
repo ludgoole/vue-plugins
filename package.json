@@ -22,6 +22,7 @@
     "lunar-javascript": "^1.2.4",
     "moment": "^2.29.1",
     "reset.css": "^2.0.2",
+    "splitpanes": "^2.4.1",
     "v-click-outside": "^3.1.2",
     "v-tips": "^0.0.2",
     "vant": "^2.12.24",
