@@ -85,8 +85,8 @@
 </template>
 
 <script>
-import WUXING from '@/mock/wuxing'
-import DIZHI from '@/mock/dizhi'
+import WUXING from '@/mock/shushu/wuxing'
+import DIZHI from '@/mock/shushu/dizhi'
 import ZHOUYI from '@/mock/zhouyi'
 import { Lunar } from 'lunar-javascript'
 import moment from 'moment'

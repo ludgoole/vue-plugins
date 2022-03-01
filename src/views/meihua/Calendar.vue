@@ -69,7 +69,7 @@
 import { Lunar } from 'lunar-javascript'
 import moment from 'moment'
 import { directive as clickOutside } from 'v-click-outside'
-import DIZHI from '@/mock/dizhi'
+import DIZHI from '@/mock/shushu/dizhi'
 
 export default {
   name: 'Calendar',
