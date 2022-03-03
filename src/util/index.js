@@ -56,3 +56,9 @@ export function compareVersion(v1, v2, isEqual) {
     }
   }
 }
+
+export function sleep(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, ms)
+  })
+}

@@ -20,7 +20,12 @@
           >
             {{ chao.time }}
           </p>
-          <p>{{ chao.name }}</p>
+          <p
+            :class="[chao.diwang ? 'text-yellow-700' : '']"
+            @click="gotoHandler(chao)"
+          >
+            {{ chao.name }}
+          </p>
         </div>
       </pane>
     </splitpanes>
@@ -28,12 +33,18 @@
 </template>
 
 <script>
-import { defineComponent, reactive, toRefs } from '@vue/composition-api'
+import {
+  defineComponent,
+  reactive,
+  toRefs,
+  getCurrentInstance
+} from '@vue/composition-api'
 import CHAODAI from '@/mock/history/chaodai'
 
 export default defineComponent({
-  name: 'radio-buttons',
+  name: 'Home',
   setup() {
+    const { proxy: self } = getCurrentInstance()
     const state = reactive({
       cache: [CHAODAI],
       chaodai: CHAODAI
@@ -51,12 +62,19 @@ export default defineComponent({
         state.chaodai = state.cache[state.cache.length - 1]
       }
     }
-    // const bgColor = () =>
-    //   '#' +
-    //   Math.random(16)
-    //     .toString()
-    //     .slice(-6)
-    return { ...toRefs(state), clickHandler, goBackHandler }
+    const gotoHandler = data => {
+      const { id: chao, name, diwang: emperor } = data
+
+      emperor &&
+        self.$router.push({
+          path: '/history/emperor',
+          query: {
+            chao,
+            name
+          }
+        })
+    }
+    return { ...toRefs(state), clickHandler, goBackHandler, gotoHandler }
   }
 })
 </script>

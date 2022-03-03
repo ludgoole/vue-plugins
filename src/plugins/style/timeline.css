@@ -1,0 +1,21 @@
+.gb-vue-timeline-update__left {
+  display: block !important;
+  width: 36px !important;
+  margin-top: 4px;
+}
+
+.gb-vue-timeline-update__left .gb-vue-timeline-update__ago {
+  font-weight: bold;
+}
+
+.gb-vue-timeline-update__meta .gb-vue-timeline-update__ago {
+  display: none !important;
+}
+
+.gb-vue-timeline-update__title {
+  color: #595959;
+}
+
+.gb-base-icon {
+  color: #595959 !important;
+}

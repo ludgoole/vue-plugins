@@ -7,8 +7,6 @@ import VAQ from 'vue-apicloud-quickstart'
 import pages from '@/config/pages.json'
 import VueCompositionAPI from '@vue/composition-api'
 
-import 'windi.css'
-
 Vue.config.productionTip = false
 Vue.use(VueCompositionAPI)
 Vue.use(plugins)

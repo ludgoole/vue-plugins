@@ -1,25 +1,238 @@
 export default [
   {
+    time: '',
+    name: '神话',
+    children: [
+      {
+        time: '',
+        name: '盘古'
+      },
+      {
+        time: '',
+        name: '女娲'
+      },
+      {
+        time: '',
+        name: '羲和'
+      },
+      {
+        time: '',
+        name: '夸父'
+      },
+      {
+        time: '',
+        name: '刑天'
+      },
+      {
+        time: '',
+        name: '东王公'
+      },
+      {
+        time: '',
+        name: '祝融'
+      },
+      {
+        time: '',
+        name: '西王母'
+      },
+      {
+        time: '',
+        name: '共工'
+      },
+      {
+        time: '',
+        name: '精卫'
+      },
+      {
+        time: '',
+        name: '华旭'
+      },
+      {
+        time: '',
+        name: '伏羲'
+      }
+    ]
+  },
+  {
+    time: '',
+    name: '三皇',
+    children: [
+      {
+        time: '',
+        name: '有巢氏'
+      },
+      {
+        time: '',
+        name: '燧人氏'
+      },
+      {
+        time: '',
+        name: '伏羲氏'
+      },
+      {
+        time: '',
+        name: '女娲氏'
+      },
+      {
+        time: '',
+        name: '神农氏'
+      }
+    ]
+  },
+  {
+    time: '',
+    name: '五帝',
+    children: [
+      {
+        time: '',
+        name: '黄帝'
+      },
+      {
+        time: '',
+        name: '颛顼'
+      },
+      {
+        time: '',
+        name: '帝喾'
+      },
+      {
+        time: '',
+        name: '尧'
+      },
+      {
+        time: '',
+        name: '瞬'
+      },
+      {
+        time: '',
+        name: '禹'
+      }
+    ]
+  },
+  {
+    id: '01',
     time: '-2027',
     name: '夏'
   },
   {
+    id: '02',
     time: '-1600',
     name: '商'
   },
   {
+    id: '03',
     time: '-1046',
-    name: '周'
+    name: '周',
+    children: [
+      {
+        time: '1046',
+        name: '西周'
+      },
+      {
+        time: '-770',
+        name: '东周',
+        children: [
+          {
+            time: '-770',
+            name: '春秋',
+            children: [
+              {
+                time: '-770',
+                name: '春秋五霸',
+                children: [
+                  {
+                    time: '-743',
+                    name: '郑庄公'
+                  },
+                  {
+                    time: '-685',
+                    name: '齐桓公'
+                  },
+                  {
+                    time: '-659',
+                    name: '秦穆公'
+                  },
+                  {
+                    time: '-650',
+                    name: '宋襄公'
+                  },
+                  {
+                    time: '-636',
+                    name: '晋文公'
+                  },
+                  {
+                    time: '-613',
+                    name: '楚庄王'
+                  },
+                  {
+                    time: '-514',
+                    name: '吴王阖闾'
+                  },
+                  {
+                    time: '-496',
+                    name: '越王勾践'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            time: '-475',
+            name: '战国',
+            children: [
+              {
+                time: '-475',
+                name: '战国七雄',
+                children: [
+                  {
+                    time: '',
+                    name: '秦'
+                  },
+                  {
+                    time: '',
+                    name: '燕'
+                  },
+                  {
+                    time: '',
+                    name: '韩'
+                  },
+                  {
+                    time: '',
+                    name: '赵'
+                  },
+                  {
+                    time: '',
+                    name: '魏'
+                  },
+                  {
+                    time: '',
+                    name: '楚'
+                  },
+                  {
+                    time: '',
+                    name: '齐'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
+    id: '04',
     time: '-221',
-    name: '秦'
+    name: '秦',
+    diwang: true
   },
   {
+    id: '05',
     time: '-206',
     name: '西楚'
   },
   {
+    id: '06',
     time: '-202',
     name: '汉',
     children: [
@@ -42,10 +255,12 @@ export default [
     ]
   },
   {
+    id: '07',
     time: '220',
     name: '三国'
   },
   {
+    id: '08',
     time: '265',
     name: '晋',
     children: [
@@ -174,6 +389,7 @@ export default [
     ]
   },
   {
+    id: '09',
     time: '420',
     name: '南北朝',
     children: [
@@ -234,14 +450,17 @@ export default [
     ]
   },
   {
+    id: '10',
     time: '581',
     name: '隋'
   },
   {
+    id: '11',
     time: '618',
     name: '唐'
   },
   {
+    id: '12',
     time: '907',
     name: '五代十国',
     children: [
@@ -320,6 +539,7 @@ export default [
     ]
   },
   {
+    id: '13',
     time: '960',
     name: '宋',
     children: [
@@ -354,22 +574,27 @@ export default [
     ]
   },
   {
+    id: '14',
     time: '1271',
     name: '元'
   },
   {
+    id: '15',
     time: '1368',
     name: '明'
   },
   {
+    id: '16',
     time: '1644',
     name: '清'
   },
   {
+    id: '17',
     time: '1912',
     name: '民国'
   },
   {
+    id: '18',
     time: '1949',
     name: '中国'
   }

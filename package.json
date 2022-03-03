@@ -10,6 +10,7 @@
     "serve:mock": "vue-cli-service serve --mode mock"
   },
   "dependencies": {
+    "@growthbunker/vuetimeline": "^0.1.17",
     "@vue/composition-api": "^1.4.9",
     "@vueuse/core": "^7.7.0",
     "axios": "^0.21.0",
@@ -21,6 +22,7 @@
     "lodash": "^4.17.20",
     "lunar-javascript": "^1.2.4",
     "moment": "^2.29.1",
+    "relation-graph": "^1.1.0",
     "reset.css": "^2.0.2",
     "splitpanes": "^2.4.1",
     "v-click-outside": "^3.1.2",
@@ -28,6 +30,7 @@
     "vant": "^2.12.24",
     "vue": "^2.6.11",
     "vue-apicloud-quickstart": "^1.0.27",
+    "vue-orgchart": "^1.1.7",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0",
     "vuex-persist": "^3.1.3",

@@ -7,7 +7,25 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: () =>
-      import(/* webpackChunkName: "chat" */ '../views/history/Home.vue')
+      import(/* webpackChunkName: "history" */ '../views/history/Home.vue')
+  },
+  {
+    path: '/emperor',
+    name: 'Emperor',
+    component: () =>
+      import(/* webpackChunkName: "history" */ '../views/history/Emperor.vue')
+  },
+  {
+    path: '/minister',
+    name: 'Minister',
+    component: () =>
+      import(/* webpackChunkName: "history" */ '../views/history/Minister.vue')
+  },
+  {
+    path: '/life',
+    name: 'Life',
+    component: () =>
+      import(/* webpackChunkName: "history" */ '../views/history/Life.vue')
   }
 ]
 
