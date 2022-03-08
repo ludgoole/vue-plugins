@@ -4,13 +4,13 @@
     <div class="p-4 flex-1 overflow-auto">
       <vue-timeline-update
         v-for="(experience, i) in life"
-        :key="experience.age"
+        :key="experience.date"
         :date="new Date()"
-        :dateString="experience.age + '岁'"
+        :dateString="experience.date"
         :category="experience.achievement"
         :title="experience.title || ''"
         :description="experience.description"
-        :color="colors[i]"
+        :color="colors[experience.color || i] || 'black'"
         icon="code"
       />
     </div>
@@ -37,7 +37,16 @@ export default defineComponent({
       chao,
       minister,
       name,
-      colors: ['red', 'orange', 'green', 'turquoise', 'blue', 'purple', 'black']
+      colors: [
+        '',
+        'red',
+        'orange',
+        'green',
+        'turquoise',
+        'blue',
+        'purple',
+        'black'
+      ]
     })
 
     onMounted(async () => {

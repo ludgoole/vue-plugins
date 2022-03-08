@@ -9,7 +9,8 @@ export default {
       defaultJunctionPoint: 'border',
       defaultNodeShape: 0,
       defaultLineShape: 1,
-      min_per_width: '90'
+      min_per_width: '120',
+      min_per_height: '140'
     }
   ],
   defaultLineMarker: {
@@ -26,11 +27,11 @@ export default {
   defaultNodeColor: 'rgba(250, 212, 0, 0.5)',
   defaultNodeBorderColor: '#FAD400',
   defaultNodeFontColor: 'rgba(0, 0, 0, 1)',
-  defaultShowLineLabel: false,
+  defaultShowLineLabel: true,
   allowShowMiniView: false,
   isMoveByParentNode: true,
   hideNodeContentByZoom: true,
-  allowSwitchLineShape: false,
+  allowSwitchLineShape: true,
   allowSwitchJunctionPoint: false,
   allowShowMiniNameFilter: false
 }

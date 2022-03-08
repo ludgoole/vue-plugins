@@ -229,48 +229,48 @@ export default [
   {
     id: '05',
     time: '-206',
-    name: '西楚'
-  },
-  {
-    id: '06',
-    time: '-202',
     name: '汉',
     children: [
       {
+        id: '0501',
         time: '-202',
-        name: '西汉'
+        name: '西汉',
+        diwang: true
       },
       {
+        id: '0502',
         time: '8',
-        name: '新朝'
+        name: '新莽'
       },
       {
-        time: '23',
-        name: '玄汉'
-      },
-      {
+        id: '0503',
         time: '25',
-        name: '东汉'
+        name: '东汉',
+        diwang: true
       }
     ]
   },
   {
-    id: '07',
+    id: '06',
     time: '220',
     name: '三国'
   },
   {
-    id: '08',
+    id: '07',
     time: '265',
     name: '晋',
     children: [
       {
+        id: '0701',
         time: '265',
-        name: '西晋'
+        name: '西晋',
+        diwang: true
       },
       {
+        id: '0702',
         time: '317',
         name: '东晋',
+        diwang: true,
         children: [
           {
             time: '317',
@@ -389,7 +389,7 @@ export default [
     ]
   },
   {
-    id: '09',
+    id: '08',
     time: '420',
     name: '南北朝',
     children: [
@@ -450,17 +450,17 @@ export default [
     ]
   },
   {
-    id: '10',
+    id: '09',
     time: '581',
     name: '隋'
   },
   {
-    id: '11',
+    id: '10',
     time: '618',
     name: '唐'
   },
   {
-    id: '12',
+    id: '11',
     time: '907',
     name: '五代十国',
     children: [
@@ -539,7 +539,7 @@ export default [
     ]
   },
   {
-    id: '13',
+    id: '12',
     time: '960',
     name: '宋',
     children: [
@@ -574,27 +574,27 @@ export default [
     ]
   },
   {
-    id: '14',
+    id: '13',
     time: '1271',
     name: '元'
   },
   {
-    id: '15',
+    id: '14',
     time: '1368',
     name: '明'
   },
   {
-    id: '16',
+    id: '15',
     time: '1644',
     name: '清'
   },
   {
-    id: '17',
+    id: '16',
     time: '1912',
     name: '民国'
   },
   {
-    id: '18',
+    id: '17',
     time: '1949',
     name: '中国'
   }

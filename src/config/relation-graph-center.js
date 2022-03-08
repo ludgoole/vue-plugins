@@ -6,7 +6,7 @@ export default {
       label: '中心',
       layoutName: 'center',
       layoutClassName: 'seeks-layout-center',
-      min_per_width: '90',
+      min_per_width: '60',
       distance_coefficient: 1
     }
   ],
@@ -20,8 +20,8 @@ export default {
   defaultLineShape: 0,
   defaultJunctionPoint: 'border',
   defaultNodeShape: 0,
-  // defaultNodeWidth: '40',
-  // defaultNodeHeight: '40',
+  defaultNodeWidth: '80',
+  defaultNodeHeight: '80',
   defaultNodeBorderWidth: 2,
   defaultNodeColor: 'rgba(250, 212, 0, 0.5)',
   defaultNodeBorderColor: '#FAD400',

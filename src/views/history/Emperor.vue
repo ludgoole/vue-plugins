@@ -42,7 +42,8 @@ export default {
         nodes: nodes.map(v => {
           // { id: 'c', text: 'C', width: 80, height: 60, color: '#43a2f1', fontColor: 'yellow' }
           return {
-            ...v,
+            id: v.id,
+            text: v.text.replace(' ', '<br>'),
             expandHolderPosition: v.isEnd ? 'hide' : 'bottom'
           }
         }),
@@ -50,7 +51,8 @@ export default {
           // { from: 'a', to: 'b', text: '关系1', color: '#43a2f1' },
           return {
             from: v.ancestors || v.parentId,
-            to: v.id
+            to: v.id,
+            text: v.relation
           }
         })
       }
@@ -62,7 +64,7 @@ export default {
     },
     onNodeClick(node, $event) {
       const { chao } = this
-      const { id: emperor, text: name } = node
+      const { id: emperor, text } = node
       console.log('onNodeClick:', node)
       this.$refs.seeksRelationGraph.focusNodeById(node.id)
       this.$router.push({
@@ -70,7 +72,7 @@ export default {
         query: {
           chao,
           emperor,
-          name
+          name: text.replace('<br>', '')
         }
       })
     },

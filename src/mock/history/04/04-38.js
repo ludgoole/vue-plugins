@@ -32,6 +32,16 @@ const people = [
     id: '04-38-06',
     text: '赵姬',
     relation: '母亲'
+  },
+  {
+    id: '04-38-07',
+    text: '王翦',
+    relation: '将军'
+  },
+  {
+    id: '04-38-08',
+    text: '李信',
+    relation: '将军'
   }
 ]
 

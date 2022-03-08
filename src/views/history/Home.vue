@@ -42,7 +42,7 @@ import {
 import CHAODAI from '@/mock/history/chaodai'
 
 export default defineComponent({
-  name: 'Home',
+  name: 'History',
   setup() {
     const { proxy: self } = getCurrentInstance()
     const state = reactive({
