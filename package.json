@@ -27,6 +27,7 @@
     "reset.css": "^2.0.2",
     "splitpanes": "^2.4.1",
     "v-click-outside": "^3.1.2",
+    "v-dragged": "^0.0.5",
     "v-tips": "^0.0.2",
     "vant": "^2.12.24",
     "vconsole": "^3.12.1",

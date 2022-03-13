@@ -1,13 +1,7 @@
 <template>
   <div class="Emperor">
     <van-nav-bar :title="title" left-arrow @click-left="$router.go(-1)" />
-    <div
-      class="Emperor-graph h-88vh m-1"
-      @panstart="panstart"
-      @pan="onPan"
-      @pinchin="onPinchin"
-      @pinchout="onPinchout"
-    >
+    <div class="Emperor-graph h-88vh m-1" @pan="onPan">
       <RelationGraph
         ref="seeksRelationGraph"
         :options="graphOptions"
@@ -22,16 +16,13 @@
 
 <script>
 import graphOptions from '@/config/relation-graph-tree'
-import AnyTouch from 'any-touch'
+import dragMixin from './mixins/drag'
 export default {
   name: 'Relation',
+  mixins: [dragMixin],
   data() {
     return {
-      graphOptions,
-      start: false,
-      displacementX: 0,
-      displacementY: 0,
-      scale: 1
+      graphOptions
     }
   },
   computed: {
@@ -40,24 +31,12 @@ export default {
     },
     title() {
       return this.$route.query.name
-    },
-    canvas() {
-      return this.$el.querySelector('.rel-map-canvas')
     }
   },
   mounted() {
     this.showSeeksGraph()
-    this.initTouch()
   },
   methods: {
-    initTouch() {
-      // 没错, 就这2行
-      const at = new AnyTouch(this.canvas)
-
-      this.$on('hook:destroyed', () => {
-        at.destroy()
-      })
-    },
     async showSeeksGraph(query) {
       const { default: nodes } = await import(`@/mock/history/${this.chao}`)
       const graphjsondata = {
@@ -113,27 +92,6 @@ export default {
       console.log('onNodeExpand:', node)
       this.$refs.seeksRelationGraph.refresh()
       this.$refs.seeksRelationGraph.focusNodeById(node.id)
-    },
-    onPan(data) {
-      const { displacementX, displacementY } = data
-      const el = this.canvas
-      console.log('[ data ] >', data)
-
-      // panstart 记录起始位置
-      if (!this.start) {
-        this.displacementX = parseFloat(el.style.marginLeft)
-        this.displacementY = parseFloat(el.style.marginTop)
-        this.start = true
-      }
-
-      // panmove 移动位置
-      el.style.marginLeft = this.displacementX + displacementX + 'px'
-      el.style.marginTop = this.displacementY + displacementY + 'px'
-
-      // panend 恢复状态
-      if (data.phase === 'end') {
-        this.start = false
-      }
     }
   }
 }

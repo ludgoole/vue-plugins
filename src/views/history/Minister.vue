@@ -1,7 +1,7 @@
 <template>
   <div class="Minister">
     <van-nav-bar :title="title" left-arrow @click-left="$router.go(-1)" />
-    <div class="h-88vh m-1">
+    <div class="h-88vh m-1" @pan="onPan">
       <RelationGraph
         ref="seeksRelationGraph"
         :options="graphOptions"
@@ -13,9 +13,10 @@
 
 <script>
 import graphOptions from '@/config/relation-graph-center'
-
+import dragMixin from './mixins/drag'
 export default {
   name: 'Minister',
+  mixins: [dragMixin],
   data() {
     return {
       graphOptions
