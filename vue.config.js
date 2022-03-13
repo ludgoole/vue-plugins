@@ -118,6 +118,7 @@ module.exports = {
 
   devServer: {
     disableHostCheck: true,
+    port: 8000,
     proxy: {
       '/api': {
         target: 'https://api.qingyunke.com',

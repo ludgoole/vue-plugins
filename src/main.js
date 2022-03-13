@@ -6,6 +6,8 @@ import plugins from './plugins'
 import VAQ from 'vue-apicloud-quickstart'
 import pages from '@/config/pages.json'
 import VueCompositionAPI from '@vue/composition-api'
+// import VConsole from 'vconsole'
+// window.vConsole = new VConsole()
 
 Vue.config.productionTip = false
 Vue.use(VueCompositionAPI)
