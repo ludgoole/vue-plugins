@@ -259,18 +259,17 @@ export default [
     id: '07',
     time: '265',
     name: '晋',
+    diwang: true,
     children: [
       {
         id: '0701',
         time: '265',
-        name: '西晋',
-        diwang: true
+        name: '西晋'
       },
       {
         id: '0702',
         time: '317',
         name: '东晋',
-        diwang: true,
         children: [
           {
             time: '317',
@@ -457,12 +456,14 @@ export default [
   {
     id: '10',
     time: '618',
-    name: '唐'
+    name: '唐',
+    diwang: true
   },
   {
     id: '11',
     time: '907',
     name: '五代十国',
+    diwang: true,
     children: [
       {
         time: '550',
@@ -542,6 +543,7 @@ export default [
     id: '12',
     time: '960',
     name: '宋',
+    diwang: true,
     children: [
       {
         time: '960',
@@ -581,12 +583,14 @@ export default [
   {
     id: '14',
     time: '1368',
-    name: '明'
+    name: '明',
+    diwang: true
   },
   {
     id: '15',
     time: '1644',
-    name: '清'
+    name: '清',
+    diwang: true
   },
   {
     id: '16',

@@ -1,7 +1,7 @@
 export default [
   {
-    id: '0701-01-lb',
-    text: '刘邦'
+    id: '0701-01-smy',
+    text: '司马炎'
   },
   {
     id: '0701-38-xh',

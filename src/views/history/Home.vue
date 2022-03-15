@@ -22,7 +22,7 @@
           </p>
           <p
             :class="[chao.diwang ? 'text-yellow-700' : '']"
-            @click="gotoHandler(chao)"
+            @click.stop="gotoHandler(chao)"
           >
             {{ chao.name }}
           </p>
