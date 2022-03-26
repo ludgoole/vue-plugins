@@ -1,6 +1,12 @@
 <template>
   <div class="Life flex flex-column !overflow-hidden">
-    <van-nav-bar :title="name" left-arrow @click-left="$router.go(-1)" />
+    <van-nav-bar
+      :title="name"
+      right-text="足迹"
+      left-arrow
+      @click-left="$router.go(-1)"
+      @click-right="toMap"
+    />
     <div class="p-4 flex-1 overflow-auto">
       <vue-timeline-update
         v-for="(experience, i) in life"
@@ -57,7 +63,14 @@ export default defineComponent({
       state.life = life
     })
 
-    return { ...toRefs(state) }
+    const toMap = () => {
+      self.$router.push({
+        path: '/history/map',
+        query: self.$route.query
+      })
+    }
+
+    return { ...toRefs(state), toMap }
   }
 })
 </script>
