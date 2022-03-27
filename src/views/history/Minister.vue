@@ -14,6 +14,8 @@
 <script>
 import graphOptions from '@/config/relation-graph-center'
 import dragMixin from './mixins/drag'
+import { tree2flat } from '@/util'
+
 export default {
   name: 'Minister',
   mixins: [dragMixin],
@@ -38,9 +40,11 @@ export default {
   },
   methods: {
     async showSeeksGraph(query) {
-      const { default: nodes } = await import(
+      const { default: nodetree } = await import(
         `@/mock/history/${this.chao}/${this.emperor}`
       )
+      const nodes = tree2flat(nodetree)
+      console.log('[ nodes ] >', nodes)
 
       const graphjsondata = {
         rootId: nodes[0].id,
@@ -51,8 +55,9 @@ export default {
           }
         }),
         links: nodes.slice(1).map(v => {
+          console.log('[ v ] >', v)
           return {
-            from: nodes[0].id,
+            from: v.parentId,
             to: v.id,
             text: v.relation
           }

@@ -62,3 +62,13 @@ export function sleep(ms) {
     setTimeout(resolve, ms)
   })
 }
+
+export function tree2flat(arr, parentId = '', level = 0) {
+  return arr.reduce((a, c) => {
+    const { children, ...rest } = c
+    return a.concat(
+      { ...rest, parentId, level },
+      tree2flat(children || [], c.id, level + 1)
+    )
+  }, [])
+}
