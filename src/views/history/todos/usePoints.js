@@ -23,8 +23,8 @@ export default function usePoints() {
       `@/mock/history/${chao}/${minister}-map`
     )
 
-    const { oldCity: start, startCity } = points[0]
-    const { oldCity: end, endCity } = points.slice(-1)[0]
+    const { newCity: startCity } = points[0]
+    const { newCity: endCity } = points.slice(-1)[0]
     const waypoints = points.slice(1, -1).map(point => point.newCity)
     const markers = points
       .slice(0, startCity === endCity ? -1 : undefined)
@@ -42,8 +42,8 @@ export default function usePoints() {
         }
       })
 
-    state.start = start
-    state.end = end
+    state.start = startCity
+    state.end = endCity
     state.startCity = startCity
     state.endCity = endCity
     state.waypoints = waypoints

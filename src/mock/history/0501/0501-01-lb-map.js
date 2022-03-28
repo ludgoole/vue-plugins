@@ -5,9 +5,7 @@ export default [
       lat: 34.764994
     },
     oldCity: '沛县',
-    newCity: '沛县',
-    startCity: '江苏',
-    offset: { width: 0, height: 10 }
+    newCity: '沛县'
   },
   {
     position: {
@@ -17,14 +15,14 @@ export default [
     oldCity: '砀山',
     newCity: '砀山县'
   },
-  {
-    position: {
-      lng: 116.663079,
-      lat: 34.701971
-    },
-    oldCity: '丰县',
-    newCity: '丰县'
-  },
+  // {
+  //   position: {
+  //     lng: 116.663079,
+  //     lat: 34.701971
+  //   },
+  //   oldCity: '丰县',
+  //   newCity: '丰县'
+  // },
   {
     position: {
       lng: 117.292782,
@@ -39,7 +37,17 @@ export default [
       lat: 35.117166
     },
     oldCity: '薛地',
-    newCity: '滕州市'
+    newCity: '滕州市',
+    offset: { width: 0, height: 10 }
+  },
+  {
+    position: {
+      lng: 108.937392,
+      lat: 34.341997
+    },
+    oldCity: '咸阳(长安)',
+    newCity: '西安',
+    offset: { width: -20, height: 20 }
   },
   {
     position: {
@@ -48,7 +56,8 @@ export default [
     },
     oldCity: '鸿门',
     newCity: '鸿门堡村',
-    offset: { width: 0, height: 10 }
+    // 上小下大
+    offset: { width: 0, height: 5 }
   },
   {
     position: {
@@ -68,11 +77,11 @@ export default [
   },
   {
     position: {
-      lng: 108.937392,
-      lat: 34.341997
+      lng: 112.450129,
+      lat: 34.63466
     },
-    oldCity: '长安',
-    newCity: '西安'
+    oldCity: '洛阳',
+    newCity: '洛阳市'
   },
   {
     position: {
@@ -84,12 +93,28 @@ export default [
   },
   {
     position: {
+      lng: 108.937392,
+      lat: 34.341997
+    },
+    oldCity: '咸阳(长安)',
+    newCity: '西安',
+    offset: { width: -20, height: 20 }
+  },
+  {
+    position: {
+      lng: 116.80569,
+      lat: 32.562742
+    },
+    oldCity: '淮南',
+    newCity: '寿县'
+  },
+  {
+    position: {
       lng: 116.945007,
       lat: 34.764994
     },
     oldCity: '沛县',
     newCity: '沛县',
-    endCity: '江苏',
     offset: { width: 0, height: 10 }
   }
 ]

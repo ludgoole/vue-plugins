@@ -13,9 +13,13 @@
 }
 
 .gb-vue-timeline-update__title {
-  color: #595959;
+  color: #303133;
+}
+
+.gb-vue-timeline-update__description {
+  color: #909399 !important;
 }
 
 .gb-base-icon {
-  color: #595959 !important;
+  color: #606266 !important;
 }

@@ -9,14 +9,14 @@
     />
     <div class="p-4 flex-1 overflow-auto">
       <vue-timeline-update
-        v-for="(experience, i) in life"
-        :key="experience.date"
+        v-for="{ date, achievement, title, description } in life"
+        :key="date + achievement"
         :date="new Date()"
-        :dateString="experience.date"
-        :category="experience.achievement"
-        :title="experience.title || ''"
-        :description="experience.description"
-        :color="colors[experience.color || i] || 'black'"
+        :dateString="date"
+        :category="achievement"
+        :title="title || ''"
+        :description="description"
+        color="red"
         icon="code"
       />
     </div>
