@@ -17,10 +17,14 @@ export default function usePoints() {
 
   onMounted(async () => {
     const { proxy: self } = getCurrentInstance()
-    const { chao = '0501', minister = '0501-01-lb' } = self.$route.query
+    const {
+      chao = '0501',
+      emperor = '0501-01',
+      minister = '0501-01-lb'
+    } = self.$route.query
 
     const { default: points } = await import(
-      `@/mock/history/${chao}/${minister}-map`
+      `@/mock/history/${chao}/${emperor}/${minister}-map`
     )
 
     const { newCity: startCity } = points[0]

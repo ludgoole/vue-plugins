@@ -11,13 +11,12 @@ export default [
     date: '33岁',
     achievement: '沛县',
     title: '泗水亭亭长',
-    description: `常年在外游手好闲，随游的张耳成为秦廷通缉犯，同时秦中央颁布流动人口政策，被迫返乡谋生。`,
-    color: 1
+    description: `常年在外游手好闲，随游的张耳成为秦廷通缉犯，同时秦中央颁布流动人口政策，被迫返乡谋生。`
   },
   {
     date: '34岁',
     achievement: '吕公家',
-    title: '娶亲',
+    title: '媒妁之言',
     description: `沛县县令为博得吕公好感，特设下酒宴，刘邦打着混吃混喝的心理随口说贺万钱，获得吕公欣赏，遂娶吕雉为妻。`
   },
   {
@@ -100,13 +99,13 @@ export default [
   {
     date: '56岁',
     achievement: '长安',
-    title: '迁都',
+    title: '迁都长安',
     description: `听从娄敬和张良建议，关中背山面河，关塞险峻，土地肥美，进退自如，高祖遂迁都长安。`
   },
   {
     date: '58岁',
     achievement: '漠北',
-    title: '和亲',
+    title: '汉匈和亲',
     description: `听从娄敬建议，高祖立宗室女儿为公主，与匈奴和亲，并开通关市，维持汉匈稳定。`
   },
   {
@@ -118,7 +117,7 @@ export default [
   {
     date: '62岁',
     achievement: '长乐宫',
-    title: '崩',
+    title: '驾崩',
     description: `征战多年，又在最后一次亲征中，不幸中箭，不愿配合御医治疗，不久后崩于长安长乐宫，葬于长陵。`
   }
 ]

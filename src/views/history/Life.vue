@@ -36,11 +36,12 @@ export default defineComponent({
   name: 'Life',
   setup() {
     const { proxy: self } = getCurrentInstance()
-    const { chao, minister, name } = self.$route.query
+    const { chao, emperor, minister, name } = self.$route.query
 
     const state = reactive({
       life: [],
       chao,
+      emperor,
       minister,
       name,
       colors: [
@@ -57,7 +58,7 @@ export default defineComponent({
 
     onMounted(async () => {
       const { default: life } = await import(
-        `@/mock/history/${chao}/${minister}`
+        `@/mock/history/${chao}/${emperor}/${minister}`
       )
 
       state.life = life

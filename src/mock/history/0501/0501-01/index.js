@@ -4,7 +4,7 @@ export default [
     text: '刘邦',
     children: [
       {
-        id: '0501-01-01',
+        id: '0501-01-WJ',
         text: '武将',
         children: [
           {
@@ -45,7 +45,7 @@ export default [
         ]
       },
       {
-        id: '0501-01-02',
+        id: '0501-01-SDF',
         text: '士大夫',
         children: [
           {
@@ -91,50 +91,7 @@ export default [
         ]
       },
       {
-        id: '0501-01-03',
-        text: '宦官',
-        children: [
-          {
-            id: '0501-01-wz',
-            text: '卧枕'
-          }
-        ]
-      },
-      {
-        id: '0501-01-04',
-        text: '后宫',
-        children: [
-          {
-            id: '0501-01-lz',
-            text: '吕雉',
-            relation: '皇后'
-          },
-          {
-            id: '0501-01-qfr',
-            text: '戚夫人'
-          },
-          {
-            id: '0501-01-bj',
-            text: '薄姬'
-          }
-        ]
-      },
-      {
-        id: '0501-01-05',
-        text: '外戚',
-        children: [
-          {
-            id: '0501-01-lc',
-            text: '吕产'
-          },
-          {
-            id: '0501-01-ll',
-            text: '吕录'
-          }
-        ]
-      },
-      {
-        id: '0501-01-06',
+        id: '0501-01-ZH',
         text: '诸侯',
         children: [
           {
@@ -165,7 +122,40 @@ export default [
         ]
       },
       {
-        id: '0501-01-07',
+        id: '0501-01-HG',
+        text: '后宫',
+        children: [
+          {
+            id: '0501-01-lz',
+            text: '吕雉',
+            relation: '皇后'
+          },
+          {
+            id: '0501-01-qfr',
+            text: '戚夫人'
+          },
+          {
+            id: '0501-01-bj',
+            text: '薄姬'
+          }
+        ]
+      },
+      {
+        id: '0501-01-WQ',
+        text: '外戚',
+        children: [
+          {
+            id: '0501-01-lc',
+            text: '吕产'
+          },
+          {
+            id: '0501-01-ll',
+            text: '吕录'
+          }
+        ]
+      },
+      {
+        id: '0501-01-FZ',
         text: '藩镇',
         children: [
           {
@@ -181,13 +171,18 @@ export default [
         ]
       },
       {
-        id: '0501-01-08',
+        id: '0501-01-DD',
         text: '敌对',
         children: [
           {
+            id: '0501-01-zy',
+            text: '子婴',
+            relation: '秦帝国'
+          },
+          {
             id: '0501-01-xy',
             text: '项羽',
-            relation: '西楚霸王'
+            relation: '西楚'
           },
           {
             id: '0501-01-md',

@@ -74,6 +74,7 @@ export default {
         path: '/history/life',
         query: {
           chao: this.chao,
+          emperor: this.emperor,
           minister: node.id,
           name: node.text
         }
