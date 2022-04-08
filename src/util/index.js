@@ -7,7 +7,9 @@ export function exportAll(r, option = {}) {
 
   r.keys().forEach(filename => {
     const moduleName = filename.replace(/^[^/]+\/([\w-]+)\.(js|vue)$/, '$1')
-    modules[moduleName] = Object.assign({}, option, r(filename).default)
+    modules[moduleName] = Array.isArray(r(filename).default)
+      ? r(filename).default
+      : Object.assign({}, option, r(filename).default)
   })
 
   return modules

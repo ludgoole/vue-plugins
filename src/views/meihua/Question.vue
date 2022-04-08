@@ -209,6 +209,9 @@ export default {
         case '历史':
           this.$router.push('/history')
           break
+        case '千字文':
+          this.$router.push('/character')
+          break
         default:
           this.$router.push({
             path: '/answer',

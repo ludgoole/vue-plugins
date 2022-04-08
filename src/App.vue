@@ -36,7 +36,7 @@
 export default {
   data() {
     return {
-      keepAlive: ['Star', 'History'],
+      keepAlive: ['Star', 'History', 'Character'],
       list: [
         {
           name: '卜卦',

@@ -1,18 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import meihuaRoutes from './meihua'
-import chatRoutes from './chat'
-import memoryRoutes from './memory'
-import historyRoutes from './history'
-
+import { exportAll } from '@/util'
+const routesMap = exportAll(
+  require.context('./', false, /\.\/(?!index)\w+\.js$/)
+)
+const routes = Object.values(routesMap).reduce((a, c) => a.concat(...c), [])
+console.log('[ routes ] >', routesMap, routes)
 Vue.use(VueRouter)
 
-const routes = [
-  ...meihuaRoutes,
-  ...chatRoutes,
-  ...memoryRoutes,
-  ...historyRoutes
-]
 const router = new VueRouter({
   routes
 })
