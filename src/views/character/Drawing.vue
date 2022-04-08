@@ -13,7 +13,7 @@
           index <= 0 ? 'opacity-50' : 'opacity-100',
           { 'pointer-events-none': index <= 0 }
         ]"
-        class="absolute -left-8 top-35"
+        class="absolute -left-3 top-35"
         size="40"
         name="arrow-left"
         @click="index--"
@@ -23,17 +23,17 @@
           index >= 999 ? 'opacity-50' : 'opacity-100',
           { 'pointer-events-none': index >= 999 }
         ]"
-        class="absolute left-68 top-35"
+        class="absolute left-63 top-35"
         size="40"
         name="arrow"
         @click="index++"
       />
     </div>
-    <div class="w-320px mt-5 mx-auto flex justify-between">
+    <div class="w-320px mt-5 mx-auto flex justify-between items-center">
       <input type="color" v-model="options.writeColor" />
+      <van-field class="!w-20" v-model="index" type="digit" maxlength="3" />
       <span @click="canvasClear()">清空</span>
     </div>
-    {{ index }}
   </div>
 </template>
 
@@ -84,3 +84,10 @@ export default defineComponent({
   }
 })
 </script>
+<style lang="scss">
+.Drawing {
+  .van-field__control {
+    text-align: center;
+  }
+}
+</style>
