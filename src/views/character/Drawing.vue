@@ -1,22 +1,25 @@
 <template>
   <div class="Drawing w-full h-full">
-    <van-nav-bar :title="title" left-arrow @click-left="$router.go(-1)" />
+    <van-nav-bar :title="qzw.cn" left-arrow @click-left="$router.go(-1)" />
     <van-search
       v-model="search"
       placeholder="请输入搜索关键词"
       @search="onSearch"
     />
-    <van-radio-group v-model="font" direction="horizontal" class="mt-3 ml-6">
-      <van-radio name="jwdz">金文</van-radio>
-      <van-radio name="zszd">篆书</van-radio>
-      <van-radio name="gfls">隶书</van-radio>
-    </van-radio-group>
+    <div class="Drawing-option flex justify-between align-middle mt-3 mx-6">
+      <van-radio-group v-model="font" direction="horizontal">
+        <van-radio name="jwdz">金文</van-radio>
+        <van-radio name="zszd">篆书</van-radio>
+        <van-radio name="gfls">隶书</van-radio>
+      </van-radio-group>
+      <span @click="canvasClear()">清空</span>
+    </div>
     <div class="Drawing-container relative w-320px h-320px mt-3 mx-auto">
       <p
         class="Drawing-font text-center text-280px"
         :style="{ 'font-family': font }"
       >
-        {{ title }}
+        {{ qzw.cn }}
       </p>
       <sign-canvas
         class="!absolute top-0"
@@ -44,12 +47,19 @@
         @click="index++"
       />
     </div>
-    <div
+    <!-- <div
       class="Drawing-option w-320px mt-5 mx-auto flex justify-between items-center"
     >
       <input type="color" v-model="options.writeColor" />
       <van-field class="!w-20" v-model="index" type="digit" maxlength="4" />
       <span @click="canvasClear()">清空</span>
+    </div> -->
+    <div class="Drawing-detail mt-3 ml-6">
+      <p class="Drawing-ls">
+        <van-tag type="warning">{{ qzw.ls }}</van-tag>
+        <van-tag class="ml-2" type="warning" plain>{{ index }}</van-tag>
+      </p>
+      <p class="Drawing-sw text-warm-gray-400">{{ qzw.sw }}</p>
     </div>
   </div>
 </template>
@@ -90,9 +100,8 @@ export default defineComponent({
     }
   },
   computed: {
-    title() {
-      const qzw = QIAN_ZI_WEN[this.index - 1] || QIAN_ZI_WEN[0]
-      return qzw.cn
+    qzw() {
+      return QIAN_ZI_WEN[this.index - 1] || QIAN_ZI_WEN[0]
     }
   },
   watch: {
@@ -105,12 +114,14 @@ export default defineComponent({
         this.index = 1
       }
       this.canvasClear()
-      this.search = this.title
+      this.search = this.qzw.cn
     }
   },
   methods: {
     onSearch(search) {
-      const index = QIAN_ZI_WEN.findIndex(v => v.cn === search)
+      const index = isNaN(search)
+        ? QIAN_ZI_WEN.findIndex(v => v.cn === search)
+        : search - 1
 
       if (index > -1) {
         this.index = index + 1
@@ -148,7 +159,7 @@ export default defineComponent({
     }
   }
 
-  .van-radio__icon--font .van-icon {
+  .van-radio__icon--checked .van-icon {
     color: #fff;
     background-color: #ff787f;
     border-color: #ff787f;
