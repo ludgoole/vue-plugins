@@ -8,14 +8,24 @@
     />
     <div class="Drawing-option flex justify-between align-middle mt-3 mx-6">
       <van-radio-group v-model="font" direction="horizontal">
+        <van-radio name="jgwz">甲骨文</van-radio>
         <van-radio name="jwdz">金文</van-radio>
         <van-radio name="zszd">篆书</van-radio>
         <van-radio name="gfls">隶书</van-radio>
       </van-radio-group>
       <span @click="canvasClear()">清空</span>
     </div>
-    <div class="Drawing-container relative w-320px h-320px mt-3 mx-auto">
+    <div
+      class="Drawing-container relative w-320px h-320px mt-3 mx-auto"
+      :style="{
+        background:
+          font === 'jgwz'
+            ? `url(${require(`@/assets/font/jgw/${index}.png`)}) no-repeat center/cover`
+            : 'transparent'
+      }"
+    >
       <p
+        v-show="font !== 'jgwz'"
         class="Drawing-font text-center text-280px"
         :style="{ 'font-family': font }"
       >
@@ -149,14 +159,23 @@ export default defineComponent({
   }
 
   &-font {
-    color: gainsboro;
+    // color: gainsboro;
     line-height: 1.3;
+    filter: blur(1.5px);
   }
 
   &-option {
     .van-field__control {
       text-align: center;
     }
+  }
+
+  .van-radio--horizontal {
+    margin-right: 6px;
+  }
+
+  .van-radio__label {
+    margin-left: 2px;
   }
 
   .van-radio__icon--checked .van-icon {
