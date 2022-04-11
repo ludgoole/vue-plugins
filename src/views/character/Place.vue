@@ -38,12 +38,13 @@ export default defineComponent({
     }
   },
   methods: {
-    goToSentence({ cn, js, jw = [] }) {
+    goToSentence({ cn, js, zhu }) {
       this.$router.push({
         path: '/character/sentence',
         query: {
           sentence: cn,
-          detail: js
+          detail: js,
+          zhu
         }
       })
     }

@@ -15,3 +15,18 @@ p {
 b {
   font-weight: bold;
 }
+
+@font-face {
+  font-family: jwdz;
+  src: url('../font/金文大篆体.ttf');
+}
+
+@font-face {
+  font-family: zszd;
+  src: url('../font/篆书字典.ttf');
+}
+
+@font-face {
+  font-family: gfls;
+  src: url('../font/秦韵古风隶书.ttf');
+}

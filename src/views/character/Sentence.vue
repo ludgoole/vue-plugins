@@ -4,13 +4,20 @@
     <div class="Palce-container px-5 mt-5">
       <van-grid square :column-num="4">
         <van-grid-item
+          class="text-rose-400"
           v-for="word in words"
           :key="word"
           :text="word"
           @click="goToDrawing(word)"
         />
       </van-grid>
-      <p class="mt-5 text-warm-gray-500">{{ detail }}</p>
+      <div class="mt-5 text-justify">{{ detail }}</div>
+      <div class="mt-5 text-warm-gray-500">
+        <p class="font-bold">[注]</p>
+        <p class="text-sm mt-2 leading-4" v-for="word in zhu" :key="word">
+          {{ word }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -20,12 +27,13 @@ import { defineComponent } from '@vue/composition-api'
 export default defineComponent({
   name: 'Sentence',
   setup(props, { root }) {
-    const { sentence, detail } = root.$route.query
+    const { sentence, detail, zhu } = root.$route.query
     const words = sentence.replace(' ', '')
 
     return {
       sentence,
-      detail,
+      detail: detail.replace(/\s/g, ''),
+      zhu: zhu.split('。').filter(Boolean),
       words
     }
   },
@@ -67,7 +75,6 @@ export default defineComponent({
       bottom: 0;
       left: 50%;
       z-index: 1;
-      // height: 100%;
       border-left: 1px solid #dcdcdc;
       content: '';
     }
@@ -78,31 +85,9 @@ export default defineComponent({
     }
 
     &__text {
-      // background: rgba(16, 185, 129, 0.4);
+      color: inherit;
       font-size: 32px;
     }
-
-    // &__content::after {
-    //   border-color: #f2f2f2;
-    // }
   }
-
-  // .van-hairline--top::before {
-  //   position: absolute;
-  //   top: -50%;
-  //   right: 0;
-  //   bottom: -50%;
-  //   left: -50%;
-  //   box-sizing: border-box;
-  //   border: 0 solid red;
-  //   border-left-width: 1px;
-  //   transform: scale(0.5);
-  //   content: ' ';
-  //   pointer-events: none;
-  // }
-
-  // .van-hairline--top::after {
-  //   border-color: #ccc;
-  // }
 }
 </style>
