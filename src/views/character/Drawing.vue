@@ -75,7 +75,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 import SignCanvas from 'sign-canvas'
 import QIAN_ZI_WEN from '@/mock/qianziwen/word'
 
@@ -83,12 +83,12 @@ export default defineComponent({
   components: {
     SignCanvas
   },
-  setup(props, { root }) {
-    const { word } = root.$route.query
-    const index = QIAN_ZI_WEN.findIndex(v => v.cn === word) + 1
-    const search = word
-    const font = 'jwdz'
-    const state = reactive({
+  data() {
+    const { word } = this.$route.query
+    this.index = QIAN_ZI_WEN.findIndex(v => v.cn === word) + 1
+    this.search = word
+    this.font = 'jwdz'
+    return {
       options: {
         canvasWidth: 320, // canvas宽高 [Number] 可选
         canvasHeight: 320, // 高度  [Number] 可选
@@ -99,14 +99,7 @@ export default defineComponent({
         writeWidth: 5, // 基础轨迹宽度  [Number] 可选
         writeColor: '#ff787f', // 轨迹颜色  [String] 可选
         isSign: false // 签名模式 [Boolean] 默认为非签名模式,有线框, 当设置为true的时候没有任何线框
-      },
-      index,
-      search,
-      font
-    })
-
-    return {
-      ...toRefs(state)
+      }
     }
   },
   computed: {

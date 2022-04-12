@@ -26,10 +26,9 @@
 import { defineComponent } from '@vue/composition-api'
 export default defineComponent({
   name: 'Sentence',
-  setup(props, { root }) {
-    const { sentence, detail, zhu } = root.$route.query
+  data() {
+    const { sentence, detail, zhu } = this.$route.query
     const words = sentence.replace(' ', '')
-
     return {
       sentence,
       detail: detail.replace(/\s/g, ''),

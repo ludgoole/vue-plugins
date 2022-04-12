@@ -24,12 +24,11 @@ import { defineComponent } from '@vue/composition-api'
 import QIAN_ZI_WEN from '@/mock/qianziwen/sentence'
 export default defineComponent({
   name: 'Place',
-  setup(props, { root }) {
-    const { place, title, story } = root.$route.query
+  data() {
+    const { place, title, story } = this.$route.query
     const sentences = QIAN_ZI_WEN.filter(sentence =>
       title.includes(sentence.cn[0])
     )
-
     return {
       place,
       title,
