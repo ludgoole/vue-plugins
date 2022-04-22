@@ -64,12 +64,32 @@
       <van-field class="!w-20" v-model="index" type="digit" maxlength="4" />
       <span @click="canvasClear()">清空</span>
     </div> -->
-    <div class="Drawing-detail mt-3 ml-6">
-      <p class="Drawing-ls">
-        <van-tag type="warning">{{ qzw.ls }}</van-tag>
-        <van-tag class="ml-2" type="warning" plain>{{ index }}</van-tag>
+    <div class="Drawing-detail mt-3 mx-6 text-justify">
+      <p class="Drawing-ls -ml-2">
+        <van-tag
+          class="ml-2"
+          v-for="ls in qzw.ls.split(' ')"
+          :key="ls"
+          type="warning"
+          @click="showXD = !showXD"
+          >{{ ls }}</van-tag
+        >
+        <van-tag class="ml-2" type="danger">{{ qzw.bs }}</van-tag>
+        <van-tag class="ml-2" plain>{{ index }}</van-tag>
       </p>
-      <p class="Drawing-sw text-warm-gray-400">{{ qzw.sw }}</p>
+      <p class="Drawing-sw text-warm-gray-400 text-xs">{{ qzw.sm }}</p>
+      <p
+        class="Drawing-sw text-warm-gray-600 text-sm my-1 leading-tight"
+        @click="toggleSW = !toggleSW"
+      >
+        {{ toggleSW ? qzw.swy : qzw.sw }}
+      </p>
+      <p v-show="showXD" class="Drawing-sw text-warm-gray-500 text-xs">
+        {{ qzw.xd }}
+      </p>
+      <!-- <ul v-show="showXD" class="Drawing-sw text-warm-gray-500 text-xs mt-2">
+        <li v-for="xd in qzw.xd.split('\n')" :key="xd">{{ xd }}</li>
+      </ul> -->
     </div>
   </div>
 </template>
@@ -100,7 +120,9 @@ export default defineComponent({
       },
       index,
       search: word,
-      font: 'jwdz'
+      font: 'jwdz',
+      toggleSW: false,
+      showXD: false
     }
   },
   computed: {
