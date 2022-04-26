@@ -8,7 +8,7 @@
     />
     <div class="Drawing-option flex justify-between align-middle mt-3 mx-6">
       <van-radio-group v-model="font" direction="horizontal">
-        <van-radio name="jgwz">甲骨文</van-radio>
+        <van-radio name="jgw">甲骨文</van-radio>
         <van-radio name="jwdz">金文</van-radio>
         <van-radio name="zszd">篆书</van-radio>
         <van-radio name="gfls">隶书</van-radio>
@@ -19,13 +19,13 @@
       class="Drawing-container relative w-320px h-320px mt-3 mx-auto"
       :style="{
         background:
-          font === 'jgwz'
+          font === 'jgw'
             ? `url(${require(`@/assets/font/jgw/${index}.png`)}) no-repeat center/cover`
             : 'transparent'
       }"
     >
       <p
-        v-show="font !== 'jgwz'"
+        v-show="font !== 'jgw'"
         class="Drawing-font text-center text-280px"
         :style="{ 'font-family': font }"
       >
