@@ -72,9 +72,11 @@
           :key="ls"
           type="warning"
           @click="showXD = !showXD"
-          >{{ ls }}</van-tag
+          >{{ ls || '形声' }}</van-tag
         >
-        <van-tag class="ml-2" type="danger">{{ qzw.bs }}</van-tag>
+        <van-tag class="ml-2" type="danger">{{
+          qzw.bs || `${qzw.cn}部`
+        }}</van-tag>
         <van-tag class="ml-2" plain>{{ index }}</van-tag>
       </p>
       <p class="Drawing-sw text-warm-gray-400 text-xs">{{ qzw.sm }}</p>
