@@ -26,7 +26,7 @@
         :placeholder="currItem.ext ? currItem.ext : currItem.text"
         :rules="[{ required: true, message: `请填写${currItem.text}` }]"
       />
-      <div style="margin: 16px;">
+      <div style="margin: 16px">
         <van-button round block type="info" native-type="submit"
           >解卦</van-button
         >
@@ -51,60 +51,60 @@ export default {
           type: 'random',
           text: '随机',
           icon: 'like-o',
-          ext: '随机数'
+          ext: '随机数',
         },
         {
           type: 'time',
           text: '时间',
           icon: 'clock-o',
-          ext: '当前时间'
+          ext: '当前时间',
         },
         {
           type: 'number',
           text: '数字',
           icon: 'info-o',
-          ext: '13 14 520 2020-02-02 20:20:20'
+          ext: '13 14 520 2020-02-02 20:20:20',
         },
         {
           type: 'character',
           text: '汉字',
           icon: 'comment-circle-o',
-          ext: '一帆风顺'
+          ext: '一帆风顺',
         },
         {
           type: 'phone',
           text: '电话',
           icon: 'phone-circle-o',
-          ext: '18672793439'
+          ext: '18672793439',
         },
         {
           type: 'car',
           text: '车牌',
           icon: 'logistics',
-          ext: '鄂A8W888'
+          ext: '鄂A8W888',
         },
         {
           type: 'id',
           text: '工号',
           icon: 'label-o',
-          ext: '2018009'
+          ext: '2018009',
         },
         {
           type: 'birthday',
           text: '生日',
           icon: 'birthday-cake-o',
-          ext: '12-19'
+          ext: '12-19',
         },
         {
           type: 'home',
           text: '房号',
           icon: 'wap-home-o',
-          ext: '1-1-1101'
-        }
+          ext: '1-1-1101',
+        },
       ],
       currItem: {},
       question: '',
-      text: ''
+      text: '',
     }
   },
   mounted() {},
@@ -166,7 +166,7 @@ export default {
           params.xiaGuaCount = text.slice(-2)
           break
         case 'car':
-          text = text.split('').map(c => {
+          text = text.split('').map((c) => {
             return c.charCodeAt() > 57
               ? c.toUpperCase().charCodeAt() - 55
               : c * 1
@@ -176,14 +176,8 @@ export default {
           break
         case 'birthday':
         case 'home':
-          params.shangGuaCount = text
-            .split(/[-_]/g)
-            .join('')
-            .slice(-2, -1)
-          params.xiaGuaCount = text
-            .split(/[-_]/g)
-            .join('')
-            .slice(-1)
+          params.shangGuaCount = text.split(/[-_]/g).join('').slice(-2, -1)
+          params.xiaGuaCount = text.split(/[-_]/g).join('').slice(-1)
           break
         // default:
       }
@@ -204,7 +198,7 @@ export default {
           this.$router.push('/game')
           break
         case '记忆宫殿':
-          this.$router.push('/palace')
+          this.$router.push('/memory')
           break
         case '历史':
           this.$router.push('/history')
@@ -218,12 +212,12 @@ export default {
             query: {
               question: this.question,
               timestamp: Date.now(),
-              ...query
-            }
+              ...query,
+            },
           })
       }
-    }
-  }
+    },
+  },
 }
 </script>
 <style lang="scss" scope>

@@ -1,5 +1,9 @@
 const routes = [
   {
+    path: '/',
+    redirect: '/Memory/home',
+  },
+  {
     path: '/home',
     name: 'Memory',
     component: () =>

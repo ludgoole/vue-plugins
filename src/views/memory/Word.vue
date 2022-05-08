@@ -95,6 +95,7 @@ $size: 60px;
   &-font {
     img {
       width: $size;
+      height: $size;
     }
 
     p {
