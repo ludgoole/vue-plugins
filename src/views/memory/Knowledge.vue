@@ -25,21 +25,6 @@ export default {
       return JSON.parse(this.$route.query.pile)
     },
   },
-  methods: {
-    goPile(item) {
-      this.$router.push({
-        path: '/memory/pile',
-        name: 'Pile',
-        query: {
-          palace: JSON.stringify(this.chapter),
-        },
-        params: {
-          palace: this.chapter,
-        },
-      })
-    },
-  },
+  methods: {},
 }
 </script>
-
-<style lang="scss" scoped></style>

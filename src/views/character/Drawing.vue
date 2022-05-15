@@ -21,7 +21,7 @@
         background:
           font === 'jgw'
             ? `url(${require(`@/assets/font/jgw/${index}.png`)}) no-repeat center/cover`
-            : 'transparent'
+            : 'transparent',
       }"
     >
       <p
@@ -39,7 +39,7 @@
       <van-icon
         :class="[
           index <= 1 ? 'opacity-50' : 'opacity-100',
-          { 'pointer-events-none': index <= 1 }
+          { 'pointer-events-none': index <= 1 },
         ]"
         class="!absolute -left-3 top-35"
         size="40"
@@ -49,7 +49,7 @@
       <van-icon
         :class="[
           index > 999 ? 'opacity-50' : 'opacity-100',
-          { 'pointer-events-none': index > 999 }
+          { 'pointer-events-none': index > 999 },
         ]"
         class="!absolute left-73 top-35"
         size="40"
@@ -103,11 +103,11 @@ import QIAN_ZI_WEN from '@/mock/qianziwen/word'
 
 export default defineComponent({
   components: {
-    SignCanvas
+    SignCanvas,
   },
   data() {
     const { word } = this.$route.query
-    const index = QIAN_ZI_WEN.findIndex(v => v.cn === word) + 1
+    const index = QIAN_ZI_WEN.findIndex((v) => v.cn === word) + 1
     return {
       options: {
         canvasWidth: 320, // canvas宽高 [Number] 可选
@@ -118,19 +118,19 @@ export default defineComponent({
         borderColor: 'rgba(255,0,0,0.1)', // 网格颜色  [String] 可选
         writeWidth: 5, // 基础轨迹宽度  [Number] 可选
         writeColor: '#ff787f', // 轨迹颜色  [String] 可选
-        isSign: false // 签名模式 [Boolean] 默认为非签名模式,有线框, 当设置为true的时候没有任何线框
+        isSign: false, // 签名模式 [Boolean] 默认为非签名模式,有线框, 当设置为true的时候没有任何线框
       },
       index,
       search: word,
       font: 'jwdz',
       toggleSW: false,
-      showXD: false
+      showXD: true,
     }
   },
   computed: {
     qzw() {
       return QIAN_ZI_WEN[this.index - 1] || QIAN_ZI_WEN[0]
-    }
+    },
   },
   watch: {
     index(val) {
@@ -143,12 +143,12 @@ export default defineComponent({
       }
       this.canvasClear()
       this.search = this.qzw.cn
-    }
+    },
   },
   methods: {
     onSearch(search) {
       const index = isNaN(search)
-        ? QIAN_ZI_WEN.findIndex(v => v.cn === search)
+        ? QIAN_ZI_WEN.findIndex((v) => v.cn === search)
         : search - 1
 
       if (index > -1) {
@@ -159,8 +159,8 @@ export default defineComponent({
     },
     canvasClear() {
       this.$refs.SignCanvas.canvasClear()
-    }
-  }
+    },
+  },
 })
 </script>
 <style lang="scss">
@@ -197,8 +197,8 @@ export default defineComponent({
   }
 
   .van-radio__icon--checked .van-icon {
-    color: #fff;
     background-color: #ff787f;
+    color: #fff;
     border-color: #ff787f;
   }
 }

@@ -14,7 +14,7 @@
           v-for="pile in chapter.piles"
           :key="pile.name"
           :text="pile.name"
-          :class="{ active: curPile === pile }"
+          :class="{ active: curPile.id === pile.id }"
           @click="clickHandler(pile)"
         />
       </van-grid>
