@@ -136,6 +136,7 @@ export default {
         path: '/memory/knowledge',
         name: 'Knowledge',
         query: {
+          chapter: JSON.stringify(this.chapter),
           pile: JSON.stringify(pile),
         },
       })
