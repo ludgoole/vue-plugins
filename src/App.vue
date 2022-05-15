@@ -36,36 +36,36 @@
 export default {
   data() {
     return {
-      keepAlive: ['Star', 'History', 'Character'],
+      keepAlive: ['Star', 'History', 'Character', 'Pile'],
       list: [
         {
           name: '卜卦',
           path: '/question',
-          icon: 'question-o'
+          icon: 'question-o',
         },
         {
           name: '查卦',
           path: '/query',
-          icon: 'gift-o'
+          icon: 'gift-o',
         },
         {
           name: '名卦',
           path: '/star',
-          icon: 'medal-o'
+          icon: 'medal-o',
         },
         {
           name: '我的',
           path: '/mine',
-          icon: 'user-circle-o'
-        }
+          icon: 'user-circle-o',
+        },
       ],
-      currName: ''
+      currName: '',
     }
   },
   computed: {
     hasNavbar() {
       return this.$route.meta.type === 'meihua'
-    }
+    },
   },
   methods: {
     onClickLeft() {
@@ -81,8 +81,8 @@ export default {
     switchTo({ name, path }) {
       this.currName !== name && this.$router.push(path)
       this.currName = name
-    }
-  }
+    },
+  },
 }
 </script>
 
