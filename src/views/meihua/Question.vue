@@ -206,6 +206,9 @@ export default {
         case '千字文':
           this.$router.push('/character')
           break
+        case '艺术':
+          this.$router.push('/art')
+          break
         default:
           this.$router.push({
             path: '/answer',

@@ -8,6 +8,9 @@ export default [
         id: '',
         time: '',
         name: '洞窟壁画',
+        image:
+          'https://img0.baidu.com/it/u=1519050398,2562977859&fm=253&fmt=auto&app=138&f=JPEG?w=879&h=500',
+        imageName: '受伤的野牛',
       },
     ],
   },
