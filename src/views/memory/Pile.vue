@@ -28,7 +28,7 @@ export default {
   name: 'Pile',
   computed: {
     chapter() {
-      return JSON.parse(this.$route.query.chapter)
+      return JSON.parse(this.$route.query.chapter || '{}')
     },
   },
   data() {
@@ -120,7 +120,7 @@ export default {
       return circle
     },
     clickHandler(pile) {
-      if (this.curPile === pile) {
+      if (this.curPile.id === pile.id) {
         this.goKnowledge(pile)
       } else {
         this.curPile = pile
@@ -136,7 +136,6 @@ export default {
         path: '/memory/knowledge',
         name: 'Knowledge',
         query: {
-          chapter: JSON.stringify(this.chapter),
           pile: JSON.stringify(pile),
         },
       })
