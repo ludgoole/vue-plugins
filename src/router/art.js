@@ -10,6 +10,12 @@ const routes = [
       import(/* webpackChunkName: "art" */ '../views/art/Home.vue'),
   },
   {
+    path: '/timeline',
+    name: 'Timeline',
+    component: () =>
+      import(/* webpackChunkName: "art" */ '../views/art/Timeline.vue'),
+  },
+  {
     path: '/image',
     name: 'Image',
     component: () =>

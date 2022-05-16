@@ -1,6 +1,6 @@
 export default [
   {
-    id: '',
+    id: '01',
     time: '',
     name: '生存',
     children: [
@@ -15,24 +15,114 @@ export default [
     ],
   },
   {
-    id: '',
+    id: '02',
     time: '',
     name: '崇拜',
     children: [
       {
-        id: '',
+        id: '0201',
         time: '',
         name: '神话',
       },
       {
-        id: '',
+        id: '0202',
         time: '',
         name: '圣经',
+        timeline: [
+          {
+            date: '旧约',
+            achievement: '第一次约定',
+            title: '伊甸之约',
+            description: `好奇心害死猫`
+          },
+          {
+            date: '旧约',
+            achievement: '第二次约定',
+            title: '亚当之约',
+            description: `救赎之道就在其中`
+          },
+          {
+            date: '旧约',
+            achievement: '第三次约定',
+            title: '诺亚之约',
+            description: `恨铁不成钢`
+          },
+          {
+            date: '旧约',
+            achievement: '第四次约定',
+            title: '亚伯拉罕之约',
+            description: `好了伤疤忘了痛`
+          },
+          {
+            date: '旧约',
+            achievement: '第五次约定',
+            title: '摩西之约',
+            description: `上帝与你同在`
+          },
+          {
+            date: '旧约',
+            achievement: '第六次约定',
+            title: '巴勒斯坦之约',
+            description: `胡萝卜加大棒`
+          },
+          {
+            date: '旧约',
+            achievement: '第七次约定',
+            title: '大卫之约',
+            description: `许你一世繁华`
+          },
+          {
+            date: '新约',
+            achievement: '道成肉身',
+            title: '圣母领报',
+            description: `久旱逢甘霖`
+          },
+          {
+            date: '新约',
+            achievement: '道成肉身',
+            title: '耶稣诞生',
+            description: `看，那是光`
+          },
+          {
+            date: '新约',
+            achievement: '公开传道',
+            title: '耶稣受洗',
+            description: `我是上帝之子`
+          },
+          {
+            date: '新约',
+            achievement: '公开传道',
+            title: '召唤马太',
+            description: `你跟从我来`
+          },
+          {
+            date: '新约',
+            achievement: '耶稣受难',
+            title: '最后的晚餐',
+            description: `大限将至`
+          },
+          {
+            date: '新约',
+            achievement: '耶稣受难',
+            title: '殉难十字架',
+            description: `出来混迟早是要还的`
+          },
+          {
+            date: '新约',
+            achievement: '耶稣受难',
+            title: '哀悼耶稣',
+            description: `母子情深`,
+            paint: {
+              name: '哀悼耶稣',
+              image: 'https://img2.baidu.com/it/u=1035942066,98562369&fm=253&fmt=auto&app=138&f=JPEG?w=524&h=500'
+            }
+          },
+        ]
       },
     ],
   },
   {
-    id: '',
+    id: '03',
     time: '',
     name: '解放',
     children: [
@@ -74,7 +164,7 @@ export default [
     ],
   },
   {
-    id: '',
+    id: '04',
     time: '',
     name: '复古',
     children: [
@@ -96,7 +186,7 @@ export default [
     ],
   },
   {
-    id: '',
+    id: '05',
     time: '',
     name: '奢华',
     children: [
@@ -113,7 +203,7 @@ export default [
     ],
   },
   {
-    id: '',
+    id: '06',
     time: '',
     name: '浪漫',
     children: [
@@ -130,7 +220,7 @@ export default [
     ],
   },
   {
-    id: '',
+    id: '07',
     time: '',
     name: '现实',
     children: [
@@ -152,7 +242,7 @@ export default [
     ],
   },
   {
-    id: '',
+    id: '08',
     time: '',
     name: '抽象',
     children: [
@@ -174,7 +264,7 @@ export default [
     ],
   },
   {
-    id: '',
+    id: '09',
     time: '',
     name: '乌托邦',
     children: [
