@@ -15,17 +15,8 @@
       </van-radio-group>
       <span @click="canvasClear()">清空</span>
     </div>
-    <div
-      class="Drawing-container relative w-320px h-320px mt-3 mx-auto"
-      :style="{
-        background:
-          font === 'jgw'
-            ? `url(${require(`@/assets/font/jgw/${index}.png`)}) no-repeat center/cover`
-            : 'transparent',
-      }"
-    >
+    <div class="Drawing-container relative w-320px h-320px mt-3 mx-auto">
       <p
-        v-show="font !== 'jgw'"
         class="Drawing-font text-center text-280px"
         :style="{ 'font-family': font }"
       >
@@ -86,7 +77,7 @@
       >
         {{ toggleSW ? qzw.swy : qzw.sw }}
       </p>
-      <p v-show="showXD" class="Drawing-sw text-warm-gray-500 text-xs">
+      <p v-show="showXD" class="Drawing-sw text-warm-gray-500 text-xs pb-2">
         {{ qzw.xd }}
       </p>
       <!-- <ul v-show="showXD" class="Drawing-sw text-warm-gray-500 text-xs mt-2">
@@ -122,7 +113,7 @@ export default defineComponent({
       },
       index,
       search: word,
-      font: 'jwdz',
+      font: 'jgw',
       toggleSW: false,
       showXD: true,
     }

@@ -7,19 +7,20 @@
           <pane v-for="(child, i) in pai.children" :key="child.name">
             <div
               class="relative flex-center h-60px bg-orange-600 bg-opacity-80"
-              :style="{background: '#D99559'}"
+              :style="{ background: '#D99559' }"
               @click="clickHandler(child)"
             >
-              <p 
-                v-show="i === 0" 
+              <p
+                v-show="i === 0"
                 class="absolute top-0 left-0 px-0.5 text-xs bg-yellow-500 bg-opacity-50"
-                :style="{background: '#F2B47E'}"
-                >
+                :style="{ background: '#F2B47E' }"
+              >
                 {{ pai.name }}
               </p>
-              <p 
-                :class="['text-yellow-200', pai.id === '03' ? 'text-xs' : 'text-2xl']" 
-                :style="{color: '#BF5B45', 'font-family': 'zszd' }">
+              <p
+                :class="['text-yellow-200', texts[pai.id] || 'text-5xl']"
+                :style="{ color: '#BF5B45', 'font-family': 'jgw' }"
+              >
                 {{ child.name | omit }}
               </p>
             </div>
@@ -38,11 +39,15 @@ export default {
   data() {
     return {
       LIUPAI,
+      texts: {
+        '03': 'text-xs',
+        '09': 'text-2xl',
+      },
     }
   },
   filters: {
     omit(value) {
-      switch(true) {
+      switch (true) {
         case value.includes('主义'):
         case value.includes('画派'):
         case value.includes('艺术'):
@@ -52,11 +57,11 @@ export default {
         default:
           return value
       }
-    }
+    },
   },
   methods: {
-    clickHandler({name, timeline}) {
-      switch(name) {
+    clickHandler({ name, timeline }) {
+      switch (name) {
         case '圣经':
           this.$router.push({
             path: '/art/timeline',
@@ -65,7 +70,7 @@ export default {
             },
           })
       }
-    }
+    },
   },
 }
 </script>
