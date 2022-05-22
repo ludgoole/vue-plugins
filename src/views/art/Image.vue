@@ -1,9 +1,27 @@
 <template>
   <div class="Pile">
     <van-nav-bar :title="title" left-arrow @click-left="$router.go(-1)" />
-    <section class="px-5 relative">
+    <section class="px-5 relative mb-4">
       <img v-show="isShow" ref="img" :src="image" />
       <canvas ref="canvas" id="canvas"></canvas>
+      <section class="ml-2 mt-2">
+        <van-tag type="danger">{{ author }}</van-tag>
+        <van-tag
+          class="ml-2"
+          v-for="tag in tags.split(' ')"
+          :key="tag"
+          type="warning"
+          >{{ tag }}</van-tag
+        >
+      </section>
+      <section class="ml-2 mt-4">
+        <p class="font-bold">背景</p>
+        <p class="text-gray-400 text-xs text-justify">{{ description }}</p>
+      </section>
+      <section class="ml-2 mt-4">
+        <p class="font-bold">赏析</p>
+        <p class="text-gray-400 text-xs text-justify">{{ appreciation }}</p>
+      </section>
     </section>
   </div>
 </template>
@@ -18,20 +36,37 @@ export default {
     }
   },
   computed: {
+    title() {
+      return this.$route.query.title
+    },
+    description() {
+      return this.$route.query.description
+    },
     paint() {
       return JSON.parse(this.$route.query.paint || '{}')
     },
-    title() {
-      return this.paint.name || '油画'
+    tags() {
+      return this.paint.tags || ''
     },
     image() {
-      return this.paint.image || 'https://img0.baidu.com/it/u=1519050398,2562977859&fm=253&fmt=auto&app=138&f=JPEG?w=879&h=500'
-    }
+      return (
+        this.paint.image ||
+        'https://img0.baidu.com/it/u=1519050398,2562977859&fm=253&fmt=auto&app=138&f=JPEG?w=879&h=500'
+      )
+    },
+    author() {
+      return this.paint.author
+    },
+    appreciation() {
+      return this.paint.appreciation
+    },
   },
   mounted() {
-    this.resetCanvasSize()
-    this.initCanvans()
-    this.isShow = false
+    this.$refs.img.onload = () => {
+      this.resetCanvasSize()
+      this.initCanvans()
+      this.isShow = false
+    }
   },
   methods: {
     resetCanvasSize() {
@@ -42,7 +77,7 @@ export default {
       const canvas = new fabric.Canvas('canvas', {
         isDrawingMode: false, // 开启绘图模式
       })
-      
+
       const circle = this.createCircle()
       this.setPen(canvas)
       this.setBgImage(canvas).then((scale) => {
@@ -57,16 +92,18 @@ export default {
           //   'center',
           //   'center'
           // )
-          image.clipPath.left = circle.getCenterPoint().x * this.scale - canvas.width * scale / 2
-          image.clipPath.top = circle.getCenterPoint().y * this.scale - canvas.height * scale / 2 
-          image.left = - circle.getCenterPoint().x * (this.scale - 1)
-          image.top = - circle.getCenterPoint().y * (this.scale - 1)
+          image.clipPath.left =
+            circle.getCenterPoint().x * this.scale - (canvas.width * scale) / 2
+          image.clipPath.top =
+            circle.getCenterPoint().y * this.scale - (canvas.height * scale) / 2
+          image.left = -circle.getCenterPoint().x * (this.scale - 1)
+          image.top = -circle.getCenterPoint().y * (this.scale - 1)
           image.set('dirty', true)
         })
       })
     },
     createImage(canvas, scale) {
-      console.log(canvas.width * scale / 2, canvas.height * scale / 2 );
+      console.log((canvas.width * scale) / 2, (canvas.height * scale) / 2)
       const image = new fabric.Image(this.$refs.img, {
         left: 0,
         top: 0,
@@ -76,8 +113,8 @@ export default {
         // height: 191,
         // angle: 50, // 旋转
         clipPath: new fabric.Circle({
-          left: -canvas.width * scale / 2,
-          top: -canvas.height * scale / 2 ,
+          left: (-canvas.width * scale) / 2,
+          top: (-canvas.height * scale) / 2,
           radius: 50,
           originX: 'center',
           originY: 'center',
@@ -95,7 +132,7 @@ export default {
         radius: 50,
         fill: 'rgba(253, 230, 138, 0.2)',
         stroke: 'rgba(253, 230, 138, 1)',
-        strokeWidth: 2
+        strokeWidth: 2,
       })
 
       // 取消边框
@@ -122,11 +159,11 @@ export default {
       })
     },
     setBgImage(canvas) {
-      return new Promise(resolve => {
-       console.log(this.image);
+      return new Promise((resolve) => {
+        console.log(this.image)
 
         fabric.Image.fromURL(this.image, (img) => {
-          this.scale = img.width / canvas.width 
+          this.scale = img.width / canvas.width
 
           // 设置背景图
           canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {

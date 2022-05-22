@@ -2,9 +2,12 @@
   <div class="Home">
     <van-nav-bar :title="poem" left-arrow @click-left="$router.go(-1)" />
     <section class="px-5">
-      <ul class="flex justify-between flex-wrap mt-4">
+      <van-radio-group class="mt-4" v-model="poem" direction="horizontal">
+        <van-radio name="虚词">易经</van-radio>
+        <van-radio name="静夜诗">论语</van-radio>
+      </van-radio-group>
+      <ul :class="['grid', `grid-cols-${cols}`, , 'gap-2', 'mt-4']">
         <li
-          class="mt-2"
           v-for="(item, index) in list"
           :key="item.word + index"
           @click="goWord(item)"
@@ -18,17 +21,24 @@
 
 <script>
 import LUNYU from '@/mock/memory/lunyu'
+import YIJING from '@/mock/memory/yijing'
+const map = new Map([
+  ['虚词', [YIJING, 4]],
+  ['静夜诗', [LUNYU, 5]],
+])
 export default {
   name: 'Memory',
   data() {
     return {
-      LUNYU,
-      poem: '静夜诗',
+      poem: '虚词',
     }
   },
   computed: {
     list() {
-      return LUNYU
+      return map.get(this.poem)[0]
+    },
+    cols() {
+      return map.get(this.poem)[1]
     },
   },
   created() {
@@ -50,14 +60,29 @@ export default {
 <style lang="scss" scoped>
 .Home {
   li {
-    width: 60px;
     font-weight: 100;
-    font-size: 32px;
-    line-height: 60px;
     text-align: center;
     background: url('https://www.cidianwang.com/images/z_100.gif') center center;
     background-repeat: no-repeat;
     border: 1px solid sandybrown;
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    font-size: 44px;
+    line-height: 78px;
+  }
+
+  .grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    font-size: 32px;
+    line-height: 60px;
+  }
+
+  .grid-cols-7 {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    font-size: 28px;
+    line-height: 40px;
   }
 }
 </style>

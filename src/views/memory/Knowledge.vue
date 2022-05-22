@@ -6,12 +6,23 @@
       <p class="text-gray-400 text-xs">{{ pile.extend }}</p>
       <p class="text-gray-400 text-xs">{{ pile.association }}</p>
       <p class="mt-10 font-bold">{{ pile.viewpoint }}</p>
-      <p class="mt-2">{{ pile.sentence }}</p>
-      <p class="text-gray-400 text-xs mt-1">{{ pile.translation }}</p>
-      <dl class="mt-5">
+      <p class="mt-2 whitespace-pre-line text-justify">
+        {{ pile.sentence.trim() }}
+      </p>
+      <p
+        v-if="pile.translation"
+        class="text-gray-400 text-xs mt-1 whitespace-pre-line text-justify"
+      >
+        {{ pile.translation.trim() }}
+      </p>
+      <dl v-if="pile.book || pile.gua" class="mt-5">
         <dt>关联</dt>
-        <dd class="text-gray-400 text-xs mt-2">书籍：{{ pile.book }}</dd>
-        <dd class="text-gray-400 text-xs mt-1">卦象：{{ pile.gua }}</dd>
+        <dd v-if="pile.book" class="text-gray-400 text-xs mt-2">
+          书籍：{{ pile.book }}
+        </dd>
+        <dd v-if="pile.gua" class="text-gray-400 text-xs mt-1">
+          卦象：{{ pile.gua }}
+        </dd>
       </dl>
     </section>
   </div>

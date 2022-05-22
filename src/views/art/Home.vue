@@ -66,6 +66,7 @@ export default {
           this.$router.push({
             path: '/art/timeline',
             query: {
+              name,
               timeline: JSON.stringify(timeline),
             },
           })

@@ -18,6 +18,9 @@
 
 .gb-vue-timeline-update__description {
   color: #909399 !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  text-align: justify;
 }
 
 .gb-base-icon {

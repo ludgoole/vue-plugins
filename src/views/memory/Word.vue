@@ -7,6 +7,7 @@
     />
     <section class="px-5">
       <div class="Word-font flex justify-between mt-5">
+        <!-- <p class="Word-jgw">{{ chapter.word }}</p> -->
         <p class="Word-dz">{{ chapter.word }}</p>
         <p class="Word-xz">{{ chapter.word }}</p>
         <p class="Word-ls">{{ chapter.word }}</p>
@@ -113,6 +114,10 @@ $size: 60px;
     }
   }
 
+  &-jgw {
+    font-family: 'jgw';
+    line-height: 70px !important;
+  }
   &-dz {
     font-family: 'jwdz';
   }
