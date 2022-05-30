@@ -3,8 +3,10 @@
     <van-nav-bar :title="title" left-arrow @click-left="$router.go(-1)" />
     <div class="Timeline-container p-4 flex-1 overflow-auto">
       <vue-timeline-update
-        v-for="{ date, achievement, title, description, paint } in timeline"
-        :key="date + title"
+        v-for="(
+          { date, achievement, title, description, paint }, index
+        ) in timeline"
+        :key="date + title + index"
         :date="new Date()"
         :dateString="date"
         :category="achievement"

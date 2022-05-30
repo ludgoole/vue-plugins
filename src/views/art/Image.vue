@@ -15,8 +15,16 @@
         >
       </section>
       <section class="ml-2 mt-4">
-        <p class="font-bold">背景</p>
+        <p class="font-bold">内容</p>
         <p class="text-gray-400 text-xs text-justify">{{ description }}</p>
+      </section>
+      <section v-if="experience" class="ml-2 mt-4">
+        <p class="font-bold">经历</p>
+        <p class="text-gray-400 text-xs text-justify">{{ experience }}</p>
+      </section>
+      <section v-if="story" class="ml-2 mt-4">
+        <p class="font-bold">八卦</p>
+        <p class="text-gray-400 text-xs text-justify">{{ story }}</p>
       </section>
       <section class="ml-2 mt-4">
         <p class="font-bold">赏析</p>
@@ -36,14 +44,17 @@ export default {
     }
   },
   computed: {
-    title() {
-      return this.$route.query.title
-    },
-    description() {
-      return this.$route.query.description
-    },
     paint() {
       return JSON.parse(this.$route.query.paint || '{}')
+    },
+    title() {
+      return this.paint.title || this.$route.query.title
+    },
+    description() {
+      return this.paint.description || this.$route.query.description
+    },
+    story() {
+      return this.paint.story
     },
     tags() {
       return this.paint.tags || ''
@@ -56,6 +67,9 @@ export default {
     },
     author() {
       return this.paint.author
+    },
+    experience() {
+      return this.paint.experience
     },
     appreciation() {
       return this.paint.appreciation

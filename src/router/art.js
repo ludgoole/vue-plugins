@@ -16,6 +16,18 @@ const routes = [
       import(/* webpackChunkName: "art" */ '../views/art/Timeline.vue'),
   },
   {
+    path: '/wordcloud',
+    name: 'WordCloud',
+    component: () =>
+      import(/* webpackChunkName: "art" */ '../views/art/WordCloud.vue'),
+  },
+  {
+    path: '/squarepaper',
+    name: 'SquarePaper',
+    component: () =>
+      import(/* webpackChunkName: "art" */ '../views/art/SquarePaper.vue'),
+  },
+  {
     path: '/image',
     name: 'Image',
     component: () =>

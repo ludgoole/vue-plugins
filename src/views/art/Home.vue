@@ -18,8 +18,16 @@
                 {{ pai.name }}
               </p>
               <p
-                :class="['text-yellow-200', texts[pai.id] || 'text-5xl']"
-                :style="{ color: '#BF5B45', 'font-family': 'jgw' }"
+                :class="[
+                  'text-yellow-200',
+                  'font-jgw',
+                  texts[pai.id] || 'text-5xl',
+                ]"
+                :style="{
+                  color: '#BF5B45',
+                  'font-family': 'jgw',
+                  transform: 'translateY(3px)',
+                }"
               >
                 {{ child.name | omit }}
               </p>
@@ -40,7 +48,8 @@ export default {
     return {
       LIUPAI,
       texts: {
-        '03': 'text-xs',
+        '03': 'text-6xl',
+        '07': 'text-4xl',
         '09': 'text-2xl',
       },
     }
@@ -60,14 +69,72 @@ export default {
     },
   },
   methods: {
-    clickHandler({ name, timeline }) {
+    clickHandler(child) {
+      const { name, timeline } = child
       switch (name) {
+        case '洞窟壁画':
+          this.$router.push({
+            path: '/art/Image',
+            query: {
+              paint: JSON.stringify(child.paints[0]),
+            },
+          })
+          break
+        case '神话':
         case '圣经':
           this.$router.push({
             path: '/art/timeline',
             query: {
               name,
               timeline: JSON.stringify(timeline),
+            },
+          })
+          break
+        case '文艺复兴':
+          this.$router.push({
+            path: '/art/wordcloud',
+            query: {
+              name,
+              paints: JSON.stringify(
+                child.liupai.reduce((a, c) => a.concat(c.paints), [])
+              ),
+            },
+          })
+          break
+        case '样式主义':
+          this.$router.push({
+            path: '/art/image',
+            query: {
+              paint: JSON.stringify(child.paints[0]),
+            },
+          })
+          break
+        case '极少主义':
+          this.$router.push({
+            path: '/art/squarepaper',
+            query: {
+              name: '画展',
+              paints: JSON.stringify(
+                LIUPAI.reduce((a, c) => a.concat(c.children), [])
+                  .filter((children) => children.paints || children.liupai)
+                  .reduce(
+                    (a, c) =>
+                      a.concat(
+                        c.paints ||
+                          c.liupai.reduce((a, c) => a.concat(c.paints), [])
+                      ),
+                    []
+                  )
+              ),
+            },
+          })
+          break
+        default:
+          this.$router.push({
+            path: '/art/wordcloud',
+            query: {
+              name,
+              paints: JSON.stringify(child.paints),
             },
           })
       }
