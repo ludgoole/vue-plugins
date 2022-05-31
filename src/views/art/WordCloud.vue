@@ -12,10 +12,6 @@
         <template slot-scope="{ text, word }">
           <div @click="onWordClick(word)">
             {{ text }}
-            <!-- <img
-              ref="img"
-              src="https://img0.baidu.com/it/u=1519050398,2562977859&fm=253&fmt=auto&app=138&f=JPEG?w=879&h=500"
-            /> -->
           </div>
         </template>
       </VueWordCloud>
@@ -32,14 +28,6 @@ export default {
   },
   data() {
     return {
-      // words: [1, 2, 3, 4, 5, 6, 7].map((text, i) => {
-      //   return {
-      //     text,
-      //     weight: (Math.random() * 10) | 0,
-      //     rotation: Math.random(),
-      //     color: '#' + Math.random().toString(16).slice(-6),
-      //   }
-      // }),
       words: [],
     }
   },
@@ -50,22 +38,6 @@ export default {
     paints() {
       return JSON.parse(this.$route.query.paints || '[]')
     },
-    // words: {
-    //   get() {
-    //     return this.paints.map(({ name }) => {
-    //       return {
-    //         text: name.slice(0, -2),
-    //         weight: (Math.random() * 10) | 0,
-    //         'font-family': 'jgw',
-    //         rotation: Math.random(),
-    //         color: '#' + Math.random().toString(16).slice(-6),
-    //       }
-    //     })
-    //   },
-    //   set(a, val) {
-    //     console.log(a, val)
-    //   },
-    // },
   },
   mounted() {
     this.refresh()
@@ -95,5 +67,3 @@ export default {
   },
 }
 </script>
-
-<style></style>
