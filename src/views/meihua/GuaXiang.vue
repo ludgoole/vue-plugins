@@ -35,7 +35,9 @@
           <li v-for="(item, index) in gua.yaoCi" :key="index">
             <p class="GuaXiang-yaoCi text-bold">{{ item }}</p>
             <p class="GuaXiang-yaoXiang">按：{{ gua.yaoXiang[index] }}</p>
-            <p class="GuaXiang-yaoXiang">析：{{ gua.yiLi[index].how }}</p>
+            <p class="GuaXiang-yaoXiang" @click="toYiLi(item, gua.yiLi[index])">
+              析：{{ gua.yiLi[index].how }}
+            </p>
             <p class="GuaXiang-fengxian" v-if="timestamp">
               <van-field
                 v-model="dangerousList[index]"
@@ -62,13 +64,13 @@ import BaseGua from '@/components/BaseGua.vue'
 export default {
   name: 'GuaXiang',
   components: {
-    BaseGua
+    BaseGua,
   },
   data() {
     return {
       ZHOUYI,
       gua: {},
-      dangerousList: Array(6).fill('')
+      dangerousList: Array(6).fill(''),
     }
   },
   computed: {
@@ -77,7 +79,7 @@ export default {
     },
     timestamp() {
       return this.$route.query.timestamp
-    }
+    },
   },
   mounted() {
     this.init()
@@ -90,7 +92,7 @@ export default {
     async setDangerousList() {
       const { timestamp, search } = this
       const mine = (await localforage.getItem('MEI_HUA__mine')) || []
-      const item = mine.find(item => item.timestamp === +timestamp)
+      const item = mine.find((item) => item.timestamp === +timestamp)
 
       item &&
         item[`${search}.dangerousList`] &&
@@ -98,7 +100,7 @@ export default {
     },
     toSearch(search) {
       this.gua =
-        ZHOUYI.find(gua => {
+        ZHOUYI.find((gua) => {
           if (Number.isNaN(+search)) {
             // 八宫-乾宫一世
             if (search.length === 4) {
@@ -122,26 +124,35 @@ export default {
       this.$router.push({
         path: '/game',
         query: {
-          guaXu: this.gua.guaXu
-        }
+          guaXu: this.gua.guaXu,
+        },
+      })
+    },
+    toYiLi(yaoCi, yiLi) {
+      this.$router.push({
+        path: '/yili',
+        query: {
+          yaoCi,
+          yiLi: JSON.stringify(yiLi),
+        },
       })
     },
     change(guaXiang) {
-      this.gua = ZHOUYI.find(gua => gua.guaXiang.join('') === guaXiang)
+      this.gua = ZHOUYI.find((gua) => gua.guaXiang.join('') === guaXiang)
     },
     prev(e) {
       const guaXu = this.gua.guaXu === 1 ? 64 : this.gua.guaXu - 1
-      this.gua = ZHOUYI.find(gua => gua.guaXu === guaXu)
+      this.gua = ZHOUYI.find((gua) => gua.guaXu === guaXu)
     },
     next(e) {
       const guaXu = this.gua.guaXu === 64 ? 1 : this.gua.guaXu + 1
-      this.gua = ZHOUYI.find(gua => gua.guaXu === guaXu)
+      this.gua = ZHOUYI.find((gua) => gua.guaXu === guaXu)
     },
     async save() {
       const { search, dangerousList, timestamp } = this
       const mine = (await localforage.getItem('MEI_HUA__mine')) || []
-      const item = mine.find(item => item.timestamp === +timestamp)
-      const index = mine.findIndex(item => item.timestamp === +timestamp)
+      const item = mine.find((item) => item.timestamp === +timestamp)
+      const index = mine.findIndex((item) => item.timestamp === +timestamp)
 
       if (!item) {
         if (timestamp) {
@@ -149,7 +160,7 @@ export default {
         } else {
           let baGongOrder = this.gua.baGongOrder + 1
           baGongOrder % 10 >= 8 && (baGongOrder = baGongOrder - 8)
-          this.gua = ZHOUYI.find(gua => gua.baGongOrder === baGongOrder)
+          this.gua = ZHOUYI.find((gua) => gua.baGongOrder === baGongOrder)
         }
       } else {
         item[`${search}.dangerousList`] = dangerousList
@@ -162,8 +173,8 @@ export default {
 
         this.$toast({ msg: '保存成功', location: 'middle' })
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

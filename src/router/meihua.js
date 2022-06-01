@@ -1,7 +1,7 @@
 const routes = [
   {
     path: '/',
-    redirect: '/question'
+    redirect: '/question',
   },
   {
     path: '/question',
@@ -9,19 +9,19 @@ const routes = [
     meta: {
       title: '卜卦',
       leftText: '',
-      rightText: ''
+      rightText: '',
     },
     component: () =>
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      import(/* webpackChunkName: "question" */ '../views/meihua/Question.vue')
+      import(/* webpackChunkName: "question" */ '../views/meihua/Question.vue'),
   },
   {
     path: '/answer',
     name: 'Answer',
     component: () =>
-      import(/* webpackChunkName: "question" */ '../views/meihua/Answer.vue')
+      import(/* webpackChunkName: "question" */ '../views/meihua/Answer.vue'),
   },
   {
     path: '/calendar',
@@ -30,10 +30,10 @@ const routes = [
       title: '老黄历',
       leftText: '',
       leftArrow: true,
-      rightText: ''
+      rightText: '',
     },
     component: () =>
-      import(/* webpackChunkName: "question" */ '../views/meihua/Calendar.vue')
+      import(/* webpackChunkName: "question" */ '../views/meihua/Calendar.vue'),
   },
   {
     path: '/compass',
@@ -42,10 +42,10 @@ const routes = [
       title: '罗盘',
       leftText: '',
       leftArrow: true,
-      rightText: ''
+      rightText: '',
     },
     component: () =>
-      import(/* webpackChunkName: "question" */ '../views/meihua/Compass.vue')
+      import(/* webpackChunkName: "question" */ '../views/meihua/Compass.vue'),
   },
   {
     path: '/guaQi',
@@ -54,10 +54,10 @@ const routes = [
       title: '卦气',
       leftText: '',
       leftArrow: true,
-      rightText: ''
+      rightText: '',
     },
     component: () =>
-      import(/* webpackChunkName: "question" */ '../views/meihua/GuaQi.vue')
+      import(/* webpackChunkName: "question" */ '../views/meihua/GuaQi.vue'),
   },
   {
     path: '/query',
@@ -65,10 +65,10 @@ const routes = [
     meta: {
       title: '查卦',
       leftText: '',
-      rightText: ''
+      rightText: '',
     },
     component: () =>
-      import(/* webpackChunkName: "query" */ '../views/meihua/Query.vue')
+      import(/* webpackChunkName: "query" */ '../views/meihua/Query.vue'),
   },
   {
     path: '/game',
@@ -77,10 +77,21 @@ const routes = [
       title: '卦象组合',
       leftText: '',
       leftArrow: true,
-      rightText: '保存'
+      rightText: '保存',
     },
     component: () =>
-      import(/* webpackChunkName: "query" */ '../views/meihua/Game.vue')
+      import(/* webpackChunkName: "query" */ '../views/meihua/Game.vue'),
+  },
+  {
+    path: '/yili',
+    name: 'YiLi',
+    meta: {
+      title: '易理',
+      leftText: '',
+      leftArrow: true,
+    },
+    component: () =>
+      import(/* webpackChunkName: "query" */ '../views/meihua/YiLi.vue'),
   },
   {
     path: '/guaXiang',
@@ -88,10 +99,10 @@ const routes = [
     meta: {
       title: '',
       leftText: '',
-      rightText: ''
+      rightText: '',
     },
     component: () =>
-      import(/* webpackChunkName: "query" */ '../views/meihua/GuaXiang.vue')
+      import(/* webpackChunkName: "query" */ '../views/meihua/GuaXiang.vue'),
   },
   {
     path: '/leiXiang',
@@ -99,10 +110,10 @@ const routes = [
     meta: {
       title: '',
       leftText: '',
-      rightText: ''
+      rightText: '',
     },
     component: () =>
-      import(/* webpackChunkName: "query" */ '../views/meihua/LeiXiang.vue')
+      import(/* webpackChunkName: "query" */ '../views/meihua/LeiXiang.vue'),
   },
   {
     path: '/star',
@@ -110,10 +121,10 @@ const routes = [
     meta: {
       title: '名卦',
       leftText: '',
-      rightText: ''
+      rightText: '',
     },
     component: () =>
-      import(/* webpackChunkName: "star" */ '../views/meihua/Star.vue')
+      import(/* webpackChunkName: "star" */ '../views/meihua/Star.vue'),
   },
   {
     path: '/mine',
@@ -121,14 +132,14 @@ const routes = [
     meta: {
       title: '我的',
       leftText: '',
-      rightText: '保存'
+      rightText: '保存',
     },
     component: () =>
-      import(/* webpackChunkName: "mine" */ '../views/meihua/Mine.vue')
-  }
+      import(/* webpackChunkName: "mine" */ '../views/meihua/Mine.vue'),
+  },
 ]
 
-export default routes.map(v => {
+export default routes.map((v) => {
   v.meta = v.meta || {}
   v.meta.type = 'meihua'
   return v
