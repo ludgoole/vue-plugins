@@ -7,11 +7,11 @@
     />
     <section class="px-5">
       <div class="Word-font flex justify-between mt-5">
-        <!-- <p class="Word-jgw">{{ chapter.word }}</p> -->
+        <p class="Word-jgw">{{ chapter.word }}</p>
         <p class="Word-dz">{{ chapter.word }}</p>
         <p class="Word-xz">{{ chapter.word }}</p>
         <p class="Word-ls">{{ chapter.word }}</p>
-        <p id="draw"></p>
+        <!-- <p id="draw"></p> -->
         <img @click="goPile" :src="chapter.image" />
       </div>
       <p class="mt-2 text-gray-400 text-xs">{{ chapter.swjz }}</p>
@@ -44,7 +44,7 @@ import cnchar from 'cnchar'
 // import 'cnchar-poly'
 // import 'cnchar-order'
 // import 'cnchar-trad'
-import 'cnchar-draw'
+// import 'cnchar-draw'
 // import 'cnchar-idiom'
 // import 'cnchar-xhy'
 // import 'cnchar-radical'
@@ -70,13 +70,13 @@ export default {
     },
   },
   mounted() {
-    cnchar.draw(this.chapter.word, {
-      el: '#draw',
-      type: cnchar.draw.TYPE.ANIMATION,
-      animation: {
-        autoAnimate: true,
-      },
-    })
+    // cnchar.draw(this.chapter.word, {
+    //   el: '#draw',
+    //   type: cnchar.draw.TYPE.ANIMATION,
+    //   animation: {
+    //     autoAnimate: true,
+    //   },
+    // })
   },
   methods: {
     goPile() {
