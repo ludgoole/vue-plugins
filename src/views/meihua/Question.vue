@@ -209,6 +209,9 @@ export default {
         case '艺术':
           this.$router.push('/art')
           break
+        case '心理':
+          this.$router.push('/psychology')
+          break
         default:
           this.$router.push({
             path: '/answer',

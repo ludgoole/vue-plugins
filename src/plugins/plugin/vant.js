@@ -23,7 +23,9 @@ import {
   SwipeItem,
   Lazyload,
   ImagePreview,
-  Tag
+  Tag,
+  Step,
+  Steps,
 } from 'vant'
 const components = [
   Button,
@@ -46,10 +48,12 @@ const components = [
   Swipe,
   SwipeItem,
   Lazyload,
-  Tag
+  Tag,
+  Step,
+  Steps,
 ]
 function installPlugin(Vue) {
-  components.forEach(component => Vue.use(component))
+  components.forEach((component) => Vue.use(component))
   Vue.prototype.$toast = Toast
   Vue.prototype.$ImagePreview = ImagePreview
 }
