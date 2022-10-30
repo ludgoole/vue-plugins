@@ -38,7 +38,7 @@
             <p class="GuaXiang-yaoXiang" @click="toYiLi(item, gua.yiLi[index])">
               析：{{ gua.yiLi[index].how }}
             </p>
-            <p class="GuaXiang-fengxian" v-if="timestamp">
+            <p class="GuaXiang-fengxian" v-if="$route.query.timestamp">
               <van-field
                 v-model="dangerousList[index]"
                 rows="1"
@@ -48,6 +48,18 @@
                 label-width="28"
                 type="textarea"
                 placeholder="请输入危险源"
+              />
+            </p>
+            <p class="GuaXiang-note" v-else>
+              <van-field
+                v-model="dangerousList[index]"
+                rows="1"
+                autosize
+                clearable
+                label="笔记"
+                label-width="28"
+                type="textarea"
+                placeholder="请输入笔记"
               />
             </p>
           </li>
@@ -78,7 +90,7 @@ export default {
       return this.$route.query.search
     },
     timestamp() {
-      return this.$route.query.timestamp
+      return this.$route.query.timestamp || this.gua.guaXu
     },
   },
   mounted() {
@@ -151,18 +163,32 @@ export default {
     async save() {
       const { search, dangerousList, timestamp } = this
       const mine = (await localforage.getItem('MEI_HUA__mine')) || []
-      const item = mine.find((item) => item.timestamp === +timestamp)
+      const item = mine.find((item) => item.timestamp === +timestamp) || {}
       const index = mine.findIndex((item) => item.timestamp === +timestamp)
 
-      if (!item) {
-        if (timestamp) {
-          return this.$toast({ msg: '请先保存卦例', location: 'middle' })
+      if (this.$route.query.timestamp) {
+        if (!item) {
+          if (timestamp) {
+            return this.$toast({ msg: '请先保存卦例', location: 'middle' })
+          } else {
+            let baGongOrder = this.gua.baGongOrder + 1
+            baGongOrder % 10 >= 8 && (baGongOrder = baGongOrder - 8)
+            this.gua = ZHOUYI.find((gua) => gua.baGongOrder === baGongOrder)
+          }
         } else {
-          let baGongOrder = this.gua.baGongOrder + 1
-          baGongOrder % 10 >= 8 && (baGongOrder = baGongOrder - 8)
-          this.gua = ZHOUYI.find((gua) => gua.baGongOrder === baGongOrder)
+          item[`${search}.dangerousList`] = dangerousList
+
+          // 如果存过，覆盖
+          // 如果没有，添加
+          index > -1 ? mine.splice(index, 1, item) : mine.push(item)
+
+          await localforage.setItem('MEI_HUA__mine', mine)
+
+          this.$toast({ msg: '保存成功', location: 'middle' })
         }
       } else {
+        // 增加笔记
+        item.timestamp = timestamp
         item[`${search}.dangerousList`] = dangerousList
 
         // 如果存过，覆盖
@@ -227,6 +253,20 @@ export default {
 
       &__control {
         color: $color-danger;
+      }
+    }
+  }
+
+  &-note {
+    /deep/ .van-field {
+      padding: 0;
+
+      &__label {
+        color: $color-primary;
+      }
+
+      &__control {
+        color: $color-primary;
       }
     }
   }

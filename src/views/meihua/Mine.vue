@@ -46,7 +46,7 @@ export default {
   name: 'Mine',
   data() {
     return {
-      list: []
+      list: [],
     }
   },
   created() {
@@ -58,19 +58,19 @@ export default {
   methods: {
     init() {
       const self = this
-      localforage.getItem('MEI_HUA__mine').then(mine => {
+      localforage.getItem('MEI_HUA__mine').then((mine) => {
         if (mine) {
-          self.list = mine
+          self.list = mine.filter((item) => item.timestamp > 100)
         } else {
           try {
             this.api.readFile(
               {
-                path: 'fs://meihua.json'
+                path: 'fs://meihua.json',
               },
-              function(ret, err) {
+              function (ret, err) {
                 if (ret.status) {
                   const saveData = JSON.parse(ret.data || '[]')
-                  self.list = saveData
+                  self.list = saveData.filter((item) => item.timestamp > 100)
                 }
               }
             )
@@ -90,7 +90,7 @@ export default {
         xiaGuaCount,
         dongYaoCount,
         timestamp,
-        ganwu
+        ganwu,
       } = item
       this.$router.push({
         path: '/answer',
@@ -100,12 +100,12 @@ export default {
           xiaGuaCount,
           dongYaoCount,
           timestamp,
-          ganwu
-        }
+          ganwu,
+        },
       })
     },
     toDelete(item) {
-      const index = this.list.findIndex(v => v.timestamp === item.timestamp)
+      const index = this.list.findIndex((v) => v.timestamp === item.timestamp)
       this.list.splice(index, 1)
 
       this.toUpdate(this.list).then(() => {
@@ -113,7 +113,7 @@ export default {
       })
     },
     toEdit(item) {
-      const index = this.list.findIndex(v => v.timestamp === item.timestamp)
+      const index = this.list.findIndex((v) => v.timestamp === item.timestamp)
       item.isEdit = false
       this.$set(this.list, index, item)
 
@@ -124,7 +124,7 @@ export default {
     toUpdate(mine) {
       return localforage
         .setItem('MEI_HUA__mine', mine)
-        .then(mine => console.log(mine))
+        .then((mine) => console.log(mine))
     },
     save() {
       const self = this
@@ -136,9 +136,9 @@ export default {
         this.api.writeFile(
           {
             path: 'fs://meihua.json',
-            data: JSON.stringify(self.list)
+            data: JSON.stringify(self.list),
           },
-          function(ret, err) {
+          function (ret, err) {
             if (ret.status) {
               self.$toast({ msg: '保存成功', location: 'middle' })
             } else {
@@ -149,12 +149,12 @@ export default {
       } catch (err) {
         self.$toast({ msg: err, location: 'middle' })
       }
-    }
+    },
   },
   onReady() {
     this.$toast({ msg: '成功', location: 'middle' })
     this.save()
-  }
+  },
 }
 </script>
 <style lang="scss">
