@@ -209,7 +209,7 @@ export default [
     },
     {
       key: '天象',
-      value: '地震 雷雨'
+      value: '多云'
     },
     {
       key: '时辰',

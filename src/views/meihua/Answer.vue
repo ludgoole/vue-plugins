@@ -1,12 +1,6 @@
 <template>
   <div class="Answer flex flex-column">
-    <van-nav-bar
-      :title="question"
-      right-text="保存"
-      left-arrow
-      @click-left="goBack"
-      @click-right="save"
-    />
+    <van-nav-bar :title="question" right-text="保存" left-arrow @click-left="goBack" @click-right="save" />
     <div class="Answer-container flex-1">
       <template>
         <div class="Answer-time">
@@ -56,31 +50,15 @@
       </template>
       <template>
         <div class="Answer-chenggua flex flex-justify flex-bottom">
-          <BaseGua
-            :gua-xiang="benGua.guaXiang"
-            :size="40"
-            :dong-yao-order="dongYao.order"
-            @click="toGuaXiang"
-          ></BaseGua>
-          <BaseGua
-            :gua-xiang="dongYao.guaXiang"
-            :size="40"
-            @click="toGuaXiang(huGua.guaMing)"
-          ></BaseGua>
-          <BaseGua
-            :gua-xiang="bianGua.guaXiang"
-            :size="40"
-            @click="toGuaXiang"
-          ></BaseGua>
+          <BaseGua :gua-xiang="benGua.guaXiang" :size="40" :dong-yao-order="dongYao.order" @click="toGuaXiang"></BaseGua>
+          <BaseGua :gua-xiang="dongYao.guaXiang" :size="40" @click="toGuaXiang(huGua.guaMing)"></BaseGua>
+          <BaseGua :gua-xiang="bianGua.guaXiang" :size="40" @click="toGuaXiang"></BaseGua>
         </div>
         <p class="Answer-zhigua text-center">
-          {{ benGua.guaMing
-          }}<span class="font-size-10" v-if="benGua.chongHe"
-            >({{ benGua.chongHe }})</span
-          >之{{ bianGua.guaMing
-          }}<span class="font-size-10" v-if="bianGua.chongHe"
-            >({{ bianGua.chongHe }})</span
-          >
+          {{ benGua.guaMing }}
+          <span class="font-size-10" v-if="benGua.chongHe">({{ benGua.chongHe }})</span>
+          之{{ bianGua.guaMing }}
+          <span class="font-size-10" v-if="bianGua.chongHe">({{ bianGua.chongHe }})</span>
         </p>
       </template>
       <template>
@@ -93,31 +71,11 @@
         </p>
 
         <div class="Answer-bagua flex flex-justify flex-bottom">
-          <BaseGua
-            :gua-xiang="tiGua.guaXiang"
-            :size="44"
-            @click="toLeiXiang"
-          ></BaseGua>
-          <BaseGua
-            :gua-xiang="yongGua.guaXiang"
-            :size="44"
-            @click="toLeiXiang"
-          ></BaseGua>
-          <BaseGua
-            :gua-xiang="shangHuGua.guaXiang"
-            :size="44"
-            @click="toLeiXiang"
-          ></BaseGua>
-          <BaseGua
-            :gua-xiang="xiaHuGua.guaXiang"
-            :size="44"
-            @click="toLeiXiang"
-          ></BaseGua>
-          <BaseGua
-            :gua-xiang="bianYongGua.guaXiang"
-            :size="44"
-            @click="toLeiXiang"
-          ></BaseGua>
+          <BaseGua :gua-xiang="tiGua.guaXiang" :size="44" @click="toLeiXiang"></BaseGua>
+          <BaseGua :gua-xiang="yongGua.guaXiang" :size="44" @click="toLeiXiang"></BaseGua>
+          <BaseGua :gua-xiang="shangHuGua.guaXiang" :size="44" @click="toLeiXiang"></BaseGua>
+          <BaseGua :gua-xiang="xiaHuGua.guaXiang" :size="44" @click="toLeiXiang"></BaseGua>
+          <BaseGua :gua-xiang="bianYongGua.guaXiang" :size="44" @click="toLeiXiang"></BaseGua>
         </div>
 
         <p class="Answer-liuqin relation flex flex-justify text-center">
@@ -131,32 +89,20 @@
         <p class="Answer-leixiang relation flex flex-justify text-center">
           <span>{{ tiGua.name }}</span>
           <span>{{ yongGua.name }}</span>
-          <span
-            v-tips="
-              dongYao.order <= 3
-                ? `${huGua.guaMing}: ${
-                    getJiXiong(shangHuGua.wuxing, xiaHuGua.wuxing).affect
-                  }`
-                : '用'
-            "
-            >{{ shangHuGua.name }}</span
-          >
-          <span
-            v-tips="
-              dongYao.order > 3
-                ? `${huGua.guaMing}: ${
-                    getJiXiong(xiaHuGua.wuxing, shangHuGua.wuxing).affect
-                  }`
-                : '用'
-            "
-            >{{ xiaHuGua.name }}</span
-          >
+          <span v-tips="dongYao.order <= 3
+            ? `${huGua.guaMing}: ${getJiXiong(shangHuGua.wuxing, xiaHuGua.wuxing).affect
+            }`
+            : '用'
+            ">{{ shangHuGua.name }}</span>
+          <span v-tips="dongYao.order > 3
+            ? `${huGua.guaMing}: ${getJiXiong(xiaHuGua.wuxing, shangHuGua.wuxing).affect
+            }`
+            : '用'
+            ">{{ xiaHuGua.name }}</span>
           <span>{{ bianYongGua.name }}</span>
         </p>
 
-        <p
-          class="Answer-wuxing relation text-color flex flex-justify text-center"
-        >
+        <p class="Answer-wuxing relation text-color flex flex-justify text-center">
           <span>{{ tiGua.wuxing }}</span>
           <span>{{ yongGua.wuxing }}</span>
           <span>{{ shangHuGua.wuxing }}</span>
@@ -164,9 +110,7 @@
           <span>{{ bianYongGua.wuxing }}</span>
         </p>
 
-        <p
-          class="Answer-shengke relation text-color flex flex-justify text-center"
-        >
+        <p class="Answer-shengke relation text-color flex flex-justify text-center">
           <span>{{ getJiXiong(tiGua.wuxing, yueJian.wuxing).action }} </span>
           <span>{{ getJiXiong(tiGua.wuxing, yongGua.wuxing).affect }}</span>
           <span>{{ getJiXiong(tiGua.wuxing, shangHuGua.wuxing).affect }}</span>
@@ -177,9 +121,9 @@
         <p class="Answer-jixiong relation flex flex-justify text-center">
           <span class="text-bold">
             {{
-              getJiXiong(tiGua.wuxing, yueJian.wuxing).action === '囚'
-                ? '凶'
-                : getRelation(tiGua.wuxing, yueJian.wuxing)
+              ['旺', '相'].includes(getJiXiong(tiGua.wuxing, yueJian.wuxing).action)
+              ? '旺'
+              : '衰'
             }}
           </span>
           <span>{{ getRelation(tiGua.wuxing, yongGua.wuxing) }}</span>
@@ -192,14 +136,8 @@
           <van-collapse-item title="断卦" name="0">
             <!-- <p class="text-justify" v-html="jianYu"></p> -->
             <template v-if="jianYu">
-              <p
-                class="text-justify"
-                v-html="jianYu.split(/<br>\s+<br>/)[0]"
-              ></p>
-              <p
-                class="text-justify font-size-10 margin-top-10"
-                v-html="jianYu.split(/<br>\s+<br>/)[1]"
-              ></p>
+              <p class="text-justify" v-html="jianYu.split(/<br>\s+<br>/)[0]"></p>
+              <p class="text-justify font-size-10 margin-top-10" v-html="jianYu.split(/<br>\s+<br>/)[1]"></p>
             </template>
             <template v-else>
               <p class="text-justify">
@@ -220,13 +158,13 @@
               </p>
             </template>
           </van-collapse-item>
-          <van-collapse-item title="吉凶" name="1">
+          <van-collapse-item title="爻辞" name="1">
             <p class="text-justify">{{ yaoCi }}</p>
-            <p class="text-justify font-size-10">
+            <!-- <p class="text-justify font-size-10">
               流年，{{ liuNian }}; 近来，{{ jixiong }}
-            </p>
+            </p> -->
           </van-collapse-item>
-          <van-collapse-item title="细节" name="2">
+          <van-collapse-item title="类象" name="2">
             <van-tabs v-model="active">
               <van-tab v-for="tab in tabs" :key="tab" :title="tab">
                 <ul>
@@ -252,14 +190,7 @@
             </p>
           </van-collapse-item>
           <van-collapse-item title="感悟" name="4">
-            <van-field
-              v-model="ganwu"
-              rows="1"
-              autosize
-              label=""
-              type="textarea"
-              placeholder="写点什么吧"
-            />
+            <van-field v-model="ganwu" rows="1" autosize label="" type="textarea" placeholder="写点什么吧" />
           </van-collapse-item>
         </van-collapse>
       </template>

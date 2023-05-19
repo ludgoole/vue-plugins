@@ -6,7 +6,7 @@ export default [
         name: '金',
         affect: '比',
         action: '旺',
-        fortune: '吉',
+        fortune: '平',
         liuqin: '兄弟',
         score: '100'
       },
@@ -14,7 +14,7 @@ export default [
         name: '木',
         affect: '耗',
         action: '囚',
-        fortune: '吉',
+        fortune: '悔',
         liuqin: '妻财',
         score: '40'
       },
@@ -22,7 +22,7 @@ export default [
         name: '水',
         affect: '泄',
         action: '休',
-        fortune: '凶',
+        fortune: '吝',
         liuqin: '子孙',
         score: '60'
       },
@@ -59,7 +59,7 @@ export default [
         name: '木',
         affect: '比',
         action: '旺',
-        fortune: '吉',
+        fortune: '平',
         liuqin: '兄弟',
         score: '100'
       },
@@ -75,7 +75,7 @@ export default [
         name: '火',
         affect: '泄',
         action: '休',
-        fortune: '凶',
+        fortune: '吝',
         liuqin: '子孙',
         score: '40'
       },
@@ -83,7 +83,7 @@ export default [
         name: '土',
         affect: '耗',
         action: '囚',
-        fortune: '吉',
+        fortune: '悔',
         liuqin: '妻财',
         score: '60'
       }
@@ -104,7 +104,7 @@ export default [
         name: '木',
         affect: '泄',
         action: '休',
-        fortune: '凶',
+        fortune: '吝',
         liuqin: '子孙',
         score: '40'
       },
@@ -112,7 +112,7 @@ export default [
         name: '水',
         affect: '比',
         action: '旺',
-        fortune: '吉',
+        fortune: '平',
         liuqin: '兄弟',
         score: '100'
       },
@@ -120,7 +120,7 @@ export default [
         name: '火',
         affect: '耗',
         action: '囚',
-        fortune: '吉',
+        fortune: '悔',
         liuqin: '妻财',
         score: '60'
       },
@@ -141,7 +141,7 @@ export default [
         name: '金',
         affect: '耗',
         action: '囚',
-        fortune: '吉',
+        fortune: '悔',
         liuqin: '妻财',
         score: '60'
       },
@@ -165,7 +165,7 @@ export default [
         name: '火',
         affect: '比',
         action: '旺',
-        fortune: '吉',
+        fortune: '平',
         liuqin: '兄弟',
         score: '100'
       },
@@ -173,7 +173,7 @@ export default [
         name: '土',
         affect: '泄',
         action: '休',
-        fortune: '凶',
+        fortune: '吝',
         liuqin: '子孙',
         score: '40'
       }
@@ -186,7 +186,7 @@ export default [
         name: '金',
         affect: '泄',
         action: '休',
-        fortune: '凶',
+        fortune: '吝',
         liuqin: '子孙',
         score: '40'
       },
@@ -202,7 +202,7 @@ export default [
         name: '水',
         affect: '耗',
         action: '囚',
-        fortune: '吉',
+        fortune: '悔',
         liuqin: '妻财',
         score: '60'
       },
@@ -218,7 +218,7 @@ export default [
         name: '土',
         affect: '比',
         action: '旺',
-        fortune: '吉',
+        fortune: '平',
         liuqin: '兄弟',
         score: '100'
       }

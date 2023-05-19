@@ -1,32 +1,13 @@
 <template>
   <div class="LeiXiang flex flex-column">
-    <van-nav-bar
-      :title="gua.name"
-      :right-text="gua.wuxing"
-      left-arrow
-      @click-left="$router.go(-1)"
-      @click-right="save"
-    />
+    <van-nav-bar :title="gua.name" :right-text="gua.wuxing" left-arrow @click-left="$router.go(-1)" @click-right="save" />
     <div class="LeiXiang-container flex-1">
       <div class="LeiXiang-leiXiang">
-        <BaseGua
-          :gua-xiang="gua.guaXiang"
-          :size="200"
-          @change="change"
-        ></BaseGua>
+        <BaseGua :gua-xiang="gua.guaXiang" :size="200" @change="change"></BaseGua>
       </div>
       <div class="LeiXiang-xiang">
-        <van-field
-          v-if="timestamp"
-          v-model="dangerous"
-          rows="1"
-          autosize
-          clearable
-          label="征兆"
-          label-width="28"
-          type="textarea"
-          placeholder="请输入征兆"
-        />
+        <van-field v-if="timestamp" v-model="dangerous" rows="1" autosize clearable label="征兆" label-width="28"
+          type="textarea" placeholder="请输入征兆" />
         <ul>
           <li v-for="xiang in gua.leixiang" :key="xiang.order">
             <span>{{ xiang.key }}:</span>
@@ -72,7 +53,7 @@ export default {
     },
     async setDangerousList() {
       const { timestamp, search } = this
-      const mine = await localforage.getItem('MEI_HUA__mine')
+      const mine = await localforage.getItem('MEI_HUA__mine') || []
       const item = mine.find(item => item.timestamp === +timestamp)
 
       item &&
@@ -126,7 +107,7 @@ export default {
     padding: 0 20px;
     overflow-y: auto;
 
-    & > div {
+    &>div {
       margin-top: 20px;
       line-height: 1.5;
     }
